@@ -1,4 +1,14 @@
 export const defaultState = {
     user:{},
-    search:{}
+
+    search:{
+        pinSearch: {
+            term: ""
+        },
+
+        conversationsSearch: {
+            term: ""
+        }
+    }
+    
 }
