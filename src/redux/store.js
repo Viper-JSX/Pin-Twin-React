@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { login } from "./action_creators";
-import { user } from "./reducers";
+import { search, user } from "./reducers";
 
 const reducer = {
-    user
+    user,
+    search
 }
 const store = configureStore({reducer });
 

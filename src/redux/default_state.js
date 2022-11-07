@@ -1,3 +1,4 @@
 export const defaultState = {
-    user:{}
+    user:{},
+    search:{}
 }
