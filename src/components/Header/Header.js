@@ -1,6 +1,10 @@
+import MainPageIcon from "./Main_page_icon";
+
 function Header(){
     return(
-        <header id="header"></header>
+        <header id="header">
+            <MainPageIcon />
+        </header>
     );
 }
 
