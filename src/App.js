@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 function App(){
     return(
-        <div className="App">App Working</div>
+        <div className="App"></div>
     );
 }
 
