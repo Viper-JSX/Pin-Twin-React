@@ -20,7 +20,7 @@ function OpenNotifications(){
     return(
         <>
             <button onClick={handleNotificationsShow}>
-                <img src="" alt="Show notifications" />
+                <img src="" alt="Notifications" />
             </button>
 
             {

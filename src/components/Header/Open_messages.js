@@ -21,7 +21,7 @@ function OpenMessages(){
         <>
             <button onClick={handleMessagesShow}>
                 g
-                <img src="" alt="Show messages" />
+                <img src="" alt="Messages" />
             </button>
 
             {
