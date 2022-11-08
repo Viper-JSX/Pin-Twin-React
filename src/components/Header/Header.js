@@ -1,7 +1,7 @@
 import Search from "../Reusable_components/Search/Search";
 import MainPageIcon from "./Main_page_icon";
-import MessagesToggle from "./Messages_toggle";
-import NotificationsToggle from "./Notifications_toggle";
+import OpenMessages from "./Open_messages";
+import OpenNotifications from "./Open_notifications";
 import OpenPinCreator from "./Open_pin_creator";
 import OpenProfile from "./Open_profile";
 
@@ -11,8 +11,8 @@ function Header(){
             <MainPageIcon />
             <OpenPinCreator />
             <Search value={""} handler={null} />
-            <NotificationsToggle />
-            <MessagesToggle />
+            <OpenNotifications />
+            <OpenMessages />
             <OpenProfile />
         </header>
     );
