@@ -6,14 +6,31 @@ function OpenNotifications(){
     const notificationsWindowRef = useRef(null);
     const [ notificationsWindowVisibility, setNotificationsWindowVisibility ] = useState("hidden");
 
+    function handleNotificationsShow(){
+        console.log("Show")
+        notificationsWindowRef.current.style.display = "block";
+        notificationsWindowRef.current.focus();
+        setNotificationsWindowVisibility("visible");
+    }
+
+    function handleNotificationsHide(){
+        console.log("Hide")
+        notificationsWindowRef.current.style.display = "none";
+        setNotificationsWindowVisibility("hidden");
+        console.log(notificationsWindowRef.current)
+    }
+
     return(
         <>
-            <button>
+            <button onClick={handleNotificationsShow}>
                 <img src="" alt="Show notifications" />
             </button>
 
             {
-                createPortal(<NotificationsWindow notificationsWindowVisibility={notificationsWindowVisibility} notificationsWindowRef={notificationsWindowRef} />, document.body)
+                createPortal(
+                    <NotificationsWindow notificationsWindowVisibility={notificationsWindowVisibility} notificationsWindowRef={notificationsWindowRef} handleNotificationsHide={handleNotificationsHide} />,
+                    document.body
+                )
             }
         </>
     );
