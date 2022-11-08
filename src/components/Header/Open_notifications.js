@@ -7,17 +7,14 @@ function OpenNotifications(){
     const [ notificationsWindowVisibility, setNotificationsWindowVisibility ] = useState("hidden");
 
     function handleNotificationsShow(){
-        console.log("Show")
         notificationsWindowRef.current.style.display = "block";
         notificationsWindowRef.current.focus();
         setNotificationsWindowVisibility("visible");
     }
 
     function handleNotificationsHide(){
-        console.log("Hide")
-        notificationsWindowRef.current.style.display = "none";
         setNotificationsWindowVisibility("hidden");
-        console.log(notificationsWindowRef.current)
+        setTimeout(() => notificationsWindowRef.current.style.display = "none", 1000)
     }
 
     return(
