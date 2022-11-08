@@ -17,9 +17,13 @@ body{
 }
 
 header{
-    background-color: red;
+    border-bottom: var(--thinDarkBorder);
     display: flex;
     justify-content: space-around;
+}
+
+header > *{
+    margin: 0.5rem;
 }
 
 .notificationsWindow, .messagesWindow{

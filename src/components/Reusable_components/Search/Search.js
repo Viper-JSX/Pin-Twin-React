@@ -1,6 +1,6 @@
 function Search({ value, handler, placeholder="Search" }){
     return(
-        <input type="text" value={value} placeholder={placeholder} onChange={handler} />
+        <input className="search" type="text" value={value} placeholder={placeholder} onChange={handler} />
     );
 }
 
