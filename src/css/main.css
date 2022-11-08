@@ -1,3 +1,12 @@
+:root{
+    --shortTransitionTime: 0.3s;
+    --middleTransitionTime: 0.5s;
+    --longTransitionTime: 1s;
+
+    --thinDarkBorder: 1px solid black;
+    --thickDarkBorder: 2px solid black;
+}
+
 *{
     box-sizing: border-box;
 }
@@ -9,4 +18,24 @@ body{
 
 header{
     background-color: red;
+    display: flex;
+    justify-content: space-around;
+}
+
+.notificationsWindow, .messagesWindow{
+    min-width: 300px;
+    min-height: 480px;
+    border: var(--thickDarkBorder);
+    transition: var(--shortTransitionTime);
+    position: absolute;
+    right: 1rem;
+    display: none;
+}
+
+.notificationsWindow.visible, .messagesWindow.visible{
+    opacity: 1;
+}
+
+.notificationsWindow.hidden, .messagesWindow.hidden{
+    opacity: 0;
 }
