@@ -1,5 +1,9 @@
 import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMessage } from "@fortawesome/free-solid-svg-icons";
+
 import MessagesWindow from "./Messages_window/Messages_window";
 
 function OpenMessages(){
@@ -20,8 +24,7 @@ function OpenMessages(){
     return(
         <>
             <button onClick={handleMessagesShow}>
-                g
-                <img src="" alt="Messages" />
+                <FontAwesomeIcon icon={faMessage} />
             </button>
 
             {

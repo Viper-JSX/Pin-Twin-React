@@ -10,7 +10,7 @@ function Header(){
         <header id="header">
             <MainPageIcon />
             <OpenPinCreator />
-            <Search value={""} handler={null} />
+            <Search value={""} placeholder={"Search"} handler={null} />
             <OpenNotifications />
             <OpenMessages />
             <OpenProfile />

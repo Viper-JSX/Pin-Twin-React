@@ -1,5 +1,9 @@
 import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
+
 import NotificationsWindow from "./Notifications_window/Notifications_window";
 
 function OpenNotifications(){
@@ -20,7 +24,7 @@ function OpenNotifications(){
     return(
         <>
             <button onClick={handleNotificationsShow}>
-                <img src="" alt="Notifications" />
+                <FontAwesomeIcon icon={faBell} />
             </button>
 
             {

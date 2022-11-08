@@ -26,6 +26,11 @@ header > *{
     margin: 0.5rem;
 }
 
+header > .search{
+    flex-grow: 1;
+    border-radius: 5rem;
+}
+
 .notificationsWindow, .messagesWindow{
     min-width: 300px;
     min-height: 480px;

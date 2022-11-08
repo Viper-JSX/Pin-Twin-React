@@ -1,9 +1,14 @@
 import { NavLink } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+
 function OpenProfile(){
     return(
         <NavLink to="profile">
-            <img src="" alt="Profile" />
+            <button>
+                <FontAwesomeIcon icon={faUser} />
+            </button>
         </NavLink>
     );
 }
