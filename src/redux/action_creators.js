@@ -1,4 +1,4 @@
-import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, LOGIN, REGISTER } from "./action_types";
+import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CREATE_PIN, DELETE_PIN, EDIT_PIN, LOGIN, REGISTER } from "./action_types";
 
 export function login(payload){
     return { type: LOGIN, payload };
@@ -8,7 +8,17 @@ export function register(payload){
     return { type: REGISTER, payload };
 }
 
+export function createPin(payload){
+    return { type: CREATE_PIN, payload };
+}
 
+export function editPin(payload){
+    return { type: EDIT_PIN, payload };
+}
+
+export function deletePin(payload){
+    return { type: DELETE_PIN, payload };
+}
 
 
 export function changePinsSearchTerm(payload){
