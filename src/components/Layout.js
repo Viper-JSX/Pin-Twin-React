@@ -1,10 +1,11 @@
 import { Route, Routes } from "react-router";
 import Header from "./Header/Header";
 
-function Layout(){
+function Layout({ handlePinsSearchTermChange }){
+
     return(
         <div id="layout">
-            <Header />
+            <Header handlePinsSearchTermChange={handlePinsSearchTermChange} />
 
             <Routes>
                 <Route path="/" element={null} />

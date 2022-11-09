@@ -27,6 +27,7 @@ export function search(state=defaultState.search, action){
     switch(action.type){
         case CHANGE_PINS_SEARCH_TERM:{
             console.log("Searching pins");
+            console.log(action.payload)
             return state;
         }
         case CHANGE_PINS_SORT_CRITERIA:{

@@ -5,12 +5,12 @@ import OpenNotifications from "./Open_notifications";
 import OpenPinCreator from "./Open_pin_creator";
 import OpenProfile from "./Open_profile";
 
-function Header(){
+function Header({ handlePinsSearchTermChange }){
     return(
         <header id="header">
             <MainPageIcon />
             <OpenPinCreator />
-            <Search value={""} placeholder={"Search"} handler={null} />
+            <Search value={""} placeholder={"Search"} handler={handlePinsSearchTermChange} />
             <OpenNotifications />
             <OpenMessages />
             <OpenProfile />
