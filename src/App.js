@@ -9,7 +9,7 @@ import { changePinsSearchTerm, login } from "./redux/action_creators";
 
 function App(){
     const dispatch = useDispatch();
-
+    dispatch(changePinsSearchTerm());
     return(
         <div className="App">
             <Layout />
