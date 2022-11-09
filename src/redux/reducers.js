@@ -6,11 +6,11 @@ import { defaultState } from "./default_state";
 export function user(state=defaultState.user, action){
     switch(action.type){
         case LOGIN:{
-            console.log("Login");
+            console.log("Login", action.payload);
             return state;
         }
         case REGISTER:{
-            console.log("Register");
+            console.log("Register", action.payload);
             return state;
         }
         case CREATE_PIN:{

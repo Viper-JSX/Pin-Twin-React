@@ -5,10 +5,21 @@ import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, login } from "./redux/action_creators";
+import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, login, register } from "./redux/action_creators";
 
 function App(){
     const dispatch = useDispatch();
+
+    /*---User---*/
+    function handleLogin(loginData){
+        dispatch(login(loginData))
+    }
+
+    function handleRegister(registerData){
+        dispatch(register(registerData));
+    }
+
+
 
     /*---Search Term Handling---*/
     function handlePinsSearchTermChange(event){
