@@ -1,4 +1,4 @@
-import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_CONVERSATIONS_SORT_CRITERIA, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, LOGIN, REGISTER } from "./action_types";
+import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, LOGIN, REGISTER } from "./action_types";
 
 export function login(payload){
     return { type: LOGIN, payload };
@@ -29,8 +29,4 @@ export function changeUserPinsSortCriteria(payload){
 
 export function changeConversationsSearchTerm(payload){
     return { type: CHANGE_CONVERSATIONS_SEARCH_TERM, payload }
-}
-
-export function changeConversationsSortCriteria(payload){
-    return { type: CHANGE_CONVERSATIONS_SORT_CRITERIA, payload }
 }

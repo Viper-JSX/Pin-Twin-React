@@ -41,10 +41,6 @@ export function search(state=defaultState.search, action){
         case CHANGE_CONVERSATIONS_SEARCH_TERM:{
             return  { ...state, conversationsSearch: { ...state.conversationsSearch, term: action.payload.term } };
         }
-        case CHANGE_CONVERSATIONS_SORT_CRITERIA:{
-            console.log("Conversations criteria", action.payload);
-            return state;
-        }
         default: {
             console.log("Nothing happened");
             return state;
