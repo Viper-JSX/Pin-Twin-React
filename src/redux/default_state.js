@@ -6,6 +6,10 @@ export const defaultState = {
             term: ""
         },
 
+        userPinsSearch: {
+            term: ""
+        },
+
         conversationsSearch: {
             term: ""
         }
