@@ -1,6 +1,11 @@
 import { NEW_TO_OLD } from "./sort_criterias";
 
 export const defaultState = {
+    app:{
+        pins: [],
+        pinsCurrentlyDisplayedOnTheMainPage: []
+    },
+
     user:{},
 
     search:{

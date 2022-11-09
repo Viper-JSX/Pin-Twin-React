@@ -1,6 +1,18 @@
-import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_CONVERSATIONS_SORT_CRITERIA, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CREATE_PIN, DELETE_PIN, EDIT_PIN, LOGIN, LOGOUT, REGISTER } from "./action_types";
+import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_CONVERSATIONS_SORT_CRITERIA, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CREATE_PIN, DELETE_PIN, EDIT_PIN, LOGIN, LOGOUT, REGISTER, SHOW_MORE_PINS } from "./action_types";
 import { defaultState } from "./default_state";
 
+
+export function app(state=defaultState.app, action){
+    switch(action.type){
+        case SHOW_MORE_PINS:{
+            console.log("More pins");
+            return state;
+        }
+        default:{
+            return state;
+        }
+    }
+}
 
 
 export function user(state=defaultState.user, action){

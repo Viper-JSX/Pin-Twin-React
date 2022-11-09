@@ -1,3 +1,6 @@
+/*---App---*/
+export const SHOW_MORE_PINS = "SHOW_MORE_PINS";
+
 /*---User---*/
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
