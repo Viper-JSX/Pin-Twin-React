@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, login, logout, register } from "./redux/action_creators";
+import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, createPin, deletePin, editPin, login, logout, register } from "./redux/action_creators";
 
 function App(){
     const dispatch = useDispatch();
@@ -21,6 +21,18 @@ function App(){
 
     function handleLogout(){
         dispatch(logout());
+    }
+
+    function handlePinCreate(newPin){
+        dispatch(createPin({ newPin }));
+    }
+
+    function handlePinEdit(newPinData){
+        dispatch(editPin({ newPinData } ));
+    }
+
+    function handlePinDelete(pinId){
+        dispatch(deletePin({ pinId }));
     }
 
 

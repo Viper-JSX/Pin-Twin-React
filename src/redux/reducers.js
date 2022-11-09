@@ -6,27 +6,24 @@ import { defaultState } from "./default_state";
 export function user(state=defaultState.user, action){
     switch(action.type){
         case LOGIN:{
-            console.log("Login", action.payload);
             return state;
         }
         case LOGOUT:{
-            console.log("Logout");
             return state;  
         }
         case REGISTER:{
-            console.log("Register", action.payload);
             return state;
         }
         case CREATE_PIN:{
-            console.log("creating pin");
+            console.log("creating pin", action.payload);
             return state;
         }
         case EDIT_PIN:{
-            console.log("editing pin");
+            console.log("editing pin", action.payload);
             return state;
         }
         case DELETE_PIN:{
-            console.log("deleting pin");
+            console.log("deleting pin", action.payload);
             return state;
         }
         default: {
