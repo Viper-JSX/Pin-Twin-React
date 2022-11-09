@@ -1,4 +1,4 @@
-import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_CONVERSATIONS_SORT_CRITERIA, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, LOGIN, REGISTER } from "./action_types";
+import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_CONVERSATIONS_SORT_CRITERIA, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CREATE_PIN, DELETE_PIN, EDIT_PIN, LOGIN, REGISTER } from "./action_types";
 import { defaultState } from "./default_state";
 
 
@@ -11,6 +11,18 @@ export function user(state=defaultState.user, action){
         }
         case REGISTER:{
             console.log("Register");
+            return state;
+        }
+        case CREATE_PIN:{
+            console.log("creating pin");
+            return state;
+        }
+        case EDIT_PIN:{
+            console.log("editing pin");
+            return state;
+        }
+        case DELETE_PIN:{
+            console.log("deleting pin");
             return state;
         }
         default: {
