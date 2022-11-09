@@ -2,7 +2,7 @@ export const defaultState = {
     user:{},
 
     search:{
-        pinSearch: {
+        pinsSearch: {
             term: ""
         },
 

@@ -9,7 +9,6 @@ import { changePinsSearchTerm, login } from "./redux/action_creators";
 
 function App(){
     const dispatch = useDispatch();
-    dispatch(changePinsSearchTerm());
 
     function handlePinsSearchTermChange(event){
         dispatch(changePinsSearchTerm({term: event.target.value}));
