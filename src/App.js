@@ -4,12 +4,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
-import { useDispatch } from 'react-redux';
-import { changeConversationsSearchTerm, changePinsSearchTerm, changeUserPinsSearchTerm, login } from "./redux/action_creators";
+import { useDispatch, useSelector } from 'react-redux';
+import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, login } from "./redux/action_creators";
+import { NEW_TO_OLD, OLD_TO_NEW } from "./redux/sort_criterias";
 
 function App(){
     const dispatch = useDispatch();
 
+    /*---Search Term Handling---*/
     function handlePinsSearchTermChange(event){
         dispatch(changePinsSearchTerm({term: event.target.value}));
     }
@@ -20,6 +22,15 @@ function App(){
 
     function handleConversationsSearchTermChange(event){
         dispatch(changeConversationsSearchTerm({ term: event.target.value }));
+    }
+
+    /*---Sort criteria handling*/
+    function handlePinsSortCriteriaChange(criteria){
+        dispatch(changePinsSortCriteria({ criteria }));
+    }
+
+    function handleUserPinsSortCriteriaChange(criteria){
+        dispatch(changeUserPinsSortCriteria({ criteria }));
     }
 
     return(

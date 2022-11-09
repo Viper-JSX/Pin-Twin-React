@@ -6,7 +6,7 @@ export const defaultState = {
     search:{
         pinsSearch: {
             term: "",
-            sortCriteria: NEW_TO_OLD;
+            sortCriteria: NEW_TO_OLD,
         },
 
         userPinsSearch: {

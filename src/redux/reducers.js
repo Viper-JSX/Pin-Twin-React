@@ -29,21 +29,20 @@ export function search(state=defaultState.search, action){
             return  { ...state, pinsSearch: { ...state.pinsSearch, term: action.payload.term } };
         }
         case CHANGE_PINS_SORT_CRITERIA:{
-            return state;
+            return  { ...state, pinsSearch: { ...state.pinsSearch, sortCriteria: action.payload.criteria } };
         }
         case CHANGE_USER_PINS_SEARCH_TERM:{
             return  { ...state, userPinsSearch: { ...state.userPinsSearch, term: action.payload.term } };
         }
         case CHANGE_USER_PINS_SORT_CRITERIA:{
-            console.log("Pins sort criteria");
-            return state;
+            console.log("user Pins sort criteria", action.payload);
+            return  { ...state, userPinsSearch: { ...state.pinsSearch, sortCriteria: action.payload.criteria } };
         }
         case CHANGE_CONVERSATIONS_SEARCH_TERM:{
-            console.log("User conv", action.payload.term, state);
             return  { ...state, conversationsSearch: { ...state.conversationsSearch, term: action.payload.term } };
         }
         case CHANGE_CONVERSATIONS_SORT_CRITERIA:{
-            console.log("Conversations criteria");
+            console.log("Conversations criteria", action.payload);
             return state;
         }
         default: {

@@ -15,7 +15,7 @@ export function changePinsSearchTerm(payload){
     return { type: CHANGE_PINS_SEARCH_TERM, payload };
 }
 
-export function changePinsSearchSortCriteria(payload){
+export function changePinsSortCriteria(payload){
     return { type: CHANGE_PINS_SORT_CRITERIA, payload };
 }
 
@@ -23,7 +23,7 @@ export function changeUserPinsSearchTerm(payload){
     return { type: CHANGE_USER_PINS_SEARCH_TERM, payload }
 }
 
-export function changeUserPinsSearchSortCriteria(payload){
+export function changeUserPinsSortCriteria(payload){
     return { type: CHANGE_USER_PINS_SORT_CRITERIA, payload }
 }
 
@@ -31,6 +31,6 @@ export function changeConversationsSearchTerm(payload){
     return { type: CHANGE_CONVERSATIONS_SEARCH_TERM, payload }
 }
 
-export function changeConversationsSearchSortCriteria(payload){
+export function changeConversationsSortCriteria(payload){
     return { type: CHANGE_CONVERSATIONS_SORT_CRITERIA, payload }
 }
