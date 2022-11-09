@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, login, register } from "./redux/action_creators";
+import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, login, logout, register } from "./redux/action_creators";
 
 function App(){
     const dispatch = useDispatch();
@@ -19,6 +19,9 @@ function App(){
         dispatch(register(registerData));
     }
 
+    function handleLogout(){
+        dispatch(logout());
+    }
 
 
     /*---Search Term Handling---*/

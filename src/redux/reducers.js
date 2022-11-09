@@ -1,4 +1,4 @@
-import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_CONVERSATIONS_SORT_CRITERIA, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CREATE_PIN, DELETE_PIN, EDIT_PIN, LOGIN, REGISTER } from "./action_types";
+import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_CONVERSATIONS_SORT_CRITERIA, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CREATE_PIN, DELETE_PIN, EDIT_PIN, LOGIN, LOGOUT, REGISTER } from "./action_types";
 import { defaultState } from "./default_state";
 
 
@@ -8,6 +8,10 @@ export function user(state=defaultState.user, action){
         case LOGIN:{
             console.log("Login", action.payload);
             return state;
+        }
+        case LOGOUT:{
+            console.log("Logout");
+            return state;  
         }
         case REGISTER:{
             console.log("Register", action.payload);
