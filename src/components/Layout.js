@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router";
-import LoginForm from "./Authorization/Login_form";
-import SignUpForm from "./Authorization/Sing_up_form";
+import AuthorizationSwitcher from "./Authorization/Authorization_switcher";
 import Header from "./Header/Header";
 import UserProfileWindow from "./User_profile_window/User_profile_window";
 
@@ -13,9 +12,8 @@ function Layout({
     return(
         <div id="layout">
             <Header handlePinsSearchTermChange={handlePinsSearchTermChange} />
-            
-            <LoginForm handleAuthorizationWindowClose={handleAuthorizationWindowClose} />
-            <SignUpForm handleAuthorizationWindowClose={handleAuthorizationWindowClose} />
+
+            <AuthorizationSwitcher />
 
             <Routes>
                 <Route path="/" element={null} />
