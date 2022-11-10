@@ -5,13 +5,17 @@ import CloseButton from "../Reusable_components/Close_button";
 function AuthorizationForm({ handleAuthorizationWindowClose }){
     const [ loginData, setLoginData ] = useState({ login: "", password: "" });
     const currentAuthorization = useSelector((state) => state.authorization.currentAuthorization);
-    console.log(currentAuthorization)
+
     function handleLoginChange(event){
         setLoginData({ ...loginData, login: event.target.value });
     }
 
     function handlePasswordChange(event){
         setLoginData({ ...loginData, password: event.target.value });
+    }
+
+    if(!currentAuthorization){
+        return null;
     }
 
     return(
