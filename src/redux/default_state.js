@@ -22,6 +22,14 @@ export const defaultState = {
         conversationsSearch: {
             term: ""
         }
+    },
+
+    authorization: {
+        loginWindow: {
+            visible: false
+        },
+        signUpWindow: {
+            visible: false
+        }
     }
-    
 }
