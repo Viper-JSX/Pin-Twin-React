@@ -48,3 +48,9 @@ header > .search{
 .notificationsWindow.hidden, .messagesWindow.hidden{
     opacity: 0;
 }
+
+
+
+.loginForm.hidden, .signUpForm.hidden{
+    display: none;
+}
