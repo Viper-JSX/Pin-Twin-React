@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
 import Header from "./Header/Header";
+import UserProfileWindow from "./User_profile_window/User_profile_window";
 
 function Layout({ handlePinsSearchTermChange }){
 
@@ -9,12 +10,7 @@ function Layout({ handlePinsSearchTermChange }){
 
             <Routes>
                 <Route path="/" element={null} />
-                <Route path="/profile" element={null}>
-                    <Route path="authorization">
-                        <Route path="login" />
-                        <Route path="register" />
-                    </Route>
-                </Route>
+                <Route path="/profile" element={<UserProfileWindow />} />
             </Routes>
         </div>
     );
