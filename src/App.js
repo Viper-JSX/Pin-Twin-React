@@ -71,11 +71,13 @@ function App(){
     function handleAuthorizationWindowClose(){
         dispatch(closeAuthorizationWindow());
     }
-
+handleLoginWindowOpen()
     return(
         <div className="App">
             <Layout
                 handlePinsSearchTermChange={handlePinsSearchTermChange}
+
+                handleAuthorizationWindowClose={handleAuthorizationWindowClose}
             />
         </div>
     );
