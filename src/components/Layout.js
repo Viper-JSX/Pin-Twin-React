@@ -6,13 +6,19 @@ import UserProfileWindow from "./User_profile_window/User_profile_window";
 function Layout({ 
     handlePinsSearchTermChange,
 
+    handleLogin,
+    handleSignUp,
     handleAuthorizationWindowClose
 }){
 
     return(
         <div id="layout">
             <Header handlePinsSearchTermChange={handlePinsSearchTermChange} />
-            <AuthorizationForm handleAuthorizationWindowClose={handleAuthorizationWindowClose} />
+            <AuthorizationForm 
+                handleLogin={handleLogin}
+                handleSignUp={handleSignUp}
+                handleAuthorizationWindowClose={handleAuthorizationWindowClose} 
+            />
 
             <Routes>
                 <Route path="/" element={null} />

@@ -11,12 +11,16 @@ function App(){
     const dispatch = useDispatch();
 
     /*---User---*/
-    function handleLogin(loginData){
+    function handleLogin({ event, loginData }){
+        event.preventDefault();
+        console.log(loginData)
         dispatch(login(loginData))
     }
 
-    function handleRegister(registerData){
-        dispatch(register(registerData));
+    function handleSignUp({ event, loginData }){
+        event.preventDefault();
+        console.log(loginData)
+        dispatch(register(loginData));
     }
 
     function handleLogout(){
@@ -71,12 +75,15 @@ function App(){
     function handleAuthorizationWindowClose(){
         dispatch(closeAuthorizationWindow());
     }
-
+handleSignUpWindowOpen();
     return(
         <div className="App">
             <Layout
                 handlePinsSearchTermChange={handlePinsSearchTermChange}
 
+
+                handleLogin={handleLogin}
+                handleSignUp={handleSignUp}
                 handleAuthorizationWindowClose={handleAuthorizationWindowClose}
             />
         </div>

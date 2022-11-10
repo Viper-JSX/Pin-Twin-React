@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import CloseButton from "../Reusable_components/Close_button";
 
-function AuthorizationForm({ handleAuthorizationWindowClose }){
+function AuthorizationForm({ handleLogin, handleSignUp, handleAuthorizationWindowClose }){
     const [ loginData, setLoginData ] = useState({ login: "", password: "" });
     const currentAuthorizationType = useSelector((state) => state.authorization.currentAuthorizationType);
 
@@ -28,9 +28,9 @@ function AuthorizationForm({ handleAuthorizationWindowClose }){
 
                     {
                         currentAuthorizationType === "login" ? 
-                        <button>Login</button>
+                        <button onClick={(event) => handleLogin({ event, loginData})}>Login</button>
                         :
-                        <button>Sign-up</button>
+                        <button onClick={(event) => handleSignUp({event, loginData})}>Sign-up</button>
                     }
                 </form>
             </div>
