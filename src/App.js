@@ -58,6 +58,20 @@ function App(){
         dispatch(changeUserPinsSortCriteria({ criteria }));
     }
 
+
+    /*---Authorization windows---*/
+    function handleLoginWindowOpen(){
+        dispatch(openLoginWindow());
+    }
+
+    function handleSignUpWindowOpen(){
+        dispatch(openSignUpWindow());
+    }
+
+    function handleAuthorizationWindowClose(){
+        dispatch(closeAuthorizationWindow());
+    }
+
     return(
         <div className="App">
             <Layout

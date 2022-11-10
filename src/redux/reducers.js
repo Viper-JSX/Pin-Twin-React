@@ -79,15 +79,12 @@ export function authorization(state=defaultState.authorization, action){
             return {...state, loginWindow: { visible: true }, signUpWindow: { visible: false }};
         }
         case OPEN_SIGN_UP_WINDOW: {
-            console.log("Opening sign-up");
             return {...state, loginWindow: { visible: false }, signUpWindow: { visible: true }};
         }
         case CLOSE_AUTHORIZATION_WINDOW: {
-            console.log("Closing authorization");
             return {...state, loginWindow: { visible: false }, signUpWindow: { visible: false }};
         }
         default:{
-            console.log("Nothing in auth");
             return state;
         }
     }
