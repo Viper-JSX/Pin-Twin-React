@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { login } from "./action_creators";
-import { search, user } from "./reducers";
+import { search, user, authorization } from "./reducers";
 
 const reducer = {
     user,
-    search
+    search,
+    authorization
 }
 const store = configureStore({reducer });
 

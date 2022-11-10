@@ -1,4 +1,4 @@
-import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_CONVERSATIONS_SORT_CRITERIA, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CREATE_PIN, DELETE_PIN, EDIT_PIN, LOGIN, LOGOUT, REGISTER, SHOW_MORE_PINS } from "./action_types";
+import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_CONVERSATIONS_SORT_CRITERIA, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CREATE_PIN, DELETE_PIN, EDIT_PIN, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SHOW_MORE_PINS } from "./action_types";
 import { defaultState } from "./default_state";
 
 
@@ -75,6 +75,20 @@ export function search(state=defaultState.search, action){
 
 export function authorization(state=defaultState.authorization, action){
     switch(action.type){
-        
+        case OPEN_LOGIN_WINDOW: {
+            return {...state, loginWindow: { visible: true }, signUpWindow: { visible: false }};
+        }
+        case OPEN_SIGN_UP_WINDOW: {
+            console.log("Opening sign-up");
+            return {...state, loginWindow: { visible: false }, signUpWindow: { visible: true }};
+        }
+        case CLOSE_AUTHORIZATION_WINDOW: {
+            console.log("Closing authorization");
+            return {...state, loginWindow: { visible: false }, signUpWindow: { visible: false }};
+        }
+        default:{
+            console.log("Nothing in auth");
+            return state;
+        }
     }
 }
