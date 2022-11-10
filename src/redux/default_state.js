@@ -25,6 +25,6 @@ export const defaultState = {
     },
 
     authorization: {
-        currentAuthorization: null
+        currentAuthorizationType: null
     }
 }

@@ -4,7 +4,7 @@ import CloseButton from "../Reusable_components/Close_button";
 
 function AuthorizationForm({ handleAuthorizationWindowClose }){
     const [ loginData, setLoginData ] = useState({ login: "", password: "" });
-    const currentAuthorization = useSelector((state) => state.authorization.currentAuthorization);
+    const currentAuthorizationType = useSelector((state) => state.authorization.currentAuthorizationType);
 
     function handleLoginChange(event){
         setLoginData({ ...loginData, login: event.target.value });
@@ -14,7 +14,7 @@ function AuthorizationForm({ handleAuthorizationWindowClose }){
         setLoginData({ ...loginData, password: event.target.value });
     }
 
-    if(!currentAuthorization){
+    if(!currentAuthorizationType){
         return null;
     }
 
@@ -25,6 +25,13 @@ function AuthorizationForm({ handleAuthorizationWindowClose }){
                 <form>
                     <input className="emailInput" type="email" value={loginData.login} onChange={handleLoginChange} />
                     <input className="passwordInput" type="password" value={loginData.password} onChange={handlePasswordChange} />
+
+                    {
+                        currentAuthorizationType === "login" ? 
+                        <button>Login</button>
+                        :
+                        <button>Sign-up</button>
+                    }
                 </form>
             </div>
         </div>

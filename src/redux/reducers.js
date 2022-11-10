@@ -76,13 +76,13 @@ export function search(state=defaultState.search, action){
 export function authorization(state=defaultState.authorization, action){
     switch(action.type){
         case OPEN_LOGIN_WINDOW: {
-            return { ...state, currentAuthorization: "login"};
+            return { ...state, currentAuthorizationType: "login"};
         }
         case OPEN_SIGN_UP_WINDOW: {
-            return { ...state, currentAuthorization: "sign_up"};
+            return { ...state, currentAuthorizationType: "sign_up"};
         }
         case CLOSE_AUTHORIZATION_WINDOW: {
-            return { ...state, currentAuthorization: null };
+            return { ...state, currentAuthorizationType: null };
         }
         default:{
             return state;
