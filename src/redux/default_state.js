@@ -25,11 +25,6 @@ export const defaultState = {
     },
 
     authorization: {
-        loginWindow: {
-            visible: false
-        },
-        signUpWindow: {
-            visible: false
-        }
+        currentAuthorization: null
     }
 }

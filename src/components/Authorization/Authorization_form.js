@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import CloseButton from "../Reusable_components/Close_button";
 
-function LoginForm({ handleAuthorizationWindowClose }){
+function AuthorizationForm({ handleAuthorizationWindowClose }){
     const [ loginData, setLoginData ] = useState({ login: "", password: "" });
-
+    const currentAuthorization = useSelector((state) => state.authorization.currentAuthorization);
+    console.log(currentAuthorization)
     function handleLoginChange(event){
         setLoginData({ ...loginData, login: event.target.value });
     }
@@ -13,10 +14,8 @@ function LoginForm({ handleAuthorizationWindowClose }){
         setLoginData({ ...loginData, password: event.target.value });
     }
 
-    console.log(loginData)
-
     return(
-        <div className="loginForm">
+        <div className="authorizationForm">
             <CloseButton handler={handleAuthorizationWindowClose} />
             <form>
                 <input className="emailInput" type="email" value={loginData.login} onChange={handleLoginChange} />
@@ -26,4 +25,4 @@ function LoginForm({ handleAuthorizationWindowClose }){
     );
 }
 
-export default LoginForm;
+export default AuthorizationForm;

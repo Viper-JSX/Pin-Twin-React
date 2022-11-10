@@ -76,13 +76,13 @@ export function search(state=defaultState.search, action){
 export function authorization(state=defaultState.authorization, action){
     switch(action.type){
         case OPEN_LOGIN_WINDOW: {
-            return {...state, loginWindow: { visible: true }, signUpWindow: { visible: false }};
+            return { ...state, currentAuthorization: "login"};
         }
         case OPEN_SIGN_UP_WINDOW: {
-            return {...state, loginWindow: { visible: false }, signUpWindow: { visible: true }};
+            return { ...state, currentAuthorization: "sign_up"};
         }
         case CLOSE_AUTHORIZATION_WINDOW: {
-            return {...state, loginWindow: { visible: false }, signUpWindow: { visible: false }};
+            return { ...state, currentAuthorization: null };
         }
         default:{
             return state;
