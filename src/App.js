@@ -17,10 +17,10 @@ function App(){
         dispatch(login(loginData))
     }
 
-    function handleSignUp({ event, loginData }){
+    function handleSignUp({ event, signUpData }){
         event.preventDefault();
-        console.log(loginData)
-        dispatch(register(loginData));
+        console.log(signUpData)
+        dispatch(register(signUpData));
     }
 
     function handleLogout(){
