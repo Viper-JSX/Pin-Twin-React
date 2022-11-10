@@ -9,6 +9,12 @@ function Layout({ handlePinsSearchTermChange }){
 
             <Routes>
                 <Route path="/" element={null} />
+                <Route path="/profile" element={null}>
+                    <Route path="authorization">
+                        <Route path="login" />
+                        <Route path="register" />
+                    </Route>
+                </Route>
             </Routes>
         </div>
     );
