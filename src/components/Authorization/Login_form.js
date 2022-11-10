@@ -5,10 +5,12 @@ function LoginForm({ handleAuthorizationWindowClose }){
     const visible = useSelector((state) => state.authorization.loginWindow.visible);
     
     return(
-        <form className={`loginForm ${visible ? "visible" : "hidden"}`}>
+        <div className="loginForm">
             <CloseButton handler={handleAuthorizationWindowClose} />
-            Login
-        </form>
+            <form>
+                Login
+            </form>
+        </div>
     );
 }
 
