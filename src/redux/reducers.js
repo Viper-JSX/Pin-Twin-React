@@ -72,3 +72,9 @@ export function search(state=defaultState.search, action){
         }
     }
 }
+
+export function authorization(state=defaultState.authorization, action){
+    switch(action.type){
+        
+    }
+}
