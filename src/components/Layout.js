@@ -13,7 +13,7 @@ function Layout({
         <div id="layout">
             <Header handlePinsSearchTermChange={handlePinsSearchTermChange} />
 
-            <AuthorizationSwitcher />
+            <AuthorizationSwitcher handleAuthorizationWindowClose={handleAuthorizationWindowClose} />
 
             <Routes>
                 <Route path="/" element={null} />
