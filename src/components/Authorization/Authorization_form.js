@@ -19,12 +19,14 @@ function AuthorizationForm({ handleAuthorizationWindowClose }){
     }
 
     return(
-        <div className="authorizationForm">
-            <CloseButton handler={handleAuthorizationWindowClose} />
-            <form>
-                <input className="emailInput" type="email" value={loginData.login} onChange={handleLoginChange} />
-                <input className="passwordInput" type="password" value={loginData.password} onChange={handlePasswordChange} />
-            </form>
+        <div className="authorizationFormWrapper">
+            <div className="authorizationForm">
+                <CloseButton handler={handleAuthorizationWindowClose} />
+                <form>
+                    <input className="emailInput" type="email" value={loginData.login} onChange={handleLoginChange} />
+                    <input className="passwordInput" type="password" value={loginData.password} onChange={handlePasswordChange} />
+                </form>
+            </div>
         </div>
     );
 }
