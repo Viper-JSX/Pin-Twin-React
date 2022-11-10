@@ -5,12 +5,22 @@ import CloseButton from "../Reusable_components/Close_button";
 function LoginForm({ handleAuthorizationWindowClose }){
     const [ loginData, setLoginData ] = useState({ login: "", password: "" });
 
+    function handleLoginChange(event){
+        setLoginData({ ...loginData, login: event.target.value });
+    }
+
+    function handlePasswordChange(event){
+        setLoginData({ ...loginData, password: event.target.value });
+    }
+
+    console.log(loginData)
+
     return(
         <div className="loginForm">
             <CloseButton handler={handleAuthorizationWindowClose} />
             <form>
-                <input type="email" value={loginData.login} />
-                <input type="password" value={loginData.password} />
+                <input className="emailInput" type="email" value={loginData.login} onChange={handleLoginChange} />
+                <input className="passwordInput" type="password" value={loginData.password} onChange={handlePasswordChange} />
             </form>
         </div>
     );

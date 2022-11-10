@@ -71,7 +71,7 @@ function App(){
     function handleAuthorizationWindowClose(){
         dispatch(closeAuthorizationWindow());
     }
-handleLoginWindowOpen();
+handleLoginWindowOpen()
     return(
         <div className="App">
             <Layout
