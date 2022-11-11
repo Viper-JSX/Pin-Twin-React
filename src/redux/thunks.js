@@ -1,15 +1,26 @@
+import { users } from "../various_things/users";
 import { LOGIN, SIGN_UP } from "./action_types";
 
 export function login(payload){
     return function(dispatch){
-        console.log("thunk");
-        dispatch({ type: LOGIN, payload });
+        for(let i = 0; i < users.length; i++){
+            console.log(payload, users[i])
+            if(users[i].email === payload.email && users[i].password === payload.password){
+                console.log("logging in...")
+                dispatch({ type: LOGIN, payload:{user: {...users[i]}}});
+                return;
+            }
+        }
+
+        console.log("Something is wrong");
     }
 }
 
 export function signUp(payload){
     return function(dispatch) {
-        console.log("Sign up thunk")
-        dispatch({ type: SIGN_UP, payload });
+        if(payload.email.length > 8 && payload.password.length > 8){ //implement email/password validation ...
+            console.log("Signing-up")
+            dispatch({ type: SIGN_UP, payload });
+        }
     };
 }
