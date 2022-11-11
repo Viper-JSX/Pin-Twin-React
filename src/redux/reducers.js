@@ -25,6 +25,7 @@ export function user(state=defaultState.user, action){
             return state;  
         }
         case SIGN_UP:{
+            console.log(action.payload);
             return state;
         }
         case CREATE_PIN:{

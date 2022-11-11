@@ -4,17 +4,8 @@ export function showMorePins(payload){
     return { type: SHOW_MORE_PINS, payload };
 }
 
-
-export function login(payload){
-    return { type: LOGIN, payload };
-}
-
 export function logout(){
     return { type: LOGOUT };
-}
-
-export function signUp(payload){
-    return { type: SIGN_UP, payload };
 }
 
 export function createPin(payload){

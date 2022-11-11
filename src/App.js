@@ -5,7 +5,8 @@ import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, createPin, deletePin, editPin, login, logout, openLoginWindow, openSignUpWindow, signUp } from "./redux/action_creators";
+import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, createPin, deletePin, editPin, logout, openLoginWindow, openSignUpWindow } from "./redux/action_creators";
+import { login, signUp } from "./redux/thunks";
 
 import { users } from "./various_things/users";
 
