@@ -92,3 +92,11 @@ export function authorization(state=defaultState.authorization, action){
         }
     }
 }
+
+export function message(state=defaultState.message, action){
+    switch(action.type){
+        default:{
+            return state;
+        }
+    }
+}

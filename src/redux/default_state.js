@@ -26,5 +26,10 @@ export const defaultState = {
 
     authorization: {
         currentAuthorizationType: null
+    },
+
+    message: {
+        text: "",
+        title: ""
     }
 }

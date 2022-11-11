@@ -8,7 +8,7 @@ function MessageModal(){
     return(
         <div>
             <b className="messageTitle">{message.title}</b>
-            <p className="messageText">{message.messageText}</p>
+            <p className="messageText">{message.text}</p>
         </div>
     );
 }
