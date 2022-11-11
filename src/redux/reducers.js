@@ -1,3 +1,4 @@
+import { UserClass } from "../Classes/User_class";
 import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CREATE_PIN, DELETE_PIN, EDIT_PIN, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SHOW_MORE_PINS, SIGN_UP } from "./action_types";
 import { defaultState } from "./default_state";
 
@@ -18,8 +19,7 @@ export function app(state=defaultState.app, action){
 export function user(state=defaultState.user, action){
     switch(action.type){
         case LOGIN:{
-            console.log(action.payload);
-            return state;
+            return UserClass.create(action.payload.user.id, action.payload.user.email, action.payload.user.password, action.payload.user.pins, action.payload.user.savedPins, action.payload.user.conversations, action.payload.user.tagsViewFrequency);
         }
         case LOGOUT:{
             return state;  
@@ -41,7 +41,6 @@ export function user(state=defaultState.user, action){
             return state;
         }
         default: {
-            console.log("Nothing happened");
             return state;
         }
 
@@ -69,7 +68,6 @@ export function search(state=defaultState.search, action){
             return  { ...state, conversationsSearch: { ...state.conversationsSearch, term: action.payload.term } };
         }
         default: {
-            console.log("Nothing happened");
             return state;
         }
     }

@@ -6,7 +6,7 @@ export function login(payload){
         for(let i = 0; i < users.length; i++){
             console.log(payload, users[i])
             if(users[i].email === payload.email && users[i].password === payload.password){
-                console.log("logging in...")
+                console.log("logging in...", {...users[i]})
                 dispatch({ type: LOGIN, payload:{user: {...users[i]}}});
                 return;
             }
