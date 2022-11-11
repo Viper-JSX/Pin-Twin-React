@@ -19,6 +19,13 @@ export function login(payload){
 export function signUp(payload){
     return function(dispatch) {
         if(payload.email.length > 8 && payload.password.length > 8){ //implement email/password validation ...
+            users.forEach((user) => {
+                if(user.email === payload.email){
+                    console.log("This email is already used");
+                    return;
+                }
+            });
+
             console.log("Signing-up")
             dispatch({ type: SIGN_UP, payload });
         }
