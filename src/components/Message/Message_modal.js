@@ -1,7 +1,9 @@
+import { useSelector } from "react-redux/es/exports";
+
 function MessageModal(){
     const message = useSelector((state) => state.message);
-
-    if(!message.messageText){
+    console.log(message)
+    if(!message.text){
         return null;
     }
 

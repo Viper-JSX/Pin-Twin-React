@@ -1,4 +1,5 @@
 import { users } from "../various_things/users";
+import { showMessage } from "./action_creators";
 import { LOGIN, SIGN_UP } from "./action_types";
 
 export function login(payload){
@@ -22,6 +23,7 @@ export function signUp(payload){
             users.forEach((user) => {
                 if(user.email === payload.email){
                     console.log("This email is already used");
+                    dispatch(showMessage({ title: "Error", text: "This email is already used" }));
                     return;
                 }
             });
