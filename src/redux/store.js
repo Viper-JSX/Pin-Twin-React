@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { login } from "./action_creators";
 import { search, user, authorization } from "./reducers";
 
@@ -7,6 +7,6 @@ const reducer = {
     search,
     authorization
 }
-const store = configureStore({reducer });
+const store = configureStore({reducer, middleware: getDefaultMiddleware({ serializableCheck: false }) });
 
 export default store;
