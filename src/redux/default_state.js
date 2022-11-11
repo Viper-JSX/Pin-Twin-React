@@ -6,7 +6,7 @@ export const defaultState = {
         pinsCurrentlyDisplayedOnTheMainPage: []
     },
 
-    user:{},
+    user: null,
 
     search:{
         pinsSearch: {

@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, createPin, deletePin, editPin, login, logout, openLoginWindow, openSignUpWindow, register } from "./redux/action_creators";
+import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, createPin, deletePin, editPin, login, logout, openLoginWindow, openSignUpWindow, signUp } from "./redux/action_creators";
 
 import { users } from "./various_things/users";
 
@@ -22,7 +22,7 @@ function App(){
     function handleSignUp({ event, signUpData }){
         event.preventDefault();
         console.log(signUpData)
-        dispatch(register(signUpData));
+        dispatch(signUp(signUpData));
     }
 
     function handleLogout(){

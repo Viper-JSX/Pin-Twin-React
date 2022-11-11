@@ -1,4 +1,4 @@
-import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CREATE_PIN, DELETE_PIN, EDIT_PIN, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SHOW_MORE_PINS } from "./action_types";
+import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CREATE_PIN, DELETE_PIN, EDIT_PIN, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, SHOW_MORE_PINS, SIGN_UP } from "./action_types";
 
 export function showMorePins(payload){
     return { type: SHOW_MORE_PINS, payload };
@@ -13,8 +13,8 @@ export function logout(){
     return { type: LOGOUT };
 }
 
-export function register(payload){
-    return { type: REGISTER, payload };
+export function signUp(payload){
+    return { type: SIGN_UP, payload };
 }
 
 export function createPin(payload){

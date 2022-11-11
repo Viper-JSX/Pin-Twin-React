@@ -4,7 +4,7 @@ export const SHOW_MORE_PINS = "SHOW_MORE_PINS";
 /*---User---*/
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
-export const REGISTER = "REGISTER";
+export const SIGN_UP = "SIGN_UP";
 
 
 export const CREATE_PIN = "CREATE_PIN";

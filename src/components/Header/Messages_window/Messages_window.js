@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 function MessagesWindow( { messagesWindowVisibility, messagesWindowRef, handleMessagesHide } ){
-    const messages = useSelector((state) => state.user.conversations) || [];
+    const messages = useSelector((state) => state.user?.conversations) || [];
 
     return(
         <div className={`messagesWindow ${messagesWindowVisibility}`} ref={messagesWindowRef} tabIndex={1} onBlur={handleMessagesHide}>
