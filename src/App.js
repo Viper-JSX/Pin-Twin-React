@@ -7,6 +7,8 @@ import Layout from "./components/Layout";
 import { useDispatch, useSelector } from 'react-redux';
 import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, createPin, deletePin, editPin, login, logout, openLoginWindow, openSignUpWindow, register } from "./redux/action_creators";
 
+import { users } from "./various_things/users";
+
 function App(){
     const dispatch = useDispatch();
 
