@@ -1,6 +1,6 @@
 let currentIdCount = 0;
 
-class PinClass{
+export class PinClass{
     constructor(creatorId, imageSrc, title, discription, tags, creationDate){
         this.id = currentIdCount;
         this.creatorId = creatorId;

@@ -1,4 +1,5 @@
 function Pin({ pin }){
+
     return(
         <div>{pin.title}</div>
     );

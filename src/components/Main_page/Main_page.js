@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux/es/exports";
+import { pins } from "../../various_things/pins";
 
 import Pins from "../Pins/Pins";
 
@@ -11,7 +12,7 @@ function MainPage(){
 
             {
                 user ? 
-                <Pins pins={[]} />
+                <Pins pins={pins} />
                 :
                 "Some other content"
             }

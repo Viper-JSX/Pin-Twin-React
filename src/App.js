@@ -79,6 +79,8 @@ function App(){
         dispatch(closeAuthorizationWindow());
     }
 
+    handleLoginWindowOpen();
+
     return(
         <div className="App">
             <Layout
