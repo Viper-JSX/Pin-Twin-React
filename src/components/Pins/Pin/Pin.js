@@ -7,6 +7,7 @@ function Pin(){
 
     return(
         <div className="pin">
+            <img src={pin.imageSrc} alt={`${[pin.title]} image`} />
 
         </div>
     );  
