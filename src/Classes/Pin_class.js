@@ -8,6 +8,7 @@ export class PinClass{
         this.title = title;
         this.discription = discription;
         this.tags = tags;
+        this.comments = [];
         this.creationDate = creationDate;
 
         currentIdCount++;
@@ -22,6 +23,7 @@ export class PinClass{
         createdPin.title = pin.title;
         createdPin.discription = pin.discription;
         createdPin.tags = pin.tags;
+        createdPin.comments = this.comments;
         createdPin.creationDate = pin.creationDate;
     }
 }
