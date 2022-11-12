@@ -1,7 +1,7 @@
 let currentIdCount = 0;
 
 class PinClass{
-    constructor(id, creatorId, imageSrc, title, discription, tags, creationDate){
+    constructor(creatorId, imageSrc, title, discription, tags, creationDate){
         this.id = currentIdCount;
         this.creatorId = creatorId;
         this.imageSrc = imageSrc;
