@@ -1,4 +1,5 @@
 import { useLocation } from "react-router";
+import PinInfo from "./Pin_info";
 
 function Pin(){
     const location = useLocation();
@@ -8,8 +9,8 @@ function Pin(){
     return(
         <div className="pin">
             <img src={pin.imageSrc} alt={`${[pin.title]} image`} />
-
-        </div>
+            <PinInfo pin={pin} />
+        </div> 
     );  
 }
 
