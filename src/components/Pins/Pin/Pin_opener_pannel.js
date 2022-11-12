@@ -1,9 +1,12 @@
+import { NavLink } from 'react-router-dom';
+
 function PinOpenerPannel({ pin }){
     return(
-        <div className="pinOpenerPannel">
-            <button className="savePin">Save</button>
-            <b>Open {pin.title}</b>
-        </div>
+        <NavLink to={`pins/${pin.id}`}>
+            <div className="pinOpenerPannel">
+                <b>Open {pin.title}</b>
+            </div>
+        </NavLink>
     );
 }
 
