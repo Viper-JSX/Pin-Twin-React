@@ -6,7 +6,7 @@ import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
 import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, createPin, deletePin, editPin, logout, openLoginWindow, openSignUpWindow } from "./redux/action_creators";
-import { login, signUp } from "./redux/thunks";
+import { login, showMessage, /*showMessage,*/ signUp } from "./redux/thunks";
 
 import { users } from "./various_things/users";
 
@@ -78,7 +78,9 @@ function App(){
     function handleAuthorizationWindowClose(){
         dispatch(closeAuthorizationWindow());
     }
-handleSignUpWindowOpen();
+
+    dispatch(showMessage({ title: "Tobi gg", text: "Sobaka" }));
+
     return(
         <div className="App">
             <Layout

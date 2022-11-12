@@ -1,6 +1,5 @@
 import { users } from "../various_things/users";
-import { showMessage } from "./action_creators";
-import { LOGIN, SIGN_UP } from "./action_types";
+import { HIDE_MESSAGE, LOGIN, SHOW_MESSAGE, SIGN_UP } from "./action_types";
 
 export function login(payload){
     return function(dispatch){
@@ -32,4 +31,12 @@ export function signUp(payload){
             dispatch({ type: SIGN_UP, payload });
         }
     };
+}
+
+export function showMessage(payload){
+    return function (dispatch){
+        dispatch({type: SHOW_MESSAGE, payload});
+
+        setTimeout(() => dispatch({ type: HIDE_MESSAGE }), 3000)
+    }
 }
