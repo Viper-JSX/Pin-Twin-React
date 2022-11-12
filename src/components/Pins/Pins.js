@@ -1,4 +1,4 @@
-import PinOpener from "./Pin/Pin_opener";
+import PinOpener from "./Pin/Pin_opener/Pin_opener";
 
 function Pins({ pins }){
     return(
