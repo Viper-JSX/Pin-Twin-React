@@ -79,8 +79,6 @@ function App(){
         dispatch(closeAuthorizationWindow());
     }
 
-    dispatch(showMessage({ title: "Tobi gg", text: "Sobaka" }));
-
     return(
         <div className="App">
             <Layout
