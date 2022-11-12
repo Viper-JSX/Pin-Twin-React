@@ -1,13 +1,11 @@
-import Pin from "./Pin";
+import PinOpener from "./Pin/Pin_opener";
 
 function Pins({ pins }){
-    console.log(pins)
-
     return(
         <div>
             Pins
             {
-                pins.map((pin) => <Pin pin={pin} key={`pin_${pin.id}`} /> ) 
+                pins.map((pin) => <PinOpener pin={pin} key={`pin_${pin.id}`} /> ) 
             }
         </div>
     );
