@@ -3,6 +3,7 @@ import AuthorizationForm from "./Authorization/Authorization_form";
 import Header from "./Header/Header";
 import MainPage from "./Main_page/Main_page";
 import MessageModal from "./Message/Message_modal";
+import Pin from "./Pins/Pin/Pin";
 import UserProfileWindow from "./User_profile_window/User_profile_window";
 
 function Layout({ 
@@ -26,6 +27,7 @@ function Layout({
 
             <Routes>
                 <Route path="/" element={<MainPage />} />
+                <Route path="/pins/:id" element={<Pin />} />
                 <Route path="/profile" element={<UserProfileWindow />} />
             </Routes>
         </div>
