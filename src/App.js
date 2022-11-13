@@ -84,7 +84,7 @@ function App(){
         dispatch(closeAuthorizationWindow());
     }
 
-    handleLoginWindowOpen();
+    handleSignUpWindowOpen();
 
     dispatch(forceUpdate())
 
