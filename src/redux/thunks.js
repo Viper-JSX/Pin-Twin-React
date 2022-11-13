@@ -1,5 +1,5 @@
 import { users } from "../various_things/users";
-import { CREATE_PIN, EDIT_PIN, HIDE_MESSAGE, LOGIN, SAVE_PIN, SHOW_MESSAGE, SIGN_UP } from "./action_types";
+import { CREATE_PIN, DELETE_PIN, EDIT_PIN, HIDE_MESSAGE, LOGIN, SAVE_PIN, SHOW_MESSAGE, SIGN_UP } from "./action_types";
 
 export function login(payload){
     return function(dispatch){
@@ -43,6 +43,13 @@ export function editPin(payload){
     return function(dispatch){
         console.log("Edit pin", payload);
         dispatch({ type: EDIT_PIN, payload });
+    }
+}
+
+export function deletePin(payload){
+    return function(dispatch){
+        console.log("Deleting");
+        dispatch({ type: DELETE_PIN, payload });
     }
 }
 

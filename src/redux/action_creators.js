@@ -12,18 +12,6 @@ export function logout(){
     return { type: LOGOUT };
 }
 
-export function createPin(payload){
-    return { type: CREATE_PIN, payload };
-}
-
-export function editPin(payload){
-    return { type: EDIT_PIN, payload };
-}
-
-export function deletePin(payload){
-    return { type: DELETE_PIN, payload };
-}
-
 
 export function changePinsSearchTerm(payload){
     return { type: CHANGE_PINS_SEARCH_TERM, payload };
