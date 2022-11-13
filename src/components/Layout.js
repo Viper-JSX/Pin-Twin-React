@@ -4,6 +4,7 @@ import Header from "./Header/Header";
 import MainPage from "./Main_page/Main_page";
 import MessageModal from "./Message/Message_modal";
 import Pin from "./Pins/Pin/Pin";
+import PinEditor from "./Pin_editor/Pin_editor";
 import UserProfileWindow from "./User_profile_window/User_profile_window";
 
 function Layout({ 
@@ -31,6 +32,8 @@ function Layout({
                 <Route path="/" element={<MainPage handlePinSave={handlePinSave} />} />
                 <Route path="/pins/:id" element={<Pin />} />
                 <Route path="/profile" element={<UserProfileWindow />} />
+                <Route path="/pins/create" element={<PinEditor mode="create" handlePinCreate={null} handlePinEdit={null} />} />
+                <Route path="/pins/:id/edit" element={<PinEditor mode="edit" handlePinCreate={null} handlePinEdit={null} />} />
             </Routes>
         </div>
     );

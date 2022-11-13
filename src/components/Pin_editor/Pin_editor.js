@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useLocation } from "react-router";
 
-function PinEditor({ handlePinCreate, handlePinEdit }){
+function PinEditor({ mode, handlePinCreate, handlePinEdit }){
     const location = useLocation();
     const [ pinData, setPinData ] = useState(location.state.pin || { imageSrc: "", title: "", discription: "", tagsString: "" });
-    const mode = location.state.mode;
 
     return(
         <div className="pinEditor">
