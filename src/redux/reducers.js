@@ -26,7 +26,6 @@ export function user(state=defaultState.user, action){
             return state;  
         }
         case SIGN_UP:{
-            console.log(action.payload);
             const newUser = new UserClass(action.payload.email, action.payload.password);
             users.push(newUser);
             return newUser;
@@ -44,8 +43,14 @@ export function user(state=defaultState.user, action){
             return state;
         }
         case SAVE_PIN: {
-            console.log("Saving pin", action.payload);
-            return state;
+            for(let i = 0; i < users.length; i++){
+                if(users[i].id === state.id){
+                    users[i].savePin(action.payload.pin);
+                    break;
+                }
+            }
+
+            return {...state, savedPins: [...state.savedPins, action.payload.pin]};
         }
         default: {
             return state;

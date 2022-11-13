@@ -3,7 +3,7 @@ import { pins } from "../../various_things/pins";
 
 import Pins from "../Pins/Pins";
 
-function MainPage(){
+function MainPage({ handlePinSave }){
     const user = useSelector((state) => state.user);
 
     return(
@@ -12,7 +12,7 @@ function MainPage(){
 
             {
                 user ? 
-                <Pins pins={pins} />
+                <Pins pins={pins} handlePinSave={handlePinSave} />
                 :
                 "Some other content"
             }

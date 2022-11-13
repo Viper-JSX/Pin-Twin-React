@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, createPin, deletePin, editPin, forceUpdate, logout, openLoginWindow, openSignUpWindow } from "./redux/action_creators";
+import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, createPin, deletePin, editPin, forceUpdate, logout, openLoginWindow, openSignUpWindow, savePin } from "./redux/action_creators";
 import { login, showMessage, /*showMessage,*/ signUp } from "./redux/thunks";
 
 import { users } from "./various_things/users";
@@ -40,6 +40,11 @@ function App(){
 
     function handlePinDelete(pinId){
         dispatch(deletePin({ pinId }));
+    }
+
+    function handlePinSave(pin){
+        console.log("Saving")
+        dispatch(savePin({ pin }));
     }
 
 
@@ -92,6 +97,7 @@ function App(){
                 handleLogin={handleLogin}
                 handleSignUp={handleSignUp}
                 handleAuthorizationWindowClose={handleAuthorizationWindowClose}
+                handlePinSave={handlePinSave}
             />
         </div>
     );

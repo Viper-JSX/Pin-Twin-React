@@ -11,7 +11,9 @@ function Layout({
 
     handleLogin,
     handleSignUp,
-    handleAuthorizationWindowClose
+    handleAuthorizationWindowClose,
+
+    handlePinSave
 }){
 
     return(
@@ -26,7 +28,7 @@ function Layout({
             <MessageModal />
 
             <Routes>
-                <Route path="/" element={<MainPage />} />
+                <Route path="/" element={<MainPage handlePinSave={handlePinSave} />} />
                 <Route path="/pins/:id" element={<Pin />} />
                 <Route path="/profile" element={<UserProfileWindow />} />
             </Routes>
