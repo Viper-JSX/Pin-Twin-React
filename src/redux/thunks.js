@@ -1,5 +1,5 @@
 import { users } from "../various_things/users";
-import { HIDE_MESSAGE, LOGIN, SHOW_MESSAGE, SIGN_UP } from "./action_types";
+import { HIDE_MESSAGE, LOGIN, SAVE_PIN, SHOW_MESSAGE, SIGN_UP } from "./action_types";
 
 export function login(payload){
     return function(dispatch){
@@ -30,6 +30,13 @@ export function signUp(payload){
             dispatch({ type: SIGN_UP, payload });
         }
     };
+}
+
+export function savePin(payload){
+    return function(dispatch){
+        console.log("Saving to global storage")
+        return { type: SAVE_PIN, payload };
+    }
 }
 
 export function showMessage(payload){
