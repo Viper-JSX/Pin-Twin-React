@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, createPin, deletePin, editPin, forceUpdate, logout, openLoginWindow, openSignUpWindow } from "./redux/action_creators";
 import { login, showMessage, signUp, savePin } from "./redux/thunks";
 
-import { users } from "./various_things/users";
+import Pins from "./components/Pins/Pins";
 
 function App(){
     const dispatch = useDispatch();
