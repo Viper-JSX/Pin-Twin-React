@@ -1,6 +1,8 @@
 /*---App---*/
 export const SHOW_MORE_PINS = "SHOW_MORE_PINS";
 
+export const FORCE_UPDATE = "FORCE_UPDATE";
+
 /*---User---*/
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
