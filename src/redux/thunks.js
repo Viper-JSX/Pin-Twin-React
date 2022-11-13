@@ -34,7 +34,6 @@ export function signUp(payload){
 
 export function createPin(payload){
     return function(dispatch){
-        console.log("Create pin", payload);
         dispatch({ type: CREATE_PIN, payload });
     }
 }

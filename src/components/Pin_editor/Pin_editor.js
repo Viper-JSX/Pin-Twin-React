@@ -37,9 +37,9 @@ function PinEditor({ mode, handlePinCreate, handlePinEdit }){
             <input type="text" value={pinData.tagsString} placeholder="Tags" onChange={handlePinTagsChange} />
             {
                 mode === "create" ?
-                <button className="createPin" onClick={() => handlePinCreate()}>Create</button>
+                <button className="createPin" onClick={() => handlePinCreate({ pinData })}>Create</button>
                 :
-                <button className="editPin" onClick={ () => handlePinEdit()}>Save</button>
+                <button className="editPin" onClick={ () => handlePinEdit({ pinData })}>Save</button>
             }
         </div>
     );

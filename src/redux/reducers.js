@@ -31,7 +31,6 @@ export function user(state=defaultState.user, action){
             return newUser;
         }
         case CREATE_PIN:{
-            console.log("creating pin", action.payload);
             return state;
         }
         case EDIT_PIN:{

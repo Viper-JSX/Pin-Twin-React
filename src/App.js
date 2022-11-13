@@ -31,12 +31,12 @@ function App(){
         dispatch(logout());
     }
 
-    function handlePinCreate(newPin){
-        dispatch(createPin({ newPin }));
+    function handlePinCreate(pinData){
+        dispatch(createPin({ pinData }));
     }
 
-    function handlePinEdit(newPinData){
-        dispatch(editPin({ newPinData } ));
+    function handlePinEdit(pinData){
+        dispatch(editPin({ pinData } ));
     }
 
     function handlePinDelete(pinId){
@@ -85,10 +85,6 @@ function App(){
         dispatch(closeAuthorizationWindow());
     }
 
-    handleLoginWindowOpen();
-
-    dispatch(forceUpdate())
-
     return(
         <div className="App">
             <Layout
@@ -98,6 +94,10 @@ function App(){
                 handleLogin={handleLogin}
                 handleSignUp={handleSignUp}
                 handleAuthorizationWindowClose={handleAuthorizationWindowClose}
+
+                handlePinCreate={handlePinCreate}
+                handlePinEdit={handlePinEdit}
+                handlePinDelete={handlePinDelete}
                 handlePinSave={handlePinSave}
             />
         </div>

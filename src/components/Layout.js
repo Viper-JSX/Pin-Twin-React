@@ -14,6 +14,9 @@ function Layout({
     handleSignUp,
     handleAuthorizationWindowClose,
 
+    handlePinCreate,
+    handlePinEdit,
+    handlePinDelete,
     handlePinSave
 }){
 
@@ -32,8 +35,8 @@ function Layout({
                 <Route path="/" element={<MainPage handlePinSave={handlePinSave} />} />
                 <Route path="/pins/:id" element={<Pin />} />
                 <Route path="/profile" element={<UserProfileWindow />} />
-                <Route path="/pins/create" element={<PinEditor mode="create" handlePinCreate={null} handlePinEdit={null} />} />
-                <Route path="/pins/:id/edit" element={<PinEditor mode="edit" handlePinCreate={null} handlePinEdit={null} />} />
+                <Route path="/pins/create" element={<PinEditor mode="create" handlePinCreate={handlePinCreate} handlePinEdit={null} />} />
+                <Route path="/pins/:id/edit" element={<PinEditor mode="edit" handlePinCreate={null} handlePinEdit={handlePinEdit} handlePinDelete={handlePinDelete} />} />
             </Routes>
         </div>
     );
