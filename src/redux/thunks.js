@@ -5,7 +5,8 @@ export function login(payload){
     return function(dispatch){
         for(let i = 0; i < users.length; i++){
             if(users[i].email === payload.email && users[i].password === payload.password){
-                dispatch({ type: LOGIN, payload:{user: {...users[i]}}});
+                console.log("creating", users[i])
+                dispatch({ type: LOGIN, payload: {user: users[i]} });
                 return;
             }
         }
