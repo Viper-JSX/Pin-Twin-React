@@ -9,6 +9,7 @@ import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCrit
 import { login, showMessage, signUp, savePin } from "./redux/thunks";
 
 import Pins from "./components/Pins/Pins";
+import { NavLink } from "react-router-dom";
 
 function App(){
     const dispatch = useDispatch();

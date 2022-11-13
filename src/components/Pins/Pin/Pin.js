@@ -2,6 +2,7 @@ import { useLocation } from "react-router";
 import { pins } from "../../../various_things/pins";
 import PinInfo from "./Pin_info";
 import Pins from "../Pins";
+import OpenPinEditor from "./Open_pin_editor";
 
 function Pin(){
     const location = useLocation();
@@ -18,6 +19,7 @@ function Pin(){
 
     return(
         <div className="pin">
+            <OpenPinEditor pin={pin} />
             <img src={pin.imageSrc} alt={`${[pin.title]} image`} />
             <PinInfo pin={pin} />
 
