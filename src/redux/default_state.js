@@ -31,5 +31,9 @@ export const defaultState = {
     message: {
         text: "",
         title: ""
+    },
+
+    update: {
+        forceUpdateObject: {}
     }
 }

@@ -1,6 +1,6 @@
 import { UserClass } from "../Classes/User_class";
 import { users } from "../various_things/users";
-import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CREATE_PIN, DELETE_PIN, EDIT_PIN, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SHOW_MESSAGE, SHOW_MORE_PINS, SIGN_UP } from "./action_types";
+import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CREATE_PIN, DELETE_PIN, EDIT_PIN, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SHOW_MESSAGE, SHOW_MORE_PINS, SIGN_UP } from "./action_types";
 import { defaultState } from "./default_state";
 
 
@@ -103,6 +103,19 @@ export function message(state=defaultState.message, action){
             return {...state, title: "", text: ""};
         }
         default:{
+            return state;
+        }
+    }
+}
+
+
+
+export function update(state=defaultState.update, action){
+    switch(action.type){
+        case FORCE_UPDATE: {
+            return { ...state, forceUpdateObject: new Object() };
+        }
+        default: {
             return state;
         }
     }
