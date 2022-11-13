@@ -33,6 +33,6 @@ export class UserClass{
     }
 
     savePin(pin){
-        this.pins.push(pin);
+        this.savedPins.push(pin);
     };
 }

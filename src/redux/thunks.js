@@ -34,8 +34,7 @@ export function signUp(payload){
 
 export function savePin(payload){
     return function(dispatch){
-        console.log("Saving to global storage")
-        return { type: SAVE_PIN, payload };
+        dispatch( { type: SAVE_PIN, payload } );
     }
 }
 

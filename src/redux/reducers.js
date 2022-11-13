@@ -20,7 +20,7 @@ export function app(state=defaultState.app, action){
 export function user(state=defaultState.user, action){
     switch(action.type){
         case LOGIN:{
-            return { ...action.payload.user, pins: action.payload.user.pins.map( (pin) => ({ ...pin }) ), savedPins: action.payload.user.savedPins.map( (pin) => ({...pin}) ), tagsViewFrequency: { ...action.payload.tagsViewFrequency }  };
+            return JSON.parse(JSON.stringify(action.payload.user));
         }
         case LOGOUT:{
             return state;  
@@ -43,7 +43,6 @@ export function user(state=defaultState.user, action){
             return state;
         }
         case SAVE_PIN: {
-            console.log(state)
             for(let i = 0; i < users.length; i++){
                 if(users[i].id === state.id){
                     users[i].savePin(action.payload.pin);
