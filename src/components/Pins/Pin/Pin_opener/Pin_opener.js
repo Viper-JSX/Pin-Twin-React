@@ -4,12 +4,12 @@ import PinOpenerPannel from "./Pin_opener_pannel";
 
 
 function PinOpener({ pin, handlePinSave }){
-    const userPins = useSelector((state) => state.user.savedPins)
+    const userSavedPins = useSelector((state) => state.user.savedPins)
 
     return(
         <div className="pinOpener">
             {
-                userPins.find((savedPin) => savedPin.id === pin.id) ? 
+                userSavedPins.find((savedPin) => savedPin.id === pin.id) ? 
                 null
                 :
                <button className="savePin" onClick={() => handlePinSave(pin)}>Save</button>

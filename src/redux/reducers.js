@@ -36,12 +36,20 @@ export function user(state=defaultState.user, action){
         case CREATE_PIN:{
             const newPin = new PinClass(action.payload.pinData.creatorId, action.payload.pinData.imageSrc, action.payload.pinData.title, action.payload.pinData.discription, action.payload.pinData.tags);
             pins.push(newPin);
-            console.log(state.pins);
             return { ...state, pins: [ ...state.pins, { ...newPin } ]   };
         }
         case EDIT_PIN:{
-            console.log("editing pin", action.payload);
-            return state;
+            console.log(state.pins)
+            return {         
+                ...state, 
+                pins: state.pins.map((pin) => {
+                    if(pin.id === action.payload.pinData.id){
+                        return { ...pin, imageSrc: action.payload.pinData.imageSrc, title: action.payload.pinData.title, discription: action.payload.pinData.discription, tags: action.payload.pinData.tags };
+                    }
+                    return pin;
+                }) 
+            }
+
         }
         case DELETE_PIN:{
             console.log("deleting pin", action.payload);

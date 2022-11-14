@@ -36,7 +36,7 @@ function App(){
     }
 
     function handlePinEdit(pinData){
-        dispatch(editPin(pinData ));
+        dispatch(editPin( pinData ));
     }
 
     function handlePinDelete(pinId){

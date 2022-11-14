@@ -71,7 +71,7 @@ export function editPin(payload){
             return;
         }
 
-        dispatch({ type: CREATE_PIN, payload: { pinData:{ ...payload.pinData, tags } }}); //implement validation
+        dispatch({ type: EDIT_PIN, payload: { pinData: { ...payload.pinData, tags } }}); //implement validation
     }
 }
 

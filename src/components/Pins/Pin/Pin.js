@@ -16,7 +16,6 @@ function Pin(){
             }
         }
     });
-    console.log("Similar",similarPins);
 
     return(
         <div className="pin">
