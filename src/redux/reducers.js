@@ -39,7 +39,15 @@ export function user(state=defaultState.user, action){
             return { ...state, pins: [ ...state.pins, { ...newPin } ]   };
         }
         case EDIT_PIN:{
-            console.log(state.pins)
+            //console.log(state.pins)
+            for(let i = 0; i < pins.length; i++){
+                if(pins[i].id === action.payload.pinData.id){
+                    console.log("found", pins[i]);
+                    pins[i].edit(action.payload.pinData.imageSrc, action.payload.pinData.title, action.payload.pinData.discription, action.payload.pinData.tags);
+
+                }
+            }
+
             return {         
                 ...state, 
                 pins: state.pins.map((pin) => {

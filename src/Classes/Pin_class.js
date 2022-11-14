@@ -14,7 +14,7 @@ export class PinClass{
         currentIdCount++;
     }
 
-    editData(imageSrc, title, discription, tags){
+    edit(imageSrc, title, discription, tags){
         this.imageSrc = imageSrc;
         this.title = title;
         this.discription = discription;
