@@ -5,11 +5,12 @@ import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, forceUpdate, logout, openLoginWindow, openSignUpWindow } from "./redux/action_creators";
+import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues } from "./redux/action_creators";
 import { login, showMessage, signUp, createPin, deletePin, editPin, savePin } from "./redux/thunks";
 
 import Pins from "./components/Pins/Pins";
 import { NavLink } from "react-router-dom";
+import { DELETE_PIN } from "./redux/action_types";
 
 function App(){
     const dispatch = useDispatch();
@@ -83,6 +84,7 @@ function App(){
     }
 
     handleLoginWindowOpen();
+    //dispatch(setConfirmationValues({ text: "Sobaka", confirmationType: DELETE_PIN }));
     return(
         <div className="App">
             <Layout
