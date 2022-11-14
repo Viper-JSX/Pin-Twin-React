@@ -95,7 +95,7 @@ function App(){
 
     handleLoginWindowOpen();
     dispatch(setConfirmationValues({ text: "Sobaka", confirmationType: DELETE_PIN }));
-    handleConfirm();
+    //handleConfirm();
     return(
         <div className="App">
             <Layout
