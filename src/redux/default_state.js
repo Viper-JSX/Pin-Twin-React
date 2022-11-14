@@ -34,6 +34,8 @@ export const defaultState = {
         title: ""
     },
 
+    confirmation: {},
+
     update: {
         forceUpdateObject: {}
     }
