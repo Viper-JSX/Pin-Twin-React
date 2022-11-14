@@ -37,9 +37,8 @@ export function user(state=defaultState.user, action){
             const newPin = new PinClass(0, action.payload.pinData.imageSrc, action.payload.pinData.title, action.payload.pinData.discription, action.payload.pinData.tags);
             pins.push(newPin);
             //add to user.pins
-
-
-            return state;
+            console.log(state.pins);
+            return { ...state, pins: [ ...state.pins, { ...newPin } ]   };
         }
         case EDIT_PIN:{
             console.log("editing pin", action.payload);
