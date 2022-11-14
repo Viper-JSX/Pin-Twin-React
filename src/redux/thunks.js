@@ -35,15 +35,15 @@ export function signUp(payload){
 export function createPin(payload){
     return function(dispatch){
         if(!payload.pinData.imageSrc){
-            dispatch({ type: SHOW_MESSAGE, payload: {title: "Image error", text: "You did not provide the image"} });
+            dispatch(showMessage({title: "Image error", text: "You did not provide the image"}));
             return;
         }
         else if(!payload.pinData.title){
-            dispatch({ type: SHOW_MESSAGE, payload: {title: "Title not provided", text: "Provide the title"} });
+            dispatch(showMessage({title: "Title not provided", text: "Provide the title"} ));
             return;
         }
         else if(!payload.pinData.tagsString){
-            dispatch({ type: SHOW_MESSAGE, payload: {title: "Wrong tags", text: "There must be at least one tag, tags must be comma-separated and must not contain special characters except of comma and white-space"} });
+            dispatch(showMessage({title: "Wrong tags", text: "There must be at least one tag, tags must be comma-separated and must not contain special characters except of comma and white-space"} ));
             return;
         }
 
@@ -54,15 +54,15 @@ export function createPin(payload){
 export function editPin(payload){
     return function(dispatch){
         if(!payload.pinData.imageSrc){
-            dispatch({ type: SHOW_MESSAGE, payload: {title: "Image error", text: "You did not provide the image"} });
+            dispatch(showMessage({title: "Image error", text: "You did not provide the image"}));
             return;
         }
         else if(!payload.pinData.title){
-            dispatch({ type: SHOW_MESSAGE, payload: {title: "Title not provided", text: "Provide the title"} });
+            dispatch(showMessage({title: "Title not provided", text: "Provide the title"} ));
             return;
         }
         else if(!payload.pinData.tagsString){
-            dispatch({ type: SHOW_MESSAGE, payload: {title: "Wrong tags", text: "There must be at least one tag, tags must be comma-separated and must not contain special characters except of comma and white-space"} });
+            dispatch(showMessage({title: "Wrong tags", text: "There must be at least one tag, tags must be comma-separated and must not contain special characters except of comma and white-space"} ));
             return;
         }
 
@@ -85,8 +85,8 @@ export function savePin(payload){
 
 export function showMessage(payload){
     return function (dispatch){
+        console.log("Hiding")
         dispatch({type: SHOW_MESSAGE, payload});
-
         setTimeout(() => dispatch({ type: HIDE_MESSAGE }), 3000)
     }
 }
