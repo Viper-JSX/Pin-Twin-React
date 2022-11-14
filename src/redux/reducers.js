@@ -10,7 +10,6 @@ import { pins } from "../various_things/pins";
 export function app(state=defaultState.app, action){
     switch(action.type){
         case SHOW_MORE_PINS:{
-            console.log("More pins");
             return state;
         }
         default:{
@@ -39,10 +38,8 @@ export function user(state=defaultState.user, action){
             return { ...state, pins: [ ...state.pins, { ...newPin } ]   };
         }
         case EDIT_PIN:{
-            //console.log(state.pins)
             for(let i = 0; i < pins.length; i++){
                 if(pins[i].id === action.payload.pinData.id){
-                    console.log("found", pins[i]);
                     pins[i].edit(action.payload.pinData.imageSrc, action.payload.pinData.title, action.payload.pinData.discription, action.payload.pinData.tags);
 
                 }
@@ -60,7 +57,6 @@ export function user(state=defaultState.user, action){
 
         }
         case DELETE_PIN:{
-            console.log("deleting pin", action.payload);
             return state;
         }
         case SAVE_PIN: {
@@ -94,7 +90,6 @@ export function search(state=defaultState.search, action){
             return  { ...state, userPinsSearch: { ...state.userPinsSearch, term: action.payload.term } };
         }
         case CHANGE_USER_PINS_SORT_CRITERIA:{
-            console.log("user Pins sort criteria", action.payload);
             return  { ...state, userPinsSearch: { ...state.pinsSearch, sortCriteria: action.payload.criteria } };
         }
         case CHANGE_CONVERSATIONS_SEARCH_TERM:{

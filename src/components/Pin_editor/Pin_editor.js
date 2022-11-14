@@ -14,7 +14,6 @@ function PinEditor({ mode, handlePinCreate, handlePinEdit }){
         const reader = new FileReader();
         reader.readAsDataURL(event.target.files[0])
         reader.onload = function(processed){
-            console.log(processed.srcElement.result);
             setPinData({ ...pinData, imageSrc: processed.srcElement.result });
         }
     }

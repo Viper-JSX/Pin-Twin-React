@@ -7,7 +7,7 @@ function NotificationsWindow( { notificationsWindowVisibility, notificationsWind
         <div className={`notificationsWindow ${notificationsWindowVisibility}`} ref={notificationsWindowRef} tabIndex={1} onBlur={handleNotificationsHide}>
             <b>Notifications</b>
             {
-                notifications.map((notification) => console.log(notification))
+                notifications.map((notification) => <b>{notification.text}</b>)
             }
         </div>
     );  

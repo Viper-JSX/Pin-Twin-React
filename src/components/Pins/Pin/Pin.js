@@ -10,7 +10,6 @@ function Pin(){
 
     const similarPins = pins.filter((possibleSimilarPin) => {
         for(let i = 0; i < pin.tags.length; i++){
-            console.log(possibleSimilarPin);
             if(possibleSimilarPin.tags.includes(pin.tags[i]) && possibleSimilarPin.id !== pin.id){
                 return true;
             }
