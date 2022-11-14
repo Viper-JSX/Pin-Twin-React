@@ -83,7 +83,6 @@ function App(){
     }
 
     handleLoginWindowOpen();
-
     return(
         <div className="App">
             <Layout
