@@ -1,3 +1,4 @@
+import { convertTagsStringToTagsArray } from "../utilities/convertTagsStringToTagsArray";
 import { users } from "../various_things/users";
 import { CREATE_PIN, DELETE_PIN, EDIT_PIN, HIDE_MESSAGE, LOGIN, SAVE_PIN, SHOW_MESSAGE, SIGN_UP } from "./action_types";
 
@@ -33,7 +34,9 @@ export function signUp(payload){
 }
 
 export function createPin(payload){
-    return function(dispatch){
+    return function(dispatch){  
+        convertTagsStringToTagsArray(payload.pinData.tagsString);
+
         if(!payload.pinData.imageSrc){
             dispatch(showMessage({title: "Image error", text: "You did not provide the image"}));
             return;
@@ -43,7 +46,7 @@ export function createPin(payload){
             return;
         }
         else if(!payload.pinData.tagsString){
-            dispatch(showMessage({title: "Wrong tags", text: "There must be at least one tag, tags must be comma-separated and must not contain special characters except of comma and white-space"} ));
+            dispatch(showMessage({title: "Wrong tags", text: "There must be at least one tag, tags must be space-separated and must not contain special characters except of comma and white-space"} ));
             return;
         }
 
