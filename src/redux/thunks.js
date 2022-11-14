@@ -50,7 +50,7 @@ export function createPin(payload){
             return;
         }
 
-        dispatch({ type: CREATE_PIN, payload: { ...payload, tags }}); //implement validation
+        dispatch({ type: CREATE_PIN, payload: { pinData:{ ...payload.pinData, tags }}}); //implement validation
     }
 }
 
@@ -71,7 +71,7 @@ export function editPin(payload){
             return;
         }
 
-        dispatch({ type: CREATE_PIN, payload: { ...payload, tags }}); //implement validation
+        dispatch({ type: CREATE_PIN, payload: { pinData:{ ...payload.pinData, tags } }}); //implement validation
     }
 }
 

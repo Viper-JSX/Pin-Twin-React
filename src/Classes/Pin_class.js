@@ -1,7 +1,7 @@
 let currentIdCount = 0;
 
 export class PinClass{
-    constructor(creatorId, imageSrc, title, discription, tags, creationDate){
+    constructor(creatorId, imageSrc, title, discription, tags){
         this.id = currentIdCount;
         this.creatorId = creatorId;
         this.imageSrc = imageSrc;
@@ -9,7 +9,7 @@ export class PinClass{
         this.discription = discription;
         this.tags = tags;
         this.comments = [];
-        this.creationDate = creationDate;
+        this.creationDate = new Date();
 
         currentIdCount++;
     }

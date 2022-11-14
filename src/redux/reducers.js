@@ -1,7 +1,10 @@
 import { UserClass } from "../Classes/User_class";
+import { PinClass } from "../Classes/Pin_class"; 
+
 import { users } from "../various_things/users";
 import { CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CREATE_PIN, DELETE_PIN, EDIT_PIN, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SAVE_PIN, SHOW_MESSAGE, SHOW_MORE_PINS, SIGN_UP } from "./action_types";
 import { defaultState } from "./default_state";
+import { pins } from "../various_things/pins";
 
 
 export function app(state=defaultState.app, action){
@@ -31,7 +34,11 @@ export function user(state=defaultState.user, action){
             return newUser;
         }
         case CREATE_PIN:{
-            console.log("Creating pin");
+            const newPin = new PinClass(0, action.payload.pinData.imageSrc, action.payload.pinData.title, action.payload.pinData.discription, action.payload.pinData.tags);
+            pins.push(newPin);
+            //add to user.pins
+
+
             return state;
         }
         case EDIT_PIN:{
