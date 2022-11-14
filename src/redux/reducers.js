@@ -34,9 +34,8 @@ export function user(state=defaultState.user, action){
             return newUser;
         }
         case CREATE_PIN:{
-            const newPin = new PinClass(0, action.payload.pinData.imageSrc, action.payload.pinData.title, action.payload.pinData.discription, action.payload.pinData.tags);
+            const newPin = new PinClass(action.payload.pinData.creatorId, action.payload.pinData.imageSrc, action.payload.pinData.title, action.payload.pinData.discription, action.payload.pinData.tags);
             pins.push(newPin);
-            //add to user.pins
             console.log(state.pins);
             return { ...state, pins: [ ...state.pins, { ...newPin } ]   };
         }

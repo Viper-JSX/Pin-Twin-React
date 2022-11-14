@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import ImageSelect from "./Image_select";
 
 function PinEditor({ mode, handlePinCreate, handlePinEdit }){
     const location = useLocation();
-    const [ pinData, setPinData ] = useState(location?.state?.pin || { imageSrc: "", title: "", discription: "", tagsString: "" });
+    const userId = useSelector((state) => state.user.id);
+    const [ pinData, setPinData ] = useState(location?.state?.pin || { creatorId: userId, imageSrc: "", title: "", discription: "", tagsString: "" });
 
     function handlePinImageChange(event){
         if(event.target.files.length === 0) return;
