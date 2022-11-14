@@ -14,6 +14,13 @@ export class PinClass{
         currentIdCount++;
     }
 
+    editData(imageSrc, title, discription, tags){
+        this.imageSrc = imageSrc;
+        this.title = title;
+        this.discription = discription;
+        this.tags = tags;
+    }
+
     create(pin){
         const createdPin = Object.create(this.prototype);
 
