@@ -57,7 +57,13 @@ export function user(state=defaultState.user, action){
 
         }
         case DELETE_PIN:{
-            return state;
+            for(let i = 0; i < pins.length; i++){
+                if(pins[i].id === action.payload.pinId){
+                    pins.splice(i, 1);
+                    break;
+                }
+            }
+            return { ...state, pins: state.pins.filter((pin) => pin.id !== action.payload.pinId) };
         }
         case SAVE_PIN: {
             for(let i = 0; i < users.length; i++){

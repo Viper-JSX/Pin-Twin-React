@@ -72,6 +72,7 @@ export function editPin(payload){
 
 export function deletePin(payload){
     return function(dispatch){
+        console.log(payload)
         dispatch({ type: DELETE_PIN, payload });
     }
 }

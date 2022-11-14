@@ -17,13 +17,11 @@ function App(){
     /*---User---*/
     function handleLogin({ event, loginData }){
         event.preventDefault();
-        console.log(loginData)
         dispatch(login(loginData))
     }
 
     function handleSignUp({ event, signUpData }){
         event.preventDefault();
-        console.log(signUpData)
         dispatch(signUp(signUpData));
     }
 
@@ -39,7 +37,7 @@ function App(){
         dispatch(editPin( pinData ));
     }
 
-    function handlePinDelete(pinId){
+    function handlePinDelete({ pinId }){
         dispatch(deletePin({ pinId }));
     }
 
