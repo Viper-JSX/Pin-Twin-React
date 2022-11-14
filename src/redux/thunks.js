@@ -35,7 +35,7 @@ export function signUp(payload){
 
 export function createPin(payload){
     return function(dispatch){  
-        convertTagsStringToTagsArray(payload.pinData.tagsString);
+        const tags = convertTagsStringToTagsArray(payload.pinData.tagsString);
 
         if(!payload.pinData.imageSrc){
             dispatch(showMessage({title: "Image error", text: "You did not provide the image"}));
@@ -45,17 +45,19 @@ export function createPin(payload){
             dispatch(showMessage({title: "Title not provided", text: "Provide the title"} ));
             return;
         }
-        else if(!payload.pinData.tagsString){
+        else if(tags.length === 0){
             dispatch(showMessage({title: "Wrong tags", text: "There must be at least one tag, tags must be space-separated and must not contain special characters except of comma and white-space"} ));
             return;
         }
 
-        dispatch({ type: CREATE_PIN, payload }); //implement validation
+        dispatch({ type: CREATE_PIN, payload: { ...payload, tags }}); //implement validation
     }
 }
 
 export function editPin(payload){
     return function(dispatch){
+        const tags = convertTagsStringToTagsArray(payload.pinData.tagsString);
+
         if(!payload.pinData.imageSrc){
             dispatch(showMessage({title: "Image error", text: "You did not provide the image"}));
             return;
@@ -64,12 +66,12 @@ export function editPin(payload){
             dispatch(showMessage({title: "Title not provided", text: "Provide the title"} ));
             return;
         }
-        else if(!payload.pinData.tagsString){
+        else if(tags.length === 0){
             dispatch(showMessage({title: "Wrong tags", text: "There must be at least one tag, tags must be comma-separated and must not contain special characters except of comma and white-space"} ));
             return;
         }
 
-        dispatch({ type: EDIT_PIN, payload });
+        dispatch({ type: CREATE_PIN, payload: { ...payload, tags }}); //implement validation
     }
 }
 

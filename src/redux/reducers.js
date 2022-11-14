@@ -105,7 +105,6 @@ export function authorization(state=defaultState.authorization, action){
 export function message(state=defaultState.message, action){
     switch(action.type){
         case SHOW_MESSAGE: {
-            console.log("Message")
             return { ...state, title: action.payload.title, text: action.payload.text }
         }
         case HIDE_MESSAGE: {
