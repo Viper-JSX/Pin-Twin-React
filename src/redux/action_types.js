@@ -32,3 +32,8 @@ export const CLOSE_AUTHORIZATION_WINDOW = "CLOSE_AUTHORIZATION_WINDOW";
 /*---Show Message---*/
 export const SHOW_MESSAGE = "SHOW_MESSAGE";
 export const HIDE_MESSAGE = "HIDE_MESSAGE";
+
+/*---Confirmation---*/
+export const CONFIRM = "CONFIRM";
+export const CANCEL_CONFIRMATION = "CANCEL_CONFIRMATION";
+export const SET_CONFIRMATION_VALUES = "SET_CONFIRMATION_VALUES";
