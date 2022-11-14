@@ -2,7 +2,7 @@ import { UserClass } from "../Classes/User_class";
 import { PinClass } from "../Classes/Pin_class"; 
 
 import { users } from "../various_things/users";
-import { CANCEL_CONFIRMATION, CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CONFIRM, CREATE_PIN, DELETE_PIN, EDIT_PIN, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SAVE_PIN, SET_CONFIRMATION_VALUES, SHOW_MESSAGE, SHOW_MORE_PINS, SIGN_UP } from "./action_types";
+import { CANCEL_CONFIRMATION, CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CONFIRM, CONFIRM_ACTION, CREATE_PIN, DELETE_PIN, EDIT_PIN, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SAVE_PIN, SET_CONFIRMATION_VALUES, SHOW_MESSAGE, SHOW_MORE_PINS, SIGN_UP } from "./action_types";
 import { defaultState } from "./default_state";
 import { pins } from "../various_things/pins";
 
@@ -142,9 +142,7 @@ export function message(state=defaultState.message, action){
 
 export function confirmation(state=defaultState.confirmation, action){
     switch(action.type){
-        case CONFIRM: {
-            return state;
-        }
+        case CONFIRM_ACTION:
         case CANCEL_CONFIRMATION: {
             return {};
         }

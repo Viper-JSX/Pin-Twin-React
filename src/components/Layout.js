@@ -18,7 +18,9 @@ function Layout({
     handlePinCreate,
     handlePinEdit,
     handlePinDelete,
-    handlePinSave
+    handlePinSave,
+
+    handleConfirmationCancel
 }){
 
     return(
@@ -31,7 +33,7 @@ function Layout({
             />
 
             <MessageModal />
-            <ConfirmationWindow />
+            <ConfirmationWindow handleConfirmationCancel={handleConfirmationCancel} />
 
             <Routes>
                 <Route path="/" element={<MainPage handlePinSave={handlePinSave} />} />

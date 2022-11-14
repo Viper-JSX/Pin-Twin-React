@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues } from "./redux/action_creators";
+import { cancelConfirmation, changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues } from "./redux/action_creators";
 import { login, showMessage, signUp, createPin, deletePin, editPin, savePin } from "./redux/thunks";
 
 import Pins from "./components/Pins/Pins";
@@ -83,8 +83,19 @@ function App(){
         dispatch(closeAuthorizationWindow());
     }
 
+
+    /*---Confirmation---*/
+    function handleConfirm(){
+        dispatch(confirmAction());
+    }
+
+    function handleConfirmationCancel(){
+        dispatch(cancelConfirmation());
+    }
+
     handleLoginWindowOpen();
-    //dispatch(setConfirmationValues({ text: "Sobaka", confirmationType: DELETE_PIN }));
+    dispatch(setConfirmationValues({ text: "Sobaka", confirmationType: DELETE_PIN }));
+    handleConfirm();
     return(
         <div className="App">
             <Layout
@@ -99,6 +110,8 @@ function App(){
                 handlePinEdit={handlePinEdit}
                 handlePinDelete={handlePinDelete}
                 handlePinSave={handlePinSave}
+
+                handleConfirmationCancel={handleConfirmationCancel}
             />
         </div>
     );
