@@ -34,20 +34,45 @@ export function signUp(payload){
 
 export function createPin(payload){
     return function(dispatch){
-        dispatch({ type: CREATE_PIN, payload });
+        if(!payload.pinData.imageSrc){
+            dispatch({ type: SHOW_MESSAGE, payload: {title: "Image error", text: "You did not provide the image"} });
+            return;
+        }
+        else if(!payload.pinData.title){
+            dispatch({ type: SHOW_MESSAGE, payload: {title: "Title not provided", text: "Provide the title"} });
+            return;
+        }
+        else if(!payload.pinData.tagsString){
+            dispatch({ type: SHOW_MESSAGE, payload: {title: "Wrong tags", text: "There must be at least one tag, tags must be comma-separated and must not contain special characters except of comma and white-space"} });
+            return;
+        }
+
+        dispatch({ type: CREATE_PIN, payload }); //implement validation
     }
 }
 
 export function editPin(payload){
     return function(dispatch){
-        console.log("Edit pin", payload);
+        if(!payload.pinData.imageSrc){
+            dispatch({ type: SHOW_MESSAGE, payload: {title: "Image error", text: "You did not provide the image"} });
+            return;
+        }
+        else if(!payload.pinData.title){
+            dispatch({ type: SHOW_MESSAGE, payload: {title: "Title not provided", text: "Provide the title"} });
+            return;
+        }
+        else if(!payload.pinData.tagsString){
+            dispatch({ type: SHOW_MESSAGE, payload: {title: "Wrong tags", text: "There must be at least one tag, tags must be comma-separated and must not contain special characters except of comma and white-space"} });
+            return;
+        }
+
         dispatch({ type: EDIT_PIN, payload });
     }
 }
 
 export function deletePin(payload){
     return function(dispatch){
-        console.log("Deleting");
+        console.log("Deleting"); //implement message
         dispatch({ type: DELETE_PIN, payload });
     }
 }

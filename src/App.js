@@ -32,11 +32,11 @@ function App(){
     }
 
     function handlePinCreate(pinData){
-        dispatch(createPin({ pinData }));
+        dispatch(createPin(pinData));
     }
 
     function handlePinEdit(pinData){
-        dispatch(editPin({ pinData } ));
+        dispatch(editPin(pinData ));
     }
 
     function handlePinDelete(pinId){
@@ -44,7 +44,6 @@ function App(){
     }
 
     function handlePinSave(pin){
-        console.log("Saving")
         dispatch(savePin({ pin }));
     }
 
