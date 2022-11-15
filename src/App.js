@@ -72,11 +72,19 @@ function App(){
 
 
     /*---Authorization windows---*/
-    function handleLoginWindowOpen(){
+    function handleLoginWindowOpen(event){
+        if(event){ //If event is present it means that button inside a form has called this event
+            event.preventDefault();
+        }
+        console.log("Opening login");
         dispatch(openLoginWindow());
     }
 
-    function handleSignUpWindowOpen(){
+    function handleSignUpWindowOpen(event){ 
+        if(event){  //If event is present it means that button inside a form has called this event
+            event.preventDefault();
+        }
+        console.log("Opening sign-up");
         dispatch(openSignUpWindow());
     }
 

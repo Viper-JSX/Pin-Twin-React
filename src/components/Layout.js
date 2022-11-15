@@ -35,6 +35,8 @@ function Layout({
             />
 
             <AuthorizationForm 
+                handleLoginWindowOpen={handleLoginWindowOpen}
+                handleSignUpWindowOpen={handleSignUpWindowOpen}
                 handleLogin={handleLogin}
                 handleSignUp={handleSignUp}
                 handleAuthorizationWindowClose={handleAuthorizationWindowClose} 

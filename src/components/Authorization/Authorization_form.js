@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+
+import { NavLink } from 'react-router-dom';
 import CloseButton from "../Reusable_components/Close_button";
 
-function AuthorizationForm({ handleLogin, handleSignUp, handleAuthorizationWindowClose }){
+function AuthorizationForm({ handleLoginWindowOpen, handleSignUpWindowOpen, handleLogin, handleSignUp, handleAuthorizationWindowClose }){
     const [ inputsValue, setInputsValue ] = useState({ email: "", password: "" });
     const currentAuthorizationType = useSelector((state) => state.authorization.currentAuthorizationType);
 
@@ -28,9 +30,17 @@ function AuthorizationForm({ handleLogin, handleSignUp, handleAuthorizationWindo
 
                     {
                         currentAuthorizationType === "login" ? 
-                        <button onClick={(event) => handleLogin({ event, loginData: inputsValue})}>Login</button>
+                        <>
+                            <button onClick={(event) => handleLogin({ event, loginData: inputsValue})}>Login</button>
+                            <br />
+                            <NavLink to="*" onClick={handleSignUpWindowOpen}>Don't have an account? Create one!</NavLink>
+                        </>
                         :
-                        <button onClick={(event) => handleSignUp({event, signUpData: inputsValue})}>Sign-up</button>
+                        <>
+                            <button onClick={(event) => handleSignUp({event, signUpData: inputsValue})}>Sign-up</button>
+                            <br />
+                            <NavLink to="*" onClick={handleLoginWindowOpen}>Already have an account?</NavLink>
+                        </>
                     }
                 </form>
             </div>
