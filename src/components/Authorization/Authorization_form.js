@@ -32,13 +32,11 @@ function AuthorizationForm({ handleLoginWindowOpen, handleSignUpWindowOpen, hand
                         currentAuthorizationType === "login" ? 
                         <>
                             <button onClick={(event) => handleLogin({ event, loginData: inputsValue})}>Login</button>
-                            <br />
                             <NavLink to="" onClick={handleSignUpWindowOpen}>Don't have an account? Create one!</NavLink>
                         </>
                         :
                         <>
                             <button onClick={(event) => handleSignUp({event, signUpData: inputsValue})}>Sign-up</button>
-                            <br />
                             <NavLink to="" onClick={handleLoginWindowOpen}>Already have an account?</NavLink>
                         </>
                     }

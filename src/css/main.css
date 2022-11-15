@@ -1,10 +1,15 @@
 :root{
+    --darkTransparentColor: rgba(10, 10, 10, 0.3);
+
     --shortTransitionTime: 0.3s;
     --middleTransitionTime: 0.5s;
     --longTransitionTime: 1s;
 
     --thinDarkBorder: 1px solid black;
     --thickDarkBorder: 2px solid black;
+
+    --tinyMargin: 0.1rem;
+    --middleMargin: 0.3rem;
 }
 
 *{
@@ -50,6 +55,44 @@ header > .search{
 }
 
 
+
+/*---Authorization---*/
+.authorizationFormWrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--darkTransparentColor);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authorizationForm{
+    border: var(--thinDarkBorder);
+    position: relative;
+}
+
+.authorizationForm .closeButton{
+    position: relative;
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+.authorizationForm form{
+    border-top: var(--thickDarkBorder);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.authorizationForm form > *{
+    margin: var(--middleMargin);
+}
+
+.authorizationForm form > button{
+    align-self: end;
+}
 
 .loginForm.hidden, .signUpForm.hidden{
     display: none;
