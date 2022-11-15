@@ -4,7 +4,7 @@ import PinInfo from "./Pin_info";
 import Pins from "../Pins";
 import OpenPinEditor from "./Open_pin_editor";
 
-function Pin(){
+function Pin({ handleConfirmationWindowOpen }){
     const location = useLocation();
     const pin = location.state.pin;
 

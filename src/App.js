@@ -100,8 +100,6 @@ function App(){
 
     handleLoginWindowOpen();
 
-    handleConfirmationWindowOpen({confirmationType: CONFIRM_PIN_DELETE, pinId:0});
-
     return(
         <div className="App">
             <Layout
@@ -117,6 +115,7 @@ function App(){
                 handlePinDelete={handlePinDelete}
                 handlePinSave={handlePinSave}
 
+                handleConfirmationWindowOpen={handleConfirmationWindowOpen}
                 handleConfirmationCancel={handleConfirmationCancel}
             />
         </div>
