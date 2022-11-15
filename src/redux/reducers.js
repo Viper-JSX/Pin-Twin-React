@@ -30,7 +30,7 @@ export function user(state=defaultState.user, action){
         case SIGN_UP:{
             const newUser = new UserClass(action.payload.email, action.payload.password);
             users.push(newUser);
-            return newUser;
+            return JSON.parse(JSON.stringify(newUser));
         }
         case CREATE_PIN:{
             const newPin = new PinClass(action.payload.pinData.creatorId, action.payload.pinData.imageSrc, action.payload.pinData.title, action.payload.pinData.discription, action.payload.pinData.tags);
