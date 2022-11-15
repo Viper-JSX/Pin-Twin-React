@@ -11,6 +11,7 @@ import { login, showMessage, signUp, createPin, deletePin, editPin, savePin } fr
 import Pins from "./components/Pins/Pins";
 import { NavLink } from "react-router-dom";
 import { DELETE_PIN } from "./redux/action_types";
+import { CONFIRM_PIN_DELETE } from "./confirmation_types/confirmation_types";
 
 function App(){
     const dispatch = useDispatch();
@@ -98,8 +99,9 @@ function App(){
     }
 
     handleLoginWindowOpen();
-    //dispatch(setConfirmationValues({ text: "Sobaka", confirmationType: DELETE_PIN }));
-    ////handleConfirm();
+
+    handleConfirmationWindowOpen({confirmationType: CONFIRM_PIN_DELETE});
+
     return(
         <div className="App">
             <Layout
