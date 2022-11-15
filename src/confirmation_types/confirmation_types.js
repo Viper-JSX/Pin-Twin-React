@@ -1,0 +1,1 @@
+export const CONFIRM_PIN_DELETE = "CONFIRM_PIN_DELETE";
