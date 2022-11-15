@@ -6,7 +6,7 @@ import MessageModal from "./Message/Message_modal";
 import Pin from "./Pins/Pin/Pin";
 import PinEditor from "./Pin_editor/Pin_editor";
 import ConfirmationWindow from "./Reusable_components/Confirmation_window/Confirmation_window";
-import UserProfileWindow from "./User_profile_window/User_profile_window";
+import UserProfileWindow from "./User_profile/User_profile";
 
 function Layout({ 
     handlePinsSearchTermChange,
