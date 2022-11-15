@@ -7,7 +7,14 @@ import PinDeleteButton from "./Pin_delete_button";
 function PinEditor({ mode, handlePinCreate, handlePinEdit, handleConfirmationWindowOpen }){
     const location = useLocation();
     const userId = useSelector((state) => state.user.id);
-    const [ pinData, setPinData ] = useState(location?.state?.pin || { creatorId: userId, imageSrc: "", title: "", discription: "", tagsString: "" });
+    const [ pinData, setPinData ] = useState(() => {
+        console.log(location.state)
+        if(location.state?.pin){
+            return { ...location.state.pin, tagsString: location.state.pin.tags.join(" ") };
+        }
+        
+        return ( { creatorId: userId, imageSrc: "", title: "", discription: "", tagsString: "" } );
+    });
 
     function handlePinImageChange(event){
         if(event.target.files.length === 0) return;
