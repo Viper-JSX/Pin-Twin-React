@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 function PinOpenerPannel({ pin }){
     return(
-        <NavLink to={`pins/${pin.id}`} state={{ pin }}>
+        <NavLink to={`/pins/${pin.id}`} state={{ pin }}>
             <div className="pinOpenerPannel">
                 <b>Open {pin.title}</b>
             </div>
