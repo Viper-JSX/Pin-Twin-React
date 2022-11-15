@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import ImageSelect from "./Image_select";
 import PinDeleteButton from "./Pin_delete_button";
+import PinEditorInputs from "./Pin_editor_inputs";
 import PinEditorTextFields from "./Pin_editor_text_fields";
 
 function PinEditor({ mode, handlePinCreate, handlePinEdit, handleConfirmationWindowOpen }){
@@ -40,8 +41,8 @@ function PinEditor({ mode, handlePinCreate, handlePinEdit, handleConfirmationWin
 
     return(
         <div className="pinEditor">
-            <ImageSelect imageSrc={pinData.imageSrc} handlePinImageChange={handlePinImageChange} />
-            <PinEditorTextFields pinData={pinData} handlePinTitleChange={handlePinTitleChange} handlePinDiscriptionChange={handlePinDiscriptionChange} handlePinTagsChange={handlePinTagsChange}  />
+            <PinEditorInputs pinData={pinData} handlePinImageChange={handlePinImageChange} handlePinTitleChange={handlePinTitleChange} handlePinDiscriptionChange={handlePinDiscriptionChange} handlePinTagsChange={handlePinTagsChange} />
+
             {
                 mode === "create" ?
                 <button className="createPin" onClick={() => handlePinCreate({ pinData })}>Create</button>
