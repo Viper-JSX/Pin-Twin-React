@@ -85,6 +85,10 @@ function App(){
 
 
     /*---Confirmation---*/
+    function handleConfirmationWindowOpen(confirmationValues){
+        dispatch(setConfirmationValues(confirmationValues));
+    }
+
     function handleConfirm(){
         dispatch(confirmAction());
     }
@@ -94,8 +98,8 @@ function App(){
     }
 
     handleLoginWindowOpen();
-    dispatch(setConfirmationValues({ text: "Sobaka", confirmationType: DELETE_PIN }));
-    //handleConfirm();
+    //dispatch(setConfirmationValues({ text: "Sobaka", confirmationType: DELETE_PIN }));
+    ////handleConfirm();
     return(
         <div className="App">
             <Layout
