@@ -84,6 +84,37 @@ header > .search{
 
 
 
+/*---Editor---*/
+.pinEditor{
+    width: 100%;
+    background-color: blue;
+}
+
+.pinEditorInputs{
+    display: flex;
+    justify-content: space-around;
+}
+
+.pinEditorTextFields{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.pinEditorTextFields > *{
+    margin: var(--middleMargin);
+}
+
+.imageSelect{
+    border: var(--thickDarkBorder);
+}
+
+.imageSelect img{
+    width: 20vw;
+}
+
+
+
 /*---Authorization---*/
 .authorizationFormWrapper{
     width: 100%;
