@@ -13,8 +13,6 @@ function Pin({ handleConfirmationWindowOpen }){
     const location = useLocation();
     const pin = location.state.pin;
 
-    console.log(user.id === pin.creatorId )
-
     const similarPins = pins.filter((possibleSimilarPin) => {
         for(let i = 0; i < pin.tags.length; i++){
             if(possibleSimilarPin.tags.includes(pin.tags[i]) && possibleSimilarPin.id !== pin.id){

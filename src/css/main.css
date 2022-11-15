@@ -74,6 +74,10 @@ header > .search{
 
 }
 
+.pinImageAndInfo{
+    display: flex;
+}
+
 .pinImage{
     width: 20vw;
 }
