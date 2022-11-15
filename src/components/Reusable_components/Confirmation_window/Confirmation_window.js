@@ -3,10 +3,10 @@ import { CONFIRM_PIN_DELETE } from "../../../confirmation_types/confirmation_typ
 import { confirmAction } from "../../../redux/action_creators";
 
 function ConfirmationWindow({ handleConfirmationCancel, handlePinDelete }){
-    const confirmationValues = useSelector((state) => state.confirmation);
-    if(!confirmationValues.confirmationType) return null;
-
     const dispatch = useDispatch();
+    const confirmationValues = useSelector((state) => state.confirmation);
+    
+    if(!confirmationValues.confirmationType) return null;
 
     function confirmationHandler(){
         dispatch(confirmAction());

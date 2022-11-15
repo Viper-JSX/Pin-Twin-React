@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import ImageSelect from "./Image_select";
+import PinDeleteButton from "./Pin_delete_button";
 
-function PinEditor({ mode, handlePinCreate, handlePinEdit }){
+function PinEditor({ mode, handlePinCreate, handlePinEdit, handleConfirmationWindowOpen }){
     const location = useLocation();
     const userId = useSelector((state) => state.user.id);
     const [ pinData, setPinData ] = useState(location?.state?.pin || { creatorId: userId, imageSrc: "", title: "", discription: "", tagsString: "" });
@@ -40,7 +41,10 @@ function PinEditor({ mode, handlePinCreate, handlePinEdit }){
                 mode === "create" ?
                 <button className="createPin" onClick={() => handlePinCreate({ pinData })}>Create</button>
                 :
-                <button className="editPin" onClick={ () => handlePinEdit({ pinData })}>Save</button>
+                <>
+                    <PinDeleteButton handleConfirmationWindowOpen={handleConfirmationWindowOpen} pinId={pinData.id} />
+                    <button className="editPin" onClick={ () => handlePinEdit({ pinData })}>Save</button>
+                </>
             }
         </div>
     );

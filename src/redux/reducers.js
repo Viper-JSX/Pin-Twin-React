@@ -148,6 +148,7 @@ export function confirmation(state=defaultState.confirmation, action){
             return {};
         }
         case SET_CONFIRMATION_VALUES: {
+            console.log("Setting values")
             return { ...action.payload };
         }
         default: {

@@ -87,6 +87,7 @@ function App(){
 
     /*---Confirmation---*/
     function handleConfirmationWindowOpen(confirmationValues){
+        console.log("Confirm open")
         dispatch(setConfirmationValues(confirmationValues));
     }
 
