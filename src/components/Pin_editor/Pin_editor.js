@@ -8,7 +8,6 @@ function PinEditor({ mode, handlePinCreate, handlePinEdit, handleConfirmationWin
     const location = useLocation();
     const userId = useSelector((state) => state.user.id);
     const [ pinData, setPinData ] = useState(() => {
-        console.log(location.state)
         if(location.state?.pin){
             return { ...location.state.pin, tagsString: location.state.pin.tags.join(" ") };
         }
