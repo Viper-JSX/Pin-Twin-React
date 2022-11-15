@@ -57,6 +57,7 @@ export function user(state=defaultState.user, action){
 
         }
         case DELETE_PIN:{
+            console.log("Deleting pin", action.payload)
             for(let i = 0; i < pins.length; i++){
                 if(pins[i].id === action.payload.pinId){
                     pins.splice(i, 1);

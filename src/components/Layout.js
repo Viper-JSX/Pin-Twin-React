@@ -33,7 +33,7 @@ function Layout({
             />
 
             <MessageModal />
-            <ConfirmationWindow handleConfirmationCancel={handleConfirmationCancel} />
+            <ConfirmationWindow handleConfirmationCancel={handleConfirmationCancel} handlePinDelete={handlePinDelete} />
 
             <Routes>
                 <Route path="/" element={<MainPage handlePinSave={handlePinSave} />} />
