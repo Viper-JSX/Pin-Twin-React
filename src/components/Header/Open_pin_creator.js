@@ -1,10 +1,20 @@
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-function OpenPinCreator(){
+function OpenPinCreator({ handleLoginWindowOpen, handleSignUpWindowOpen }){
+    const user = useSelector((state) => state.user);
+
     return(
-        <NavLink to='pins/create/' >
-            <button>Create <br /> pin</button>
-        </NavLink>
+        <>
+        {
+            user ? 
+            <NavLink to='pins/create/' >
+                <button className="openPinCreator">Create <br /> pin</button>
+            </NavLink>
+            :
+            <button className="openPinCreator" onClick={handleLoginWindowOpen}>Create <br /> pin</button>
+        }
+        </>
     );
 }
 

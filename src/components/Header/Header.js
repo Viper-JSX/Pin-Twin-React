@@ -6,13 +6,13 @@ import OpenNotifications from "./Open_notifications";
 import OpenPinCreator from "./Open_pin_creator";
 import OpenProfile from "./Open_profile";
 
-function Header({ handlePinsSearchTermChange }){
+function Header({ handlePinsSearchTermChange, handleLoginWindowOpen, handleSignUpWindowOpen }){
     const [ pinsSearchTerm ] = useSelector((state) => [ state.search.pinsSearch.term ]);
 
     return(
         <header id="header">
             <MainPageIcon />
-            <OpenPinCreator />
+            <OpenPinCreator handleLoginWindowOpen={handleLoginWindowOpen} />
             <Search value={pinsSearchTerm} placeholder={"Search"} handler={handlePinsSearchTermChange} />
             <OpenNotifications />
             <OpenMessages />

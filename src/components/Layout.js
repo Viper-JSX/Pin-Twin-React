@@ -13,6 +13,8 @@ function Layout({
 
     handleLogin,
     handleSignUp,
+    handleLoginWindowOpen,
+    handleSignUpWindowOpen,
     handleAuthorizationWindowClose,
 
     handlePinCreate,
@@ -26,7 +28,12 @@ function Layout({
 
     return(
         <div id="layout">
-            <Header handlePinsSearchTermChange={handlePinsSearchTermChange} />
+            <Header 
+                handlePinsSearchTermChange={handlePinsSearchTermChange} 
+                handleLoginWindowOpen={handleLoginWindowOpen}
+                handleSignUpWindowOpen={handleAuthorizationWindowClose}
+            />
+
             <AuthorizationForm 
                 handleLogin={handleLogin}
                 handleSignUp={handleSignUp}

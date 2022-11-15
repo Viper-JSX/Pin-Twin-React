@@ -109,6 +109,8 @@ function App(){
 
                 handleLogin={handleLogin}
                 handleSignUp={handleSignUp}
+                handleLoginWindowOpen={handleLoginWindowOpen}
+                handleSignUpWindowOpen={handleSignUpWindowOpen}
                 handleAuthorizationWindowClose={handleAuthorizationWindowClose}
 
                 handlePinCreate={handlePinCreate}
