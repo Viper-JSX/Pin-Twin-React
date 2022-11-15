@@ -56,6 +56,30 @@ header > .search{
 
 
 
+/*---Pins---*/
+.pins{
+    width: 100vw;
+    background-color: red;
+    display: flex;
+}
+
+.pinOpener{
+    width: 15%;
+    margin: var(--tinyMargin);
+    border: var(--thickDarkBorder);
+    flex-grow: 1/5;
+}
+
+.pin{
+
+}
+
+.pinImage{
+    width: 20vw;
+}
+
+
+
 /*---Authorization---*/
 .authorizationFormWrapper{
     width: 100%;

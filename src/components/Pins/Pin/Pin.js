@@ -6,6 +6,7 @@ import { pins } from "../../../various_things/pins";
 import PinInfo from "./Pin_info";
 import Pins from "../Pins";
 import OpenPinEditor from "./Open_pin_editor";
+import PinImageAndInfo from "./Pin_image_and_info";
 
 function Pin({ handleConfirmationWindowOpen }){
     const user = useSelector((state) => state.user);
@@ -25,13 +26,12 @@ function Pin({ handleConfirmationWindowOpen }){
     return(
         <div className="pin">
             {
-                (user.id || user.id === 0) && user.id === pin.creatorId ?
+                (user.id || user.id === 0) && user.id === pin.creatorId ? //If user logged in and user created current pin
                 <OpenPinEditor pin={pin} />
                 :
                 null
             }
-            <img src={pin.imageSrc} alt={`${[pin.title]} image`} />
-            <PinInfo pin={pin} />
+            <PinImageAndInfo pin={pin} />
 
             <b>Similar pins</b>
             <Pins pins={similarPins} />
