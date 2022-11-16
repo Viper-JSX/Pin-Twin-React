@@ -1,4 +1,4 @@
-function EditFileButton({ accept, handler }){
+function FileEditButton({ accept, handler }){
     return(
         <label >
             <input type="file" accept={accept} hidden onChange={handler} />
@@ -7,4 +7,4 @@ function EditFileButton({ accept, handler }){
     );
 }
 
-export default EditFileButton;
+export default FileEditButton;
