@@ -1,6 +1,6 @@
 import { convertTagsStringToTagsArray } from "../utilities/convertTagsStringToTagsArray";
 import { users } from "../various_things/users";
-import { CREATE_PIN, DELETE_PIN, EDIT_PIN, HIDE_MESSAGE, LOGIN, SAVE_PIN, SHOW_MESSAGE, SIGN_UP } from "./action_types";
+import { CREATE_PIN, DELETE_PIN, EDIT_PIN, EDIT_PROFILE, HIDE_MESSAGE, LOGIN, SAVE_PIN, SHOW_MESSAGE, SIGN_UP } from "./action_types";
 
 export function login(payload){
     return function(dispatch){
@@ -26,6 +26,12 @@ export function signUp(payload){
             dispatch({ type: SIGN_UP, payload });
         }
     };
+}
+
+export function editProfile(payload){
+    return function(dispatch){
+        dispatch({ type: EDIT_PROFILE, payload });
+    }
 }
 
 export function createPin(payload){
