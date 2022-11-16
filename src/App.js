@@ -8,10 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { cancelConfirmation, changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues } from "./redux/action_creators";
 import { login, showMessage, signUp, createPin, deletePin, editPin, savePin } from "./redux/thunks";
 
-import Pins from "./components/Pins/Pins";
-import { NavLink } from "react-router-dom";
-import { DELETE_PIN } from "./redux/action_types";
-import { CONFIRM_PIN_DELETE } from "./confirmation_types/confirmation_types";
+
 
 function App(){
     const dispatch = useDispatch();
