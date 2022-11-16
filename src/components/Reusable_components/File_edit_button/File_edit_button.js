@@ -1,6 +1,6 @@
 function FileEditButton({ accept, handler }){
     return(
-        <label >
+        <label className="fileEditButton" >
             <input type="file" accept={accept} hidden onChange={handler} />
             Edit
         </label>

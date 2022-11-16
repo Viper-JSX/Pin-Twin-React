@@ -114,6 +114,25 @@ header > .search{
 }
 
 
+/*---Profile---*/
+
+.profileTopImageContainer{
+    height: 5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.profileTopImage{
+    width: 100%;
+}
+
+.profileTopImageContainer .fileEditButton{
+    margin: var(--middleMargin);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 
 /*---Authorization---*/
 .authorizationFormWrapper{

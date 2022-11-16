@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { SAVED_PINS, USER_PINS } from "../../various_things/constant_keywords";
+import ProfileTopImage from "./Profile_top_image";
 
 function UserProfileWindow({ handleProfileEdit }){
     const location = useLocation();
@@ -26,7 +27,7 @@ function UserProfileWindow({ handleProfileEdit }){
 
     return(
         <div className="userProfileWindow"> 
-
+            <ProfileTopImage imageSrc={user.profileTopImageSrc} handleProfileTopImageChange={handleProfileTopImageChange} />
         { typeOfPinsToShow }
         </div>
     );
