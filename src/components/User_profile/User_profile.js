@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { SAVED_PINS, USER_PINS } from "../../various_things/constant_keywords";
 import ProfileTopImage from "./Profile_top_image";
+import UserPinsSwitcher from "./User_pins_switcher";
 import UserProfileImageAndNickname from "./User_profile_image_and_nickname";
 
 function UserProfileWindow({ handleProfileEdit }){
@@ -38,6 +39,7 @@ function UserProfileWindow({ handleProfileEdit }){
         <div className="userProfileWindow"> 
             <ProfileTopImage imageSrc={user.profileTopImageSrc} handleProfileTopImageChange={handleProfileTopImageChange} />
             <UserProfileImageAndNickname nickname={user?.nickname || otherUser?.nickname} profileImageSrc={user?.profileImageSrc || otherUser?.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} />
+            <UserPinsSwitcher handleUserPinsSwitch={handleUserPinsSwitch} />
         { typeOfPinsToShow }
         </div>
     );
