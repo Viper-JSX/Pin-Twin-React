@@ -48,6 +48,9 @@ function App(){
         dispatch(savePin({ pin }));
     }
 
+    function handlePinRemoveFromSaved({ removalData }){
+        console.log("removing", removalData);
+    }
 
     /*---Search Term Handling---*/
     function handlePinsSearchTermChange(event){
@@ -122,6 +125,7 @@ function App(){
                 handlePinEdit={handlePinEdit}
                 handlePinDelete={handlePinDelete}
                 handlePinSave={handlePinSave}
+                handlePinRemoveFromSaved={handlePinRemoveFromSaved}
 
                 handleConfirmationWindowOpen={handleConfirmationWindowOpen}
                 handleConfirmationCancel={handleConfirmationCancel}
