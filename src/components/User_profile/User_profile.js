@@ -10,7 +10,7 @@ function UserProfileWindow(){
     const otherUser = location.state?.user; //Other person's profile
     
     const otherUserProfile = Boolean(otherUser); //indicates whether user viewing own profile or other person's profile
-    const [ typeOfPinsToShow, setTypeOfPinsToShow ] = useState(USER_PINS);
+    const [ typeOfPinsToShow, setTypeOfPinsToShow ] = useState(USER_PINS); //Determines which pins to show: created by user or saved ones
 
     function handleUserPinsSwitch(typeOfPinsToShow){
         setTypeOfPinsToShow(typeOfPinsToShow);
