@@ -18,7 +18,11 @@ function UserProfileWindow({ handleProfileEdit }){
     }
 
     function handleProfileTopImageChange(event){
-        handleProfileEdit({ profileData: { ...user, profileTopImageSrc: "img src shortly" } });
+        const reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = function(result){
+            handleProfileEdit({ profileData: { ...user, profileTopImageSrc: result.target.result } });
+        };
     }
 
     function handleUserProfileImageChange(event){

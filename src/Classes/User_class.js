@@ -41,6 +41,7 @@ export class UserClass{
     };
 
     edit({ profileData }){
-        console.log(profileData, "Changeeeeee");
+        this.profileImageSrc = profileData.profileImageSrc;
+        this.profileTopImageSrc = profileData.profileTopImageSrc;
     }
 }

@@ -29,10 +29,8 @@ export function user(state=defaultState.user, action){
         }
 
         case EDIT_PROFILE: {
-            //edit user in globas storage
-            console.log("Editing profile", action.payload);
-            users[0].edit(action.payload);
-            return state;
+            users.find((user) => user.id === action.payload.profileData.id).edit(action.payload);
+            return { ...state, profileTopImageSrc: action.payload.profileData.profileTopImageSrc };
         }
 
         case SIGN_UP:{
