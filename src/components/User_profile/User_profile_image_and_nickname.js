@@ -5,7 +5,7 @@ function UserProfileImageAndNickname({ nickname, profileImageSrc, handleUserProf
         <div className="userProfileImageAndNickname">
             <img src={profileImageSrc} className="userProfileImage" />
             <b className="userNickname">{nickname}</b>
-            <FileEditButton handler={handleUserProfileImageChange} />
+            <FileEditButton accept={"image/png, image/gif, image/jpeg"} handler={handleUserProfileImageChange} />
         </div>
     );
 }
