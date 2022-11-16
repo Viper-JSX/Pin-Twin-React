@@ -31,6 +31,7 @@ export function signUp(payload){
 export function editProfile(payload){
     return function(dispatch){
         dispatch({ type: EDIT_PROFILE, payload });
+        dispatch(showMessage({ title: "Success", text: "Changed successfully" }));
     }
 }
 

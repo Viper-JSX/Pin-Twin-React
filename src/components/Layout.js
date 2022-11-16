@@ -13,6 +13,8 @@ function Layout({
 
     handleLogin,
     handleSignUp,
+    handleProfileEdit,
+
     handleLoginWindowOpen,
     handleSignUpWindowOpen,
     handleAuthorizationWindowClose,
@@ -48,7 +50,7 @@ function Layout({
             <Routes>
                 <Route path="/" element={<MainPage handlePinSave={handlePinSave} />} />
                 <Route path="/pins/:id" element={<Pin handleConfirmationWindowOpen={handleConfirmationWindowOpen} />} />
-                <Route path="/profile" element={<UserProfileWindow />} />
+                <Route path="/profile" element={<UserProfileWindow handleProfileEdit={handleProfileEdit} />} />
                 <Route path="/pins/create" element={<PinEditor mode="create" handlePinCreate={handlePinCreate} handlePinEdit={null} />} />
                 <Route path="/pins/:id/edit" element={<PinEditor mode="edit" handlePinCreate={null} handlePinEdit={handlePinEdit} handlePinDelete={handlePinDelete} handleConfirmationWindowOpen={handleConfirmationWindowOpen} />} />
             </Routes>

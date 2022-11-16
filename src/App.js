@@ -102,6 +102,7 @@ function App(){
     }
 
     handleLoginWindowOpen();
+    handleProfileEdit();
 
     return(
         <div className="App">
@@ -111,6 +112,8 @@ function App(){
 
                 handleLogin={handleLogin}
                 handleSignUp={handleSignUp}
+                handleProfileEdit={handleProfileEdit}
+
                 handleLoginWindowOpen={handleLoginWindowOpen}
                 handleSignUpWindowOpen={handleSignUpWindowOpen}
                 handleAuthorizationWindowClose={handleAuthorizationWindowClose}
