@@ -28,8 +28,8 @@ function App(){
         dispatch(logout());
     }
 
-    function handleProfileEdit(){
-        dispatch(editProfile(null));
+    function handleProfileEdit(data){
+        dispatch(editProfile(data));
     }
 
     function handlePinCreate(pinData){
@@ -102,7 +102,7 @@ function App(){
     }
 
     handleLoginWindowOpen();
-    handleProfileEdit();
+    //handleProfileEdit();
 
     return(
         <div className="App">
