@@ -12,6 +12,9 @@ export class UserClass{
         this.conversations = [];
         this.tagsViewFrequency = {};
 
+        this.profileImageSrc = ""; //Set some default value
+        this.profileTopImageSrc = ""; //Set some default value
+
         currentIdCount++;
     } 
 

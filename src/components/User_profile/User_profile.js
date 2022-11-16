@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { SAVED_PINS, USER_PINS } from "../../various_things/constant_keywords";
 
-function UserProfileWindow(){
+function UserProfileWindow({ handleProfileEdit }){
     const location = useLocation();
 
     const user = useSelector((state) => state.user); //User itself
@@ -14,6 +14,14 @@ function UserProfileWindow(){
 
     function handleUserPinsSwitch(typeOfPinsToShow){
         setTypeOfPinsToShow(typeOfPinsToShow);
+    }
+
+    function handleTopImageChange(event){
+        handleProfileEdit({ profileData: { ...user, profileTopImageSrc: "img src shortly" } });
+    }
+
+    function handleUserProfileImageChange(event){
+        handleProfileEdit({ profileData: { ...user, profileImageSrc: "img src shortly" } });
     }
 
     return(
