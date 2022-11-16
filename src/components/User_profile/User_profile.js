@@ -16,7 +16,7 @@ function UserProfileWindow({ handleProfileEdit }){
         setTypeOfPinsToShow(typeOfPinsToShow);
     }
 
-    function handleTopImageChange(event){
+    function handleProfileTopImageChange(event){
         handleProfileEdit({ profileData: { ...user, profileTopImageSrc: "img src shortly" } });
     }
 

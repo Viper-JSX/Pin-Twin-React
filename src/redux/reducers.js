@@ -29,6 +29,7 @@ export function user(state=defaultState.user, action){
         }
 
         case EDIT_PROFILE: {
+            //edit user in globas storage
             console.log("Editing profile");
             return state;
         }

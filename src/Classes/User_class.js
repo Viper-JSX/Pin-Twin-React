@@ -38,4 +38,8 @@ export class UserClass{
     savePin(pin){
         this.savedPins.push(pin);
     };
+
+    edit({ profileData }){
+        console.log(profileData, "Changeeeeee");
+    }
 }
