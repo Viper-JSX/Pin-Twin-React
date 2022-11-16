@@ -6,7 +6,7 @@ import MessageModal from "./Message/Message_modal";
 import Pin from "./Pins/Pin/Pin";
 import PinEditor from "./Pin_editor/Pin_editor";
 import ConfirmationWindow from "./Reusable_components/Confirmation_window/Confirmation_window";
-import UserProfileWindow from "./User_profile/User_profile";
+import UserProfile from "./User_profile/User_profile";
 
 function Layout({ 
     handlePinsSearchTermChange,
@@ -50,7 +50,7 @@ function Layout({
             <Routes>
                 <Route path="/" element={<MainPage handlePinSave={handlePinSave} />} />
                 <Route path="/pins/:id" element={<Pin handleConfirmationWindowOpen={handleConfirmationWindowOpen} />} />
-                <Route path="/profile" element={<UserProfileWindow handleProfileEdit={handleProfileEdit} />} />
+                <Route path="/profile" element={<UserProfile handleProfileEdit={handleProfileEdit} />} />
                 <Route path="/pins/create" element={<PinEditor mode="create" handlePinCreate={handlePinCreate} handlePinEdit={null} />} />
                 <Route path="/pins/:id/edit" element={<PinEditor mode="edit" handlePinCreate={null} handlePinEdit={handlePinEdit} handlePinDelete={handlePinDelete} handleConfirmationWindowOpen={handleConfirmationWindowOpen} />} />
             </Routes>
