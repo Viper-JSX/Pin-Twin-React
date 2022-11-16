@@ -12,7 +12,7 @@ export class UserClass{
         this.conversations = [];
         this.tagsViewFrequency = {};
 
-        this.profileImageSrc = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fvectors%2Fsearch%2Fuser%2F&psig=AOvVaw3DzMK321nnL24YHt1sqfyD&ust=1668703127638000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIi8zeiRs_sCFQAAAAAdAAAAABAE"; //Set some default value
+        this.profileImageSrc = "https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331256__340.png"; //Set some default value
         this.profileTopImageSrc = "https://images8.alphacoders.com/484/484717.jpg"; //Set some default value
 
         currentIdCount++;
@@ -41,7 +41,7 @@ export class UserClass{
     };
 
     edit({ profileData }){
-        this.profileImageSrc = profileData.profileImageSrc;
+        this.profileImageSrc = profileData.profileImageSrc; //These are the properties that currently can be changed
         this.profileTopImageSrc = profileData.profileTopImageSrc;
     }
 }

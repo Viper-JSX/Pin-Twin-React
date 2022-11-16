@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { SAVED_PINS, USER_PINS } from "../../various_things/constant_keywords";
 import ProfileTopImage from "./Profile_top_image";
+import UserProfileImageAndNickname from "./User_profile_image_and_nickname";
 
 function UserProfileWindow({ handleProfileEdit }){
     const location = useLocation();
@@ -26,12 +27,17 @@ function UserProfileWindow({ handleProfileEdit }){
     }
 
     function handleUserProfileImageChange(event){
-        handleProfileEdit({ profileData: { ...user, profileImageSrc: "img src shortly" } });
+        const reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = function(result){
+            handleProfileEdit({ profileData: { ...user, profileImageSrc: result.target.result } });
+        };
     }
 
     return(
         <div className="userProfileWindow"> 
             <ProfileTopImage imageSrc={user.profileTopImageSrc} handleProfileTopImageChange={handleProfileTopImageChange} />
+            <UserProfileImageAndNickname nickname={user?.nickname || otherUser?.nickname} profileImageSrc={user?.profileImageSrc || otherUser?.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} />
         { typeOfPinsToShow }
         </div>
     );

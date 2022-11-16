@@ -30,7 +30,7 @@ export function user(state=defaultState.user, action){
 
         case EDIT_PROFILE: {
             users.find((user) => user.id === action.payload.profileData.id).edit(action.payload);
-            return { ...state, profileTopImageSrc: action.payload.profileData.profileTopImageSrc };
+            return { ...state, profileImageSrc: action.payload.profileData.profileImageSrc, profileTopImageSrc: action.payload.profileData.profileTopImageSrc };
         }
 
         case SIGN_UP:{
