@@ -133,6 +133,22 @@ header > .search{
     right: 0;
 }
 
+.userProfileImageWrapper{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userProfileImage{
+    height: 100%;
+}
+
+
+
 
 /*---Authorization---*/
 .authorizationFormWrapper{
