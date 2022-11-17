@@ -48,9 +48,8 @@ function App(){
         dispatch(savePin({ pin }));
     }
 
-    function handlePinRemoveFromSaved({ removalData }){
-        dispatch(deletePinFromSaved({ removalData }));
-        console.log("removing", removalData);
+    function handlePinRemoveFromSaved({ deleteData }){
+        dispatch(deletePinFromSaved({ deleteData }));
     }
 
     /*---Search Term Handling---*/
