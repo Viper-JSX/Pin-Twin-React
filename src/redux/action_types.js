@@ -14,6 +14,7 @@ export const CREATE_PIN = "CREATE_PIN";
 export const EDIT_PIN = "EDIT_PIN";
 export const DELETE_PIN = "DELETE_PIN";
 export const SAVE_PIN = "SAVE_PIN";
+export const DELETE_PIN_FROM_SAVED = "DELETE_PIN_FROM_SAVED";
 
 /*---Search---*/
 export const CHANGE_PINS_SEARCH_TERM = "CHANGE_PINS_SEARCH_TERM";

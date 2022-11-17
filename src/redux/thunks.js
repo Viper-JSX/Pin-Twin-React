@@ -1,6 +1,6 @@
 import { convertTagsStringToTagsArray } from "../utilities/convertTagsStringToTagsArray";
 import { users } from "../various_things/users";
-import { CREATE_PIN, DELETE_PIN, EDIT_PIN, EDIT_PROFILE, HIDE_MESSAGE, LOGIN, SAVE_PIN, SHOW_MESSAGE, SIGN_UP } from "./action_types";
+import { CREATE_PIN, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, HIDE_MESSAGE, LOGIN, SAVE_PIN, SHOW_MESSAGE, SIGN_UP } from "./action_types";
 
 export function login(payload){
     return function(dispatch){
@@ -79,7 +79,6 @@ export function editPin(payload){
 
 export function deletePin(payload){
     return function(dispatch){
-        console.log(payload)
         dispatch({ type: DELETE_PIN, payload });
     }
 }
@@ -87,6 +86,12 @@ export function deletePin(payload){
 export function savePin(payload){
     return function(dispatch){
         dispatch( { type: SAVE_PIN, payload } );
+    }
+}
+
+export function deletePinFromSaved(payload){
+    return function(dispatch){
+        dispatch({ type: DELETE_PIN_FROM_SAVED, payload });
     }
 }
 
