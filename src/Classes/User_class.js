@@ -38,7 +38,13 @@ export class UserClass{
 
     savePin(pin){
         this.savedPins.push(pin);
+        console.log("Added pin");
     };
+
+    deletePinFromSaved(pinId){
+        this.savedPins.splice(this.savedPins.findIndex((pin) => pin.id === pinId), 1);
+        console.log("Removed", this.savedPins);
+    }
 
     edit({ profileData }){
         this.profileImageSrc = profileData.profileImageSrc; //These are the properties that currently can be changed

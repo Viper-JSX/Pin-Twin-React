@@ -83,9 +83,8 @@ export function user(state=defaultState.user, action){
             return {...state, savedPins: [...state.savedPins, action.payload.pin]};
         }
         case DELETE_PIN_FROM_SAVED: {
-            console.log("Deleting from saved", action.payload)
+            users.find((user) => user.id === action.payload.deleteData.userId).deletePinFromSaved(action.payload.deleteData.pinID);
             return { ...state, savedPins: state.savedPins.filter((pin) => pin.id !== action.payload.deleteData.pinId) };
-            //add removing in global storage
         }
         default: {
             return state;
