@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { SAVED_PINS, USER_PINS } from "../../various_things/constant_keywords";
-import { pins } from "../../various_things/pins";
 import SavedPins from "../Pins/Saved_pins/Saved_pins.";
-import SavedPinOpener from "../Pins/Saved_pins/Saved_pin_opener";
+import ProfileOpener from "./Profile_opener";
 import ProfileTopImage from "./Profile_top_image";
 import UserPinsSwitcher from "./User_pins_switcher";
 import UserProfileImageAndNickname from "./User_profile_image_and_nickname";
@@ -44,6 +43,7 @@ function UserProfileWindow({ handleProfileEdit, handlePinRemoveFromSaved }){
             <UserProfileImageAndNickname nickname={user?.nickname || otherUser?.nickname} profileImageSrc={user?.profileImageSrc || otherUser?.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} />
             <UserPinsSwitcher handleUserPinsSwitch={handleUserPinsSwitch} />
             <SavedPins savedPins={user.savedPins} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
+            <ProfileOpener profileId={0} />
         { typeOfPinsToShow }
         </div>
     );
