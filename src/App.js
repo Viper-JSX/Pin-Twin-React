@@ -6,7 +6,7 @@ import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
 import { cancelConfirmation, changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues } from "./redux/action_creators";
-import { login, showMessage, signUp, createPin, deletePin, editPin, savePin, editProfile } from "./redux/thunks";
+import { login, showMessage, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved } from "./redux/thunks";
 
 
 
@@ -49,6 +49,7 @@ function App(){
     }
 
     function handlePinRemoveFromSaved({ removalData }){
+        dispatch(deletePinFromSaved({ removalData }));
         console.log("removing", removalData);
     }
 

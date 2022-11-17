@@ -42,7 +42,6 @@ function UserProfileWindow({ handleProfileEdit, handlePinRemoveFromSaved }){
             <ProfileTopImage imageSrc={user.profileTopImageSrc} handleProfileTopImageChange={handleProfileTopImageChange} />
             <UserProfileImageAndNickname nickname={user?.nickname || otherUser?.nickname} profileImageSrc={user?.profileImageSrc || otherUser?.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} />
             <UserPinsSwitcher handleUserPinsSwitch={handleUserPinsSwitch} />
-            {/*<SavedPinOpener userId={user.id} pin={pins[0]} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />*/}
         { typeOfPinsToShow }
         </div>
     );
