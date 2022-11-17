@@ -13,7 +13,7 @@ function UserProfileWindow({ handleProfileEdit, handlePinRemoveFromSaved }){
 
     const user = useSelector((state) => state.user); //User itself
     const otherUser = location.state?.user; //Other person's profile
-    
+    console.log(otherUser)
     const otherUserProfile = Boolean(otherUser); //indicates whether user viewing own profile or other person's profile
     const [ typeOfPinsToShow, setTypeOfPinsToShow ] = useState(USER_PINS); //Determines which pins to show: created by user or saved ones
 
@@ -40,10 +40,10 @@ function UserProfileWindow({ handleProfileEdit, handlePinRemoveFromSaved }){
     return(
         <div className="userProfileWindow"> 
             <ProfileTopImage imageSrc={user.profileTopImageSrc} handleProfileTopImageChange={handleProfileTopImageChange} />
-            <UserProfileImageAndNickname nickname={user?.nickname || otherUser?.nickname} profileImageSrc={user?.profileImageSrc || otherUser?.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} />
+            <UserProfileImageAndNickname nickname={otherUser?.nickname || user?.nickname} profileImageSrc={otherUser?.profileImageSrc || user?.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} />
             <UserPinsSwitcher handleUserPinsSwitch={handleUserPinsSwitch} />
             <SavedPins savedPins={user.savedPins} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
-            <ProfileOpener profileId={0} />
+            <ProfileOpener profileId={1} />
         { typeOfPinsToShow }
         </div>
     );

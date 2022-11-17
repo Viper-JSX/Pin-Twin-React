@@ -1,14 +1,14 @@
 import { users } from "../../various_things/users";
 
-import { NavLink } from "react-router-dom";
+import { useSearchParams, NavLink } from "react-router-dom";
 
 function ProfileOpener({ profileId }){
-    const profile = users.find((user) => user.id === profileId);
+    const user = users.find((user) => user.id === profileId);
 
     return(
-        <NavLink to={`/users/${profileId}`}>
+        <NavLink to={`/users/${profileId}`} state={{ user }}>
             <div className="profileOpener">
-                <b>{profile.nickname}</b>
+                <b>{user.nickname}</b>
                 <button>See</button>
             </div>
         </NavLink>
