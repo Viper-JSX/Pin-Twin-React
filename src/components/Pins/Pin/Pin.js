@@ -7,6 +7,7 @@ import PinInfo from "./Pin_info";
 import Pins from "../Pins";
 import OpenPinEditor from "./Open_pin_editor";
 import PinImageAndInfo from "./Pin_image_and_info";
+import ProfileOpener from "../../User_profile/Profile_opener";
 
 function Pin({ handleConfirmationWindowOpen }){
     const user = useSelector((state) => state.user);
@@ -30,6 +31,7 @@ function Pin({ handleConfirmationWindowOpen }){
                 null
             }
             <PinImageAndInfo pin={pin} />
+            <ProfileOpener profileId={pin.creatorId} />
 
             <b>Similar pins</b>
             <Pins pins={similarPins} />

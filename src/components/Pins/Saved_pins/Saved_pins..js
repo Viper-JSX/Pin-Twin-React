@@ -8,7 +8,7 @@ function SavedPins({ savedPins, handlePinRemoveFromSaved }){
     return(
         <div className="savedPins">
             {
-                savedPins.map((savedPin) => <SavedPinOpener userId={userId} pin={savedPin} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />)
+                savedPins.map((savedPin) => <SavedPinOpener userId={userId} pin={savedPin} handlePinRemoveFromSaved={handlePinRemoveFromSaved} key={`saved_pin_${savedPin.id}`} />)
             }
         </div>
     );

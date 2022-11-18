@@ -10,7 +10,7 @@ import ProfileTopImage from "./Profile_top_image";
 import UserPinsSwitcher from "./User_pins_switcher";
 import UserProfileImageAndNickname from "./User_profile_image_and_nickname";
 
-function UserProfileWindow({ handleProfileEdit, handlePinRemoveFromSaved }){
+function UserProfileWindow({ handleProfileEdit, handlePinSave, handlePinRemoveFromSaved }){
     const location = useLocation();
 
     const user = useSelector((state) => state.user); //User itself
@@ -43,7 +43,7 @@ function UserProfileWindow({ handleProfileEdit, handlePinRemoveFromSaved }){
             <div className="userProfileWindow"> 
             <ProfileTopImage imageSrc={otherUser.profileTopImageSrc} />
             <UserProfileImageAndNickname nickname={otherUser.nickname} profileImageSrc={otherUser.profileImageSrc} />
-            <Pins pins={otherUser.pins} />
+            <Pins pins={otherUser.pins} handlePinSave={handlePinSave} />
         </div>
         );
     }
