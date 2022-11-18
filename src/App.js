@@ -5,10 +5,14 @@ import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { cancelConfirmation, changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues, updateTagsViewFrequencyHistogram } from "./redux/action_creators";
-import { login, showMessage, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow, searchPins } from "./redux/thunks";
+
 import { users } from "./various_things/users";
+import { pins } from "./various_things/pins";
+
+import { cancelConfirmation, changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues, updateTagsViewFrequencyHistogram } from "./redux/action_creators";
+import { login, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow, searchPins } from "./redux/thunks";
 import { selectMostFavouriteTags } from "./utilities/select_most_favourite_tags";
+import { filterPinsBasedOnUserPreferences } from "./utilities/filter_pins_based_on_user_preferences";
 
 
 function App(){
@@ -19,7 +23,7 @@ function App(){
         const searchData = { userIsLoggedIn: Boolean(user), searchTerm: event.target.value, userFollowings: user?.followings, userFavouriteTags: [] };
         
         if(searchData.userIsLoggedIn){
-            //set top 10 tags in searchData
+            searchData.userFavouriteTags = selectMostFavouriteTags(user.updateTagsViewFrequencyHistogram);
         }
 
         dispatch(searchPins(searchData));
