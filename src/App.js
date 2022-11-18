@@ -16,7 +16,7 @@ function App(){
     /*---User---*/
     function handleLogin({ event, loginData }){
         event.preventDefault();
-        dispatch(login(loginData))
+        dispatch(login(loginData));
     }
 
     function handleSignUp({ event, signUpData }){

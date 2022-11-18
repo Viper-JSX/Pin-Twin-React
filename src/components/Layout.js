@@ -55,6 +55,8 @@ function Layout({
                 <Route path="/users/:id" element={<UserProfile handlePinSave={handlePinSave} />} />
                 <Route path="/pins/create" element={<PinEditor mode="create" handlePinCreate={handlePinCreate} handlePinEdit={null} />} />
                 <Route path="/pins/:id/edit" element={<PinEditor mode="edit" handlePinCreate={null} handlePinEdit={handlePinEdit} handlePinDelete={handlePinDelete} handleConfirmationWindowOpen={handleConfirmationWindowOpen} />} />
+            
+                <Route path="*" element={<b>Not found</b>} />
             </Routes>
         </div>
     );
