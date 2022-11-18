@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import { useDispatch, useSelector } from 'react-redux';
 import { cancelConfirmation, changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues } from "./redux/action_creators";
 import { login, showMessage, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow } from "./redux/thunks";
+import { users } from "./various_things/users";
 
 
 
@@ -20,6 +21,7 @@ function App(){
 
         //dispatch(follow({ userToFollowId: 1 }));
         dispatch(unfollow({ userToUnfollowId: 1 }));
+        console.log(users);
     }
 
     function handleSignUp({ event, signUpData }){

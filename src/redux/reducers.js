@@ -88,12 +88,12 @@ export function user(state=defaultState.user, action){
         }
         case FOLLOW: {
             users.find((user) => user.id === state.id).follow({ userToFollowId: action.payload.userToFollowId });
-            users.find((user) => user.id === action.payload.userToFollowId).addFollower({ folowerToAddId: state.id });
+            users.find((user) => user.id === action.payload.userToFollowId).addFollower({ followerId: state.id });
             return { ...state, followings: [ ...state.followings, action.payload.userToFollowId ] };
         }
         case UNFOLLOW: {
-            users.find((user) => user.id === state.id).unfollow({ userToFollowId: action.payload.userToUnfollowId });
-            users.find((user) => user.id === action.payload.userToUnfollowId).deleteFollower({ folowerToAddId: state.id });
+            users.find((user) => user.id === state.id).unfollow({ userToUnfollowId: action.payload.userToUnfollowId });
+            users.find((user) => user.id === action.payload.userToUnfollowId).deleteFollower({ followerId: state.id });
             return { ...state, followings: state.followings.filter((followerId) => followerId !== action.payload.userToUnfollowId) };
         }
         default: {

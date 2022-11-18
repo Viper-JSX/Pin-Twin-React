@@ -39,28 +39,26 @@ export class UserClass{
 
     savePin(pin){
         this.savedPins.push(pin);
-        console.log("Added pin");
     };
 
     deletePinFromSaved(pinId){
         this.savedPins.splice(this.savedPins.findIndex((pin) => pin.id === pinId), 1);
-        console.log("Removed", this.savedPins);
     }
 
     follow({ userToFollowId }){
-        console.log("Follow", userToFollowId);
+        this.followings.push(userToFollowId);
     }
 
     unfollow({ userToUnfollowId }){
-        console.log("Unfollow", userToUnfollowId);
+        this.followings.splice(this.followings.indexOf(userToUnfollowId), 1);
     }
 
     addFollower({ followerId }){
-        console.log("Add follower", followerId);
+        this.followers.push(followerId);
     }
 
     deleteFollower({ followerId }){
-        console.log("Delete from followed", followerId);
+        this.followers.splice(this.followers.indexOf(followerId), 1);
     }
 
     edit({ profileData }){
