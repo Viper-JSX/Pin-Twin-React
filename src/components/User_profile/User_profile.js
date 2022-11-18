@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { SAVED_PINS, USER_PINS } from "../../various_things/constant_keywords";
+
+import Pins from "../Pins/Pins";
 import SavedPins from "../Pins/Saved_pins/Saved_pins.";
 import ProfileOpener from "./Profile_opener";
 import ProfileTopImage from "./Profile_top_image";
@@ -13,7 +15,6 @@ function UserProfileWindow({ handleProfileEdit, handlePinRemoveFromSaved }){
 
     const user = useSelector((state) => state.user); //User itself
     const otherUser = location.state?.user; //Other person's profile
-    console.log(otherUser)
     const otherUserProfile = Boolean(otherUser); //indicates whether user viewing own profile or other person's profile
     const [ typeOfPinsToShow, setTypeOfPinsToShow ] = useState(USER_PINS); //Determines which pins to show: created by user or saved ones
 
@@ -37,12 +38,28 @@ function UserProfileWindow({ handleProfileEdit, handlePinRemoveFromSaved }){
         };
     }
 
+    if(otherUser){
+        return(
+            <div className="userProfileWindow"> 
+            <ProfileTopImage imageSrc={otherUser.profileTopImageSrc} />
+            <UserProfileImageAndNickname nickname={otherUser.nickname} profileImageSrc={otherUser.profileImageSrc} />
+            <Pins pins={otherUser.pins} />
+        </div>
+        );
+    }
+
     return(
         <div className="userProfileWindow"> 
             <ProfileTopImage imageSrc={user.profileTopImageSrc} handleProfileTopImageChange={handleProfileTopImageChange} />
-            <UserProfileImageAndNickname nickname={otherUser?.nickname || user?.nickname} profileImageSrc={otherUser?.profileImageSrc || user?.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} />
+            <UserProfileImageAndNickname nickname={user.nickname} profileImageSrc={user.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} />
+            
             <UserPinsSwitcher handleUserPinsSwitch={handleUserPinsSwitch} />
-            <SavedPins savedPins={user.savedPins} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
+            {
+                typeOfPinsToShow === USER_PINS ? 
+                <Pins pins={user.pins} />
+                :
+                <SavedPins savedPins={user.savedPins} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
+            }
             <ProfileOpener profileId={1} />
         { typeOfPinsToShow }
         </div>
