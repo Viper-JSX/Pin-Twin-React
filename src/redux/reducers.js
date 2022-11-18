@@ -2,7 +2,7 @@ import { UserClass } from "../Classes/User_class";
 import { PinClass } from "../Classes/Pin_class"; 
 
 import { users } from "../various_things/users";
-import { CANCEL_CONFIRMATION, CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CONFIRM, CONFIRM_ACTION, CREATE_PIN, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FOLLOW, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SAVE_PIN, SET_CONFIRMATION_VALUES, SHOW_MESSAGE, SHOW_MORE_PINS, SIGN_UP, UNFOLLOW } from "./action_types";
+import { CANCEL_CONFIRMATION, CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CONFIRM, CONFIRM_ACTION, CREATE_PIN, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FOLLOW, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SAVE_PIN, SET_CONFIRMATION_VALUES, SHOW_MESSAGE, SHOW_MORE_PINS, SIGN_UP, UNFOLLOW, UPDATE_TAGS_VIEW_FREQUENCY_HISTOGRAM } from "./action_types";
 import { defaultState } from "./default_state";
 import { pins } from "../various_things/pins";
 
@@ -95,6 +95,22 @@ export function user(state=defaultState.user, action){
             users.find((user) => user.id === state.id).unfollow({ userToUnfollowId: action.payload.userToUnfollowId });
             users.find((user) => user.id === action.payload.userToUnfollowId).deleteFollower({ followerId: state.id });
             return { ...state, followings: state.followings.filter((followerId) => followerId !== action.payload.userToUnfollowId) };
+        }
+        case UPDATE_TAGS_VIEW_FREQUENCY_HISTOGRAM: {
+            const tagsViewFrequencyHistogram = { ...state.tagsViewFrequencyHistogram };
+
+            action.payload.pinTags.forEach((tag) => {
+                if(tagsViewFrequencyHistogram[tag]){
+                    tagsViewFrequencyHistogram[tag]++;
+                }
+                else{
+                    tagsViewFrequencyHistogram[tag] = 1;
+                }
+            });
+
+            users.find((user) => user.id === state.id).updateTagsViewFrequencyHistogram({ pinTags: action.payload.pinTags });
+
+            return { ...state, tagsViewFrequencyHistogram: tagsViewFrequencyHistogram };
         }
         default: {
             return state;

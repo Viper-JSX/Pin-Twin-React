@@ -10,7 +10,6 @@ export class UserClass{
         this.pins = [];
         this.savedPins = [];
         this.conversations = [];
-        this.tagsViewFrequency = {};
         this.followings = [];
         this.followers = [];
         this.tagsViewFrequencyHistogram = {};
@@ -29,7 +28,6 @@ export class UserClass{
         user.pins = pins;
         user.savedPins = savedPins;
         user.conversations = conversations;
-        user.tagsViewFrequency = tagsViewFrequency
     
         return user;
     }
