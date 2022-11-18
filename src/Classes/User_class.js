@@ -11,6 +11,8 @@ export class UserClass{
         this.savedPins = [];
         this.conversations = [];
         this.tagsViewFrequency = {};
+        this.followings = [];
+        this.followers = [];
 
         this.profileImageSrc = "https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331256__340.png"; //Set some default value
         this.profileTopImageSrc = "https://images8.alphacoders.com/484/484717.jpg"; //Set some default value
@@ -27,7 +29,6 @@ export class UserClass{
         user.savedPins = savedPins;
         user.conversations = conversations;
         user.tagsViewFrequency = tagsViewFrequency
-        this.followings = [];
     
         return user;
     }
@@ -44,6 +45,22 @@ export class UserClass{
     deletePinFromSaved(pinId){
         this.savedPins.splice(this.savedPins.findIndex((pin) => pin.id === pinId), 1);
         console.log("Removed", this.savedPins);
+    }
+
+    follow({ userToFollowId }){
+        console.log("Follow", userToFollowId);
+    }
+
+    unfollow({ userToUnfollowId }){
+        console.log("Unfollow", userToUnfollowId);
+    }
+
+    addFollower({ followerId }){
+        console.log("Add follower", followerId);
+    }
+
+    deleteFollower({ followerId }){
+        console.log("Delete from followed", followerId);
     }
 
     edit({ profileData }){
