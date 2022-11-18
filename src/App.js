@@ -6,13 +6,23 @@ import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
 import { cancelConfirmation, changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues } from "./redux/action_creators";
-import { login, showMessage, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow } from "./redux/thunks";
-import { users } from "./various_things/users";
+import { login, showMessage, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow, searchPins } from "./redux/thunks";
 
 
 
 function App(){
     const dispatch = useDispatch();
+    const user = useSelector((state) => state.user);
+
+    function handlePinsSearch(event){
+        const searchData = { userIsLoggedIn: Boolean(user), searchTerm: event.target.value, userFollowings: user?.followings, userFavouriteTags: [] };
+        
+        if(searchData.userIsLoggedIn){
+            //set top 10 tags in searchData
+        }
+
+        dispatch(searchPins(searchData));
+    }
 
     /*---User---*/
     function handleLogin({ event, loginData }){
