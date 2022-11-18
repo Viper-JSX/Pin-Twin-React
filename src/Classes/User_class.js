@@ -27,7 +27,7 @@ export class UserClass{
         user.savedPins = savedPins;
         user.conversations = conversations;
         user.tagsViewFrequency = tagsViewFrequency
-
+        this.followings = [];
     
         return user;
     }
