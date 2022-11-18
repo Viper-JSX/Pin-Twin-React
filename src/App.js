@@ -53,6 +53,14 @@ function App(){
         dispatch(deletePinFromSaved({ deleteData }));
     }
 
+    function handleFollow(followData){
+        dispatch(follow(followData));
+    }
+
+    function handleUnfollow(unfollowData){
+        dispatch(unfollow(unfollowData));
+    }
+
     /*---Search Term Handling---*/
     function handlePinsSearchTermChange(event){
         dispatch(changePinsSearchTerm({term: event.target.value}));
@@ -127,6 +135,9 @@ function App(){
                 handlePinDelete={handlePinDelete}
                 handlePinSave={handlePinSave}
                 handlePinRemoveFromSaved={handlePinRemoveFromSaved}
+
+                handleFollow={handleFollow}
+                handleUnfollow={handleUnfollow}
 
                 handleConfirmationWindowOpen={handleConfirmationWindowOpen}
                 handleConfirmationCancel={handleConfirmationCancel}

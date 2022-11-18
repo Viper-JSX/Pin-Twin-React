@@ -11,7 +11,7 @@ import ProfileTopImage from "./Profile_top_image";
 import UserPinsSwitcher from "./User_pins_switcher";
 import UserProfileImageAndNickname from "./User_profile_image_and_nickname";
 
-function UserProfileWindow({ handleProfileEdit, handlePinSave, handlePinRemoveFromSaved }){
+function UserProfileWindow({ handleProfileEdit, handlePinSave, handlePinRemoveFromSaved, handleFollow, handleUnfollow }){
     const location = useLocation();
 
     const user = useSelector((state) => state.user); //User itself
@@ -44,7 +44,7 @@ function UserProfileWindow({ handleProfileEdit, handlePinSave, handlePinRemoveFr
             <div className="userProfileWindow"> 
             <ProfileTopImage imageSrc={otherUser.profileTopImageSrc} />
             <UserProfileImageAndNickname nickname={otherUser.nickname} profileImageSrc={otherUser.profileImageSrc} />
-            <FollowButton userToFollowOrUnfollowId={otherUser.id} />
+            <FollowButton userToFollowOrUnfollowId={otherUser.id} handleFollow={handleFollow} handleUnfollow={handleUnfollow} />
             <Pins pins={otherUser.pins} handlePinSave={handlePinSave} />
         </div>
         );
@@ -62,8 +62,6 @@ function UserProfileWindow({ handleProfileEdit, handlePinSave, handlePinRemoveFr
                 :
                 <SavedPins savedPins={user.savedPins} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
             }
-            <ProfileOpener profileId={1} />
-        { typeOfPinsToShow }
         </div>
     );
 }
