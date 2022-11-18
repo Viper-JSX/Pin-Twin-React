@@ -18,10 +18,6 @@ function App(){
     function handleLogin({ event, loginData }){
         event.preventDefault();
         dispatch(login(loginData));
-
-        //dispatch(follow({ userToFollowId: 1 }));
-        dispatch(unfollow({ userToUnfollowId: 1 }));
-        console.log(users);
     }
 
     function handleSignUp({ event, signUpData }){

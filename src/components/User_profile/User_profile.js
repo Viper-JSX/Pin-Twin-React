@@ -5,6 +5,7 @@ import { SAVED_PINS, USER_PINS } from "../../various_things/constant_keywords";
 
 import Pins from "../Pins/Pins";
 import SavedPins from "../Pins/Saved_pins/Saved_pins.";
+import FollowButton from "../Reusable_components/Follow_button/Follow_button";
 import ProfileOpener from "./Profile_opener";
 import ProfileTopImage from "./Profile_top_image";
 import UserPinsSwitcher from "./User_pins_switcher";
@@ -43,6 +44,7 @@ function UserProfileWindow({ handleProfileEdit, handlePinSave, handlePinRemoveFr
             <div className="userProfileWindow"> 
             <ProfileTopImage imageSrc={otherUser.profileTopImageSrc} />
             <UserProfileImageAndNickname nickname={otherUser.nickname} profileImageSrc={otherUser.profileImageSrc} />
+            <FollowButton userToFollowOrUnfollowId={otherUser.id} />
             <Pins pins={otherUser.pins} handlePinSave={handlePinSave} />
         </div>
         );
