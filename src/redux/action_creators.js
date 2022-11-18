@@ -12,8 +12,8 @@ export function logout(){
     return { type: LOGOUT };
 }
 
-export function pdateTagsViewFrequencyHistogram(payload){
-    return { type: UPDATE_TAGS_VIEW_FREQUENCY_HISTOGRAM, payload  };
+export function updateTagsViewFrequencyHistogram(payload){
+    return { type: UPDATE_TAGS_VIEW_FREQUENCY_HISTOGRAM, payload };
 }
 
 

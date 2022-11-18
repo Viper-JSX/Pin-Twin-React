@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import PinOpenerPannel from "./Pin_opener_pannel";
 
 
-function PinOpener({ pin, handlePinSave }){
+function PinOpener({ pin, handlePinOpenerClick, handlePinSave }){
     const userSavedPins = useSelector((state) => state.user.savedPins)
 
     return(
@@ -14,7 +14,7 @@ function PinOpener({ pin, handlePinSave }){
                 :
                <button className="savePin" onClick={() => handlePinSave(pin)}>Save</button>
             }
-            <PinOpenerPannel pin={pin} />
+            <PinOpenerPannel pin={pin} handlePinOpenerClick={handlePinOpenerClick} />
         </div>
 
     );

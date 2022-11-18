@@ -24,6 +24,8 @@ function Layout({
     handlePinDelete,
     handlePinSave,
     handlePinRemoveFromSaved,
+    handlePinOpenerClick,
+
 
     handleFollow,
     handleUnfollow,
@@ -52,7 +54,7 @@ function Layout({
             <ConfirmationWindow handleConfirmationCancel={handleConfirmationCancel} handlePinDelete={handlePinDelete} />
 
             <Routes>
-                <Route path="/" element={<MainPage handlePinSave={handlePinSave} />} />
+                <Route path="/" element={<MainPage handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />} />
                 <Route path="/pins/:id" element={<Pin handleConfirmationWindowOpen={handleConfirmationWindowOpen} />} />
                 <Route path="/profile" element={<UserProfile handleProfileEdit={handleProfileEdit} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />} />
                 <Route path="/users/:id" element={<UserProfile handlePinSave={handlePinSave} handleFollow={handleFollow} handleUnfollow={handleUnfollow} />} />

@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { cancelConfirmation, changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues } from "./redux/action_creators";
+import { cancelConfirmation, changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues, updateTagsViewFrequencyHistogram } from "./redux/action_creators";
 import { login, showMessage, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow, searchPins } from "./redux/thunks";
 import { users } from "./various_things/users";
 
@@ -70,6 +70,11 @@ function App(){
 
     function handleUnfollow(unfollowData){
         dispatch(unfollow(unfollowData));
+    }
+
+    function handlePinOpenerClick({ pinTags }){
+        dispatch(updateTagsViewFrequencyHistogram({ pinTags }));
+        console.log(users)
     }
 
     /*---Search Term Handling---*/
@@ -146,6 +151,7 @@ function App(){
                 handlePinDelete={handlePinDelete}
                 handlePinSave={handlePinSave}
                 handlePinRemoveFromSaved={handlePinRemoveFromSaved}
+                handlePinOpenerClick={handlePinOpenerClick}
 
                 handleFollow={handleFollow}
                 handleUnfollow={handleUnfollow}
