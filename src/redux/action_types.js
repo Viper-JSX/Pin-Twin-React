@@ -16,6 +16,9 @@ export const DELETE_PIN = "DELETE_PIN";
 export const SAVE_PIN = "SAVE_PIN";
 export const DELETE_PIN_FROM_SAVED = "DELETE_PIN_FROM_SAVED";
 
+export const FOLLOW = "FOLLOW";
+export const UNFOLLOW = "UNFOLLOW";
+
 /*---Search---*/
 export const CHANGE_PINS_SEARCH_TERM = "CHANGE_PINS_SEARCH_TERM";
 export const CHANGE_PINS_SORT_CRITERIA = "CHANGE_PINS_SEARCH_SORT_CRITERIA";

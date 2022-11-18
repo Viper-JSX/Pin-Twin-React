@@ -10,3 +10,4 @@ export const users = [
 users[0].pins[0] = pins[0];
 users[1].pins[0] = pins[1];
 users[1].profileTopImageSrc = "https://wallpapershome.com/images/pages/ico_h/24116.jpg";
+users[0].followings = 1;
