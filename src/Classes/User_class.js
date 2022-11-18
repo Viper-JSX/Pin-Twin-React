@@ -13,6 +13,7 @@ export class UserClass{
         this.tagsViewFrequency = {};
         this.followings = [];
         this.followers = [];
+        this.tagsViewFrequencyHistogram = {};
 
         this.profileImageSrc = "https://cdn.pixabay.com/photo/2018/04/18/18/56/user-3331256__340.png"; //Set some default value
         this.profileTopImageSrc = "https://images8.alphacoders.com/484/484717.jpg"; //Set some default value
