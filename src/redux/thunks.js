@@ -1,6 +1,20 @@
 import { convertTagsStringToTagsArray } from "../utilities/convertTagsStringToTagsArray";
 import { users } from "../various_things/users";
-import { CREATE_PIN, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FOLLOW, HIDE_MESSAGE, LOGIN, SAVE_PIN, SHOW_MESSAGE, SIGN_UP, UNFOLLOW } from "./action_types";
+import { CREATE_PIN, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FILTER_PINS_BASED_ON_USER_PREFERENCES, FOLLOW, HIDE_MESSAGE, LOGIN, SAVE_PIN, SEARCH_PINS, SHOW_MESSAGE, SHOW_RECENT_PINS, SIGN_UP, UNFOLLOW } from "./action_types";
+
+export function searchPins(payload){
+    return function(dispatch){
+        if(payload.searchTerm){ //User entered something to search bar
+            dispatch({ type: SEARCH_PINS, payload: { searchTerm: payload.searchTerm } });
+        }
+        else if(!action.payload.searchTerm && action.payload.userIsLoggedIn){ //user is logged in but did not typed anything to search bar, in this case - show pins based on user's preferences
+            dispatch({ type: FILTER_PINS_BASED_ON_USER_PREFERENCES, payload: { userFavouriteTags: payload.userFavouriteTags, userSubscriptions: payload.userSubscriptions } })
+        }
+        else{ //if user not logged in and nothing is searched then show recent pins
+            dispatch({ type: SHOW_RECENT_PINS });
+        }
+    }
+}
 
 export function login(payload){
     return function(dispatch){

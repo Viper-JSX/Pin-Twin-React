@@ -4,6 +4,7 @@ export const SHOW_MORE_PINS = "SHOW_MORE_PINS";
 export const FORCE_UPDATE = "FORCE_UPDATE";
 export const SEARCH_PINS = "SEARCH_PINS";
 export const FILTER_PINS_BASED_ON_USER_PREFERENCES = "FILTER_PINS_BASED_ON_USER_PREFERENCES";
+export const SHOW_RECENT_PINS = "SHOW_RECENT_PINS";
 
 /*---User---*/
 export const LOGIN = "LOGIN";
