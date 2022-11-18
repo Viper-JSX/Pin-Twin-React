@@ -2,7 +2,7 @@ import { UserClass } from "../Classes/User_class";
 import { PinClass } from "../Classes/Pin_class"; 
 
 import { users } from "../various_things/users";
-import { CANCEL_CONFIRMATION, CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CONFIRM, CONFIRM_ACTION, CREATE_PIN, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SAVE_PIN, SET_CONFIRMATION_VALUES, SHOW_MESSAGE, SHOW_MORE_PINS, SIGN_UP } from "./action_types";
+import { CANCEL_CONFIRMATION, CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CONFIRM, CONFIRM_ACTION, CREATE_PIN, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FOLLOW, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SAVE_PIN, SET_CONFIRMATION_VALUES, SHOW_MESSAGE, SHOW_MORE_PINS, SIGN_UP, UNFOLLOW } from "./action_types";
 import { defaultState } from "./default_state";
 import { pins } from "../various_things/pins";
 
@@ -85,6 +85,15 @@ export function user(state=defaultState.user, action){
         case DELETE_PIN_FROM_SAVED: {
             users.find((user) => user.id === action.payload.deleteData.userId).deletePinFromSaved(action.payload.deleteData.pinID);
             return { ...state, savedPins: state.savedPins.filter((pin) => pin.id !== action.payload.deleteData.pinId) };
+        }
+        case FOLLOW: {
+            
+            console.log("Follow");
+            return state;
+        }
+        case UNFOLLOW: {
+            console.log("Unfollow");
+            return state;
         }
         default: {
             return state;
