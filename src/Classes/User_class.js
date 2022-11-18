@@ -62,6 +62,17 @@ export class UserClass{
         this.followers.splice(this.followers.indexOf(followerId), 1);
     }
 
+    updateTagsViewFrequencyHistogram({ pinTags }){
+        pinTags.forEach((tag) => {
+            if(this.tagsViewFrequencyHistogram[tag]){
+                this.tagsViewFrequencyHistogram[tag]++;
+            }
+            else{
+                this.tagsViewFrequencyHistogram[tag] = 1; 
+            }
+        });
+    };
+
     edit({ profileData }){
         this.profileImageSrc = profileData.profileImageSrc; //These are the properties that currently can be changed
         this.profileTopImageSrc = profileData.profileTopImageSrc;
