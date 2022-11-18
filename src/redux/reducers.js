@@ -87,13 +87,14 @@ export function user(state=defaultState.user, action){
             return { ...state, savedPins: state.savedPins.filter((pin) => pin.id !== action.payload.deleteData.pinId) };
         }
         case FOLLOW: {
-            
-            console.log("Follow");
-            return state;
+            users.find((user) => user.id === state.id).follow({ userToFollowId: action.payload.userToFollowId });
+            users.find((user) => user.id === action.payload.userToFollowId).addFollower({ folowerToAddId: state.id });
+            return { ...state, followings: [ ...state.followings, action.payload.userToFollowId ] };
         }
         case UNFOLLOW: {
-            console.log("Unfollow");
-            return state;
+            users.find((user) => user.id === state.id).unfollow({ userToFollowId: action.payload.userToUnfollowId });
+            users.find((user) => user.id === action.payload.userToUnfollowId).deleteFollower({ folowerToAddId: state.id });
+            return { ...state, followings: state.followings.filter((followerId) => followerId !== action.payload.userToUnfollowId) };
         }
         default: {
             return state;
