@@ -4,7 +4,12 @@ function ProfileTopImage({ imageSrc, handleProfileTopImageChange }){
     return(
         <div className="profileTopImageContainer">
             <img className="profileTopImage" src={imageSrc} />
-            <FileEditButton accept={"image/png, image/gif, image/jpeg"} handler={handleProfileTopImageChange} />
+            {
+                handleProfileTopImageChange ? //If user is viewing his own profile
+                <FileEditButton accept={"image/png, image/gif, image/jpeg"} handler={handleProfileTopImageChange} />
+                :
+                null
+            }
         </div>
     );
 }

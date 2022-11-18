@@ -8,7 +8,12 @@ function UserProfileImageAndNickname({ nickname, profileImageSrc, handleUserProf
             </div>
             
             <b className="userNickname">{nickname}</b>
-            <FileEditButton accept={"image/png, image/gif, image/jpeg"} handler={handleUserProfileImageChange} />
+            {
+                handleUserProfileImageChange ? //If user is viewing his own profile
+                <FileEditButton accept={"image/png, image/gif, image/jpeg"} handler={handleUserProfileImageChange} />
+                :
+                null
+            }
         </div>
     );
 }

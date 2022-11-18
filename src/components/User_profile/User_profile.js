@@ -38,7 +38,7 @@ function UserProfileWindow({ handleProfileEdit, handlePinSave, handlePinRemoveFr
         };
     }
 
-    if(otherUser){
+    if(otherUser && user?.id !== otherUser.id){ //If other user was passed to view and if user opened not his own profile through ProfileOpener. User can be not existing that's why optional chaining is user
         return(
             <div className="userProfileWindow"> 
             <ProfileTopImage imageSrc={otherUser.profileTopImageSrc} />
