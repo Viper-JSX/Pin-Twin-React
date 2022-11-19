@@ -14,13 +14,14 @@ export class PinClass{
         currentIdCount++;
     }
 
-    addComment(comment){
-        this.comments.unshift(comment);
-        console.log(this.comments);
+    addComment(pinComment){
+        this.comments.unshift(pinComment);
+        console.log(this.comments, pinComment);
     }
 
     deleteComment(commentId){
-        this.comments.splice(this.comments.findIndex((comment) => this.comment.id === commentId), 1);
+        console.log(this.comments, "delete")
+        this.comments.splice(this.comments.findIndex((comment) => comment.id === commentId), 1);
         console.log(this.comments);
     }
 

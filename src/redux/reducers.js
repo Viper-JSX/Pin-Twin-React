@@ -6,6 +6,7 @@ import { CANCEL_CONFIRMATION, CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEAR
 import { defaultState } from "./default_state";
 import { pins } from "../various_things/pins";
 import { filterPinsBasedOnUserPreferences } from "../utilities/filter_pins_based_on_user_preferences";
+import { CommentClass } from "../Classes/CommentCLass";
 
 
 export function app(state=defaultState.app, action){
@@ -29,11 +30,12 @@ export function app(state=defaultState.app, action){
             return state;
         }
         case CREATE_COMMENT: {
-            console.log("Commenting");
+            const newComment = new CommentClass(action.payload.pinId, action.payload.authorId, action.payload.commentText);
+            pins.find((pin) => pin.id === action.payload.pinId).addComment(newComment);
             return state;
         }
         case DELETE_COMMENT: {
-            console.log("Deleting comment");
+            pins.find((pin) => pin.id === action.payload.pinId).deleteComment(action.payload.commentId);
             return state;
         }
         default:{

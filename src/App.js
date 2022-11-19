@@ -133,8 +133,14 @@ function App(){
         dispatch(cancelConfirmation());
     }
 
-    useEffect(() => handleLoginWindowOpen()), [""];
-    handleCommentCreate()
+    useEffect(() => {
+        handleLoginWindowOpen();
+
+        //handleCommentCreate({ pinId: 0, authorId: 0, commentText: "New comment" });
+        //handleCommentCreate({ pinId: 0, authorId: 0, commentText: "New comment1" });
+        //handleCommentCreate({ pinId: 0, authorId: 0, commentText: "New comment2" });
+        //handleCommentDelete({ pinId: 0, commentId: 1 });
+    }), [""];
 
     return(
         <div className="App">
