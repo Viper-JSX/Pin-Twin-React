@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux/es/exports";
-import { pins } from "../../various_things/pins";
 
 import Pins from "../Pins/Pins";
 
 function MainPage({ handlePinOpenerClick, handlePinSave }){
-    const user = useSelector((state) => state.user);
+    const [ user, pinsToShow ] = useSelector((state) => [ state.user, state.app.pinsToShow ]);
+    console.log(pinsToShow)
 
     return(
         <div id="mainPage">
@@ -12,7 +12,7 @@ function MainPage({ handlePinOpenerClick, handlePinSave }){
 
             {
                 user ? 
-                <Pins pins={pins} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />
+                <Pins pins={pinsToShow} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />
                 :
                 "Some other content"
             }
