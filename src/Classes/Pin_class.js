@@ -14,6 +14,16 @@ export class PinClass{
         currentIdCount++;
     }
 
+    addComment(comment){
+        this.comments.unshift(comment);
+        console.log(this.comments);
+    }
+
+    deleteComment(commentId){
+        this.comments.splice(this.comments.findIndex((comment) => this.comment.id === commentId), 1);
+        console.log(this.comments);
+    }
+
     edit(imageSrc, title, discription, tags){
         this.imageSrc = imageSrc;
         this.title = title;
