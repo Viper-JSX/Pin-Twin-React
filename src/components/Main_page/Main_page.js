@@ -11,7 +11,11 @@ function MainPage({ handlePinOpenerClick, handlePinSave }){
 
             {
                 user ? 
-                <Pins pins={pinsToShow} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />
+                <Pins 
+                    pins={pinsToShow} 
+                    handlePinOpenerClick={handlePinOpenerClick} 
+                    handlePinSave={handlePinSave} 
+                />
                 :
                 "Some other content"
             }

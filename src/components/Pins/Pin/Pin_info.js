@@ -5,7 +5,6 @@ function PinInfo({ pin }){
         <div className="pinInfo">
             <b>{ pin.title }</b>
             <p>{ pin.discription }</p>
-            <Comments comments={pin.comments} />
         </div>
     );
 }

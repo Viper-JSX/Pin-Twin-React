@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function CommentCreator({ pinId, handleCommentCreate }){
     const [ commentData, setCommentData ] = useState({ commentText: "" });

@@ -16,7 +16,7 @@ function App(){
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
 
-    useSelector((state) => console.log(state.app.pinsToShow, pins))
+   //useSelector((state) => console.log(state.app.pinsToShow, pins))
 
     /*---User---*/
     function handleLogin({ event, loginData }){
@@ -86,9 +86,6 @@ function App(){
         }
 
         dispatch(searchPins(searchData));
-        handleCommentCreate({ pinId: 1, authorId: 0, commentText: "Commet 1" })
-        handleCommentCreate({ pinId: 1, authorId: 0, commentText: "Commet 2" })
-        handleCommentDelete({ pinId: 1, commentId: 1 })
     }
 
     function handleUserPinsSearchTermChange(event){
@@ -163,6 +160,9 @@ function App(){
 
                 handleFollow={handleFollow}
                 handleUnfollow={handleUnfollow}
+
+                handleCommentCreate={handleCommentCreate}
+                handleCommentDelete={handleCommentDelete}
 
                 handleConfirmationWindowOpen={handleConfirmationWindowOpen}
                 handleConfirmationCancel={handleConfirmationCancel}
