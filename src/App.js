@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { pins } from "./various_things/pins";
 
 import { cancelConfirmation, changeConversationsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, logout, openLoginWindow, openSignUpWindow, setConfirmationValues, updateTagsViewFrequencyHistogram } from "./redux/action_creators";
-import { login, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow, searchPins } from "./redux/thunks";
+import { login, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow, searchPins, createComment, deleteComment } from "./redux/thunks";
 import { selectMostFavouriteTags } from "./utilities/select_most_favourite_tags";
 
 
@@ -63,6 +63,14 @@ function App(){
 
     function handleUnfollow(unfollowData){
         dispatch(unfollow(unfollowData));
+    }
+
+    function handleCommentCreate(commentData){
+        dispatch(createComment(commentData));
+    }
+
+    function handleCommentDelete(commentDeleteData){
+        dispatch(deleteComment(commentDeleteData));
     }
 
     function handlePinOpenerClick({ pinTags }){
@@ -126,7 +134,7 @@ function App(){
     }
 
     useEffect(() => handleLoginWindowOpen()), [""];
-    //handleProfileEdit();
+    handleCommentCreate()
 
     return(
         <div className="App">
