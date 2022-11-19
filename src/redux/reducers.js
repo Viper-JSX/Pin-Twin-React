@@ -12,7 +12,12 @@ export function app(state=defaultState.app, action){
     switch(action.type){
         case SEARCH_PINS: {
             const pinsSearchTerm = action.payload.pinsSearchTerm.toLowerCase();
-            return { ...state, pinsToShow: pins.filter((pin) => ( ( pin.title.toLowerCase().indexOf(pinsSearchTerm) ) >= 0 || ( pin.tags.some((tag) => pinsSearchTerm.indexOf(tag) ) >= 0 || ( tag.indexOf(pinsSearchTerm) >= 0) ) )) };
+
+            return { ...state, pinsToShow: pins.filter((pin) => 
+                pin.title.toLowerCase().includes(pinsSearchTerm)  
+                || 
+                pin.tags.some((tag) => pinsSearchTerm.includes(tag) || tag.includes(pinsSearchTerm) ))
+            };
         }
         case FILTER_PINS_BASED_ON_USER_PREFERENCES: {
             return { ...state, pinsToShow: filterPinsBasedOnUserPreferences(action.payload.pins, action.payload.userFollowings, action.payload.userFavouriteTags) }; //Maybe will require json.stringify and json.parse
