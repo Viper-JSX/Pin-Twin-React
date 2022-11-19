@@ -22,6 +22,5 @@ export function filterPinsBasedOnUserPreferences( pins, userFollowings, userFavo
         }
     }
 
-    console.log(pins, pinsToShow)
     return pinsToShow;
 }

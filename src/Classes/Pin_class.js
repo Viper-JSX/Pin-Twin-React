@@ -16,13 +16,10 @@ export class PinClass{
 
     addComment(pinComment){
         this.comments.unshift(pinComment);
-        console.log(this.comments, pinComment);
     }
 
     deleteComment(commentId){
-        console.log(this.comments, "delete")
         this.comments.splice(this.comments.findIndex((comment) => comment.id === commentId), 1);
-        console.log(this.comments);
     }
 
     edit(imageSrc, title, discription, tags){

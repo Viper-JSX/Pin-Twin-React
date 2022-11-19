@@ -14,25 +14,36 @@ export function app(state=defaultState.app, action){
         case SEARCH_PINS: {
             const pinsSearchTerm = action.payload.pinsSearchTerm.toLowerCase();
 
-            return { ...state, pinsToShow: pins.filter((pin) => 
+            return { ...state, pinsToShow: JSON.parse(JSON.stringify(pins.filter((pin) => 
                 pin.title.toLowerCase().includes(pinsSearchTerm)  
                 || 
                 pin.tags.some((tag) => pinsSearchTerm.includes(tag) || tag.includes(pinsSearchTerm) ))
-            };
+            ))};
         }
         case FILTER_PINS_BASED_ON_USER_PREFERENCES: {
-            return { ...state, pinsToShow: filterPinsBasedOnUserPreferences(action.payload.pins, action.payload.userFollowings, action.payload.userFavouriteTags) }; //Maybe will require json.stringify and json.parse
+            return { ...state, pinsToShow: JSON.parse(JSON.stringify(filterPinsBasedOnUserPreferences(action.payload.pins, action.payload.userFollowings, action.payload.userFavouriteTags))) }; //Maybe will require json.stringify and json.parse
         }
         case SHOW_RECENT_PINS: {
-            return { ...state, pinsToShow: pins }; //May not update 
+            return { ...state, pinsToShow: JSON.parse(JSON.stringify(pins)) }; //May not update 
         }
         case SHOW_MORE_PINS: {
             return state;
         }
         case CREATE_COMMENT: {
             const newComment = new CommentClass(action.payload.pinId, action.payload.authorId, action.payload.commentText);
+            const updatedPinsToShow = state.pinsToShow
+            .map((pin) => {
+                if(pin.id === action.payload.pinId){
+                    return { ...pin, comments: [ ...pin.comments, { id: newComment.id, pinId: newComment.pinId, authorId: newComment.authorId, text: newComment.text  } ] };
+                }
+                return pin;
+            });
+
             pins.find((pin) => pin.id === action.payload.pinId).addComment(newComment);
-            return state;
+
+            //console.log("Redux: ",updatedPinsToShow, "Global: ", pins, newComment);
+
+            return { ...state, pinsToShow: updatedPinsToShow };
         }
         case DELETE_COMMENT: {
             pins.find((pin) => pin.id === action.payload.pinId).deleteComment(action.payload.commentId);

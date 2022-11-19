@@ -13,7 +13,6 @@ function ConfirmationWindow({ handleConfirmationCancel, handlePinDelete }){
 
         switch(confirmationValues.confirmationType){
             case CONFIRM_PIN_DELETE: {
-                console.log("Pin delete confirmed")
                 handlePinDelete({ pinId: confirmationValues.pinId });
             }
         }
