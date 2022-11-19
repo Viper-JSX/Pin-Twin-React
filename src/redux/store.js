@@ -1,8 +1,9 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { login } from "./action_creators";
-import { search, user, authorization, message, confirmation, update } from "./reducers";
+import { app, search, user, authorization, message, confirmation, update } from "./reducers";
 
 const reducer = {
+    app, 
     user,
     search,
     authorization,

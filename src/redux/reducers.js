@@ -11,11 +11,11 @@ import { filterPinsBasedOnUserPreferences } from "../utilities/filter_pins_based
 export function app(state=defaultState.app, action){
     switch(action.type){
         case SEARCH_PINS: {
-            const searchTerm = action.payload.searchTerm.toLowerCase();
-            return { ...state, pinsToShow: pins.filter((pin) => ( ( pin.title.toLowerCase().indexOf(searchTerm) ) >= 0 || ( pin.tags.some((tag) => searchTerm.indexOf(tag) ) >= 0 || ( tag.indexOf(searchTerm) >= 0) ) )) };
+            const pinsSearchTerm = action.payload.pinsSearchTerm.toLowerCase();
+            return { ...state, pinsToShow: pins.filter((pin) => ( ( pin.title.toLowerCase().indexOf(pinsSearchTerm) ) >= 0 || ( pin.tags.some((tag) => pinsSearchTerm.indexOf(tag) ) >= 0 || ( tag.indexOf(pinsSearchTerm) >= 0) ) )) };
         }
         case FILTER_PINS_BASED_ON_USER_PREFERENCES: {
-            return { ...state, pinsToShow: filterPinsBasedOnUserPreferences(action.payload.followings, action.payload.favouriteTags, action.payload.pins) }; //Maybe will require json.stringify and json.parse
+            return { ...state, pinsToShow: filterPinsBasedOnUserPreferences(action.payload.pins, action.payload.userFollowings, action.payload.userFavouriteTags) }; //Maybe will require json.stringify and json.parse
         }
         case SHOW_RECENT_PINS: {
             return { ...state, pinsToShow: pins }; //May not update 
@@ -74,7 +74,6 @@ export function user(state=defaultState.user, action){
 
         }
         case DELETE_PIN:{
-            console.log("Deleting pin", action.payload)
             for(let i = 0; i < pins.length; i++){
                 if(pins[i].id === action.payload.pinId){
                     pins.splice(i, 1);
@@ -135,7 +134,7 @@ export function user(state=defaultState.user, action){
 export function search(state=defaultState.search, action){
     switch(action.type){
         case CHANGE_PINS_SEARCH_TERM:{
-            return  { ...state, pinsSearch: { ...state.pinsSearch, term: action.payload.term } };
+            return  { ...state, pinsSearch: { ...state.pinsSearch, term: action.payload.pinsSearchTerm } };
         }
         case CHANGE_PINS_SORT_CRITERIA:{
             return  { ...state, pinsSearch: { ...state.pinsSearch, sortCriteria: action.payload.criteria } };
@@ -195,7 +194,6 @@ export function confirmation(state=defaultState.confirmation, action){
             return {};
         }
         case SET_CONFIRMATION_VALUES: {
-            console.log("Setting values")
             return { ...action.payload };
         }
         default: {

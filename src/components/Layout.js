@@ -9,6 +9,7 @@ import ConfirmationWindow from "./Reusable_components/Confirmation_window/Confir
 import UserProfile from "./User_profile/User_profile";
 
 function Layout({ 
+    handlePinsSearch,
     handlePinsSearchTermChange,
 
     handleLogin,
@@ -37,6 +38,7 @@ function Layout({
     return(
         <div id="layout">
             <Header 
+                handlePinsSearch={handlePinsSearch}
                 handlePinsSearchTermChange={handlePinsSearchTermChange} 
                 handleLoginWindowOpen={handleLoginWindowOpen}
                 handleSignUpWindowOpen={handleAuthorizationWindowClose}

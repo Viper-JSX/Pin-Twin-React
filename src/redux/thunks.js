@@ -1,17 +1,18 @@
+import { useActionData } from "react-router";
 import { convertTagsStringToTagsArray } from "../utilities/convertTagsStringToTagsArray";
 import { users } from "../various_things/users";
-import { CREATE_PIN, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FILTER_PINS_BASED_ON_USER_PREFERENCES, FOLLOW, HIDE_MESSAGE, LOGIN, SAVE_PIN, SEARCH_PINS, SHOW_MESSAGE, SHOW_RECENT_PINS, SIGN_UP, UNFOLLOW } from "./action_types";
+import { CHANGE_PINS_SEARCH_TERM, CREATE_PIN, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FILTER_PINS_BASED_ON_USER_PREFERENCES, FOLLOW, HIDE_MESSAGE, LOGIN, SAVE_PIN, SEARCH_PINS, SHOW_MESSAGE, SHOW_RECENT_PINS, SIGN_UP, UNFOLLOW } from "./action_types";
 
 
 export function searchPins(payload){
-    console.log(payload)
     return function(dispatch){
-        if(payload.searchTerm){ //User entered something to search bar
-            //set search reducer state
-            dispatch({ type: SEARCH_PINS, payload: { searchTerm: payload.searchTerm } });
+        dispatch({ type: CHANGE_PINS_SEARCH_TERM, payload: { pinsSearchTerm: payload.pinsSearchTerm } });
+
+        if(payload.pinsSearchTerm){ //User entered something to search bar
+            dispatch({ type: SEARCH_PINS, payload: { pinsSearchTerm: payload.pinsSearchTerm } });
         }
-        else if(!action.payload.searchTerm && action.payload.userIsLoggedIn){ //user is logged in but did not typed anything to search bar, in this case - show pins based on user's preferences
-            dispatch({ type: FILTER_PINS_BASED_ON_USER_PREFERENCES, payload: { userFavouriteTags: payload.userFavouriteTags, userFollowings: payload.userFollowings } })
+        else if(!payload.searchTerm && payload.userIsLoggedIn){ //user is logged in but did not typed anything to search bar, in this case - show pins based on user's preferences
+            dispatch({ type: FILTER_PINS_BASED_ON_USER_PREFERENCES, payload: { pins: payload.pins, userFavouriteTags: payload.userFavouriteTags, userFollowings: payload.userFollowings } });
         }
         else{ //if user not logged in and nothing is searched then show recent pins
             dispatch({ type: SHOW_RECENT_PINS });

@@ -1,43 +1,22 @@
 import "./css/main.css";
 
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import Layout from "./components/Layout";
 
 import { useDispatch, useSelector } from 'react-redux';
-
-import { users } from "./various_things/users";
 import { pins } from "./various_things/pins";
 
 import { cancelConfirmation, changeConversationsSearchTerm, changePinsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, forceUpdate, logout, openLoginWindow, openSignUpWindow, setConfirmationValues, updateTagsViewFrequencyHistogram } from "./redux/action_creators";
 import { login, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow, searchPins } from "./redux/thunks";
 import { selectMostFavouriteTags } from "./utilities/select_most_favourite_tags";
-import { filterPinsBasedOnUserPreferences } from "./utilities/filter_pins_based_on_user_preferences";
 
 
 function App(){
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
 
-    /*function handlePinsSearch(event){
-        const searchData = { userIsLoggedIn: Boolean(user), searchTerm: event.target.value, userFollowings: user?.followings, userFavouriteTags: [] };
-        
-        if(searchData.userIsLoggedIn){
-            searchData.userFavouriteTags = selectMostFavouriteTags(user.updateTagsViewFrequencyHistogram);
-        }
-
-        dispatch(searchPins(searchData));
-    }*/
-
-    function handlePinsSearch(event){
-        const searchData = { userIsLoggedIn: Boolean(user), searchTerm: "Sobora", userFollowings: user?.followings, userFavouriteTags: [] };
-        
-        if(searchData.userIsLoggedIn){
-            searchData.userFavouriteTags = selectMostFavouriteTags(user.updateTagsViewFrequencyHistogram);
-        }
-
-        dispatch(searchPins(searchData));
-    }
+    useSelector((state) => console.log(state.app.pinsToShow))
 
     /*---User---*/
     function handleLogin({ event, loginData }){
@@ -88,12 +67,17 @@ function App(){
 
     function handlePinOpenerClick({ pinTags }){
         dispatch(updateTagsViewFrequencyHistogram({ pinTags }));
-        console.log(users)
     }
 
     /*---Search Term Handling---*/
     function handlePinsSearchTermChange(event){
-        dispatch(changePinsSearchTerm({term: event.target.value}));
+        const searchData = { userIsLoggedIn: Boolean(user), pins, pinsSearchTerm: event.target.value, userFollowings: user?.followings, userFavouriteTags: [] };
+        
+        if(searchData.userIsLoggedIn){
+            searchData.userFavouriteTags = selectMostFavouriteTags(user.tagsViewFrequencyHistogram);
+        }
+
+        dispatch(searchPins(searchData));
     }
 
     function handleUserPinsSearchTermChange(event){
@@ -120,7 +104,6 @@ function App(){
     }
 
     function handleSignUpWindowOpen(){ 
-        console.log("Opening sign-up");
         dispatch(openSignUpWindow());
     }
 
@@ -131,7 +114,6 @@ function App(){
 
     /*---Confirmation---*/
     function handleConfirmationWindowOpen(confirmationValues){
-        console.log("Confirm open")
         dispatch(setConfirmationValues(confirmationValues));
     }
 
@@ -143,7 +125,7 @@ function App(){
         dispatch(cancelConfirmation());
     }
 
-    handleLoginWindowOpen();
+    useEffect(() => handleLoginWindowOpen()), [""];
     //handleProfileEdit();
 
     return(
