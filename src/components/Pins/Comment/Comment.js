@@ -2,8 +2,7 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { users } from "../../../various_things/users";
 
-function Comment({ comment, handleUserDelete }){
-    const userId = useSelector((state) => state.user.id);
+function Comment({ userId, comment, handleCommentDelete }){
     const commentAuthor = users.find((user) => user.id === comment.creatorId);
 
     return(
