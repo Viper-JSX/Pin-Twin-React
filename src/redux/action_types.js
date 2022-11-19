@@ -19,6 +19,9 @@ export const DELETE_PIN = "DELETE_PIN";
 export const SAVE_PIN = "SAVE_PIN";
 export const DELETE_PIN_FROM_SAVED = "DELETE_PIN_FROM_SAVED";
 
+export const CREATE_COMMENT = "CREATE_COMMENT";
+export const DELETE_COMMENT = "DELETE_COMMENT";
+
 export const FOLLOW = "FOLLOW";
 export const UNFOLLOW = "UNFOLLOW";
 
