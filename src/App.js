@@ -19,8 +19,18 @@ function App(){
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
 
-    function handlePinsSearch(event){
+    /*function handlePinsSearch(event){
         const searchData = { userIsLoggedIn: Boolean(user), searchTerm: event.target.value, userFollowings: user?.followings, userFavouriteTags: [] };
+        
+        if(searchData.userIsLoggedIn){
+            searchData.userFavouriteTags = selectMostFavouriteTags(user.updateTagsViewFrequencyHistogram);
+        }
+
+        dispatch(searchPins(searchData));
+    }*/
+
+    function handlePinsSearch(event){
+        const searchData = { userIsLoggedIn: Boolean(user), searchTerm: "Sobora", userFollowings: user?.followings, userFavouriteTags: [] };
         
         if(searchData.userIsLoggedIn){
             searchData.userFavouriteTags = selectMostFavouriteTags(user.updateTagsViewFrequencyHistogram);

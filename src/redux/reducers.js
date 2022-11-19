@@ -2,14 +2,25 @@ import { UserClass } from "../Classes/User_class";
 import { PinClass } from "../Classes/Pin_class"; 
 
 import { users } from "../various_things/users";
-import { CANCEL_CONFIRMATION, CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CONFIRM, CONFIRM_ACTION, CREATE_PIN, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FOLLOW, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SAVE_PIN, SET_CONFIRMATION_VALUES, SHOW_MESSAGE, SHOW_MORE_PINS, SIGN_UP, UNFOLLOW, UPDATE_TAGS_VIEW_FREQUENCY_HISTOGRAM } from "./action_types";
+import { CANCEL_CONFIRMATION, CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CONFIRM, CONFIRM_ACTION, CREATE_PIN, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FILTER_PINS_BASED_ON_USER_PREFERENCES, FOLLOW, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SAVE_PIN, SEARCH_PINS, SET_CONFIRMATION_VALUES, SHOW_MESSAGE, SHOW_MORE_PINS, SHOW_RECENT_PINS, SIGN_UP, UNFOLLOW, UPDATE_TAGS_VIEW_FREQUENCY_HISTOGRAM } from "./action_types";
 import { defaultState } from "./default_state";
 import { pins } from "../various_things/pins";
+import { filterPinsBasedOnUserPreferences } from "../utilities/filter_pins_based_on_user_preferences";
 
 
 export function app(state=defaultState.app, action){
     switch(action.type){
-        case SHOW_MORE_PINS:{
+        case SEARCH_PINS: {
+            const searchTerm = action.payload.searchTerm.toLowerCase();
+            return { ...state, pinsToShow: pins.filter((pin) => ( ( pin.title.toLowerCase().indexOf(searchTerm) ) >= 0 || ( pin.tags.some((tag) => searchTerm.indexOf(tag) ) >= 0 || ( tag.indexOf(searchTerm) >= 0) ) )) };
+        }
+        case FILTER_PINS_BASED_ON_USER_PREFERENCES: {
+            return { ...state, pinsToShow: filterPinsBasedOnUserPreferences(action.payload.followings, action.payload.favouriteTags, action.payload.pins) }; //Maybe will require json.stringify and json.parse
+        }
+        case SHOW_RECENT_PINS: {
+            return { ...state, pinsToShow: pins }; //May not update 
+        }
+        case SHOW_MORE_PINS: {
             return state;
         }
         default:{
