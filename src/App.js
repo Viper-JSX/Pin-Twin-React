@@ -86,13 +86,6 @@ function App(){
         }
 
         dispatch(searchPins(searchData));
-        setTimeout(() => {
-            handleCommentCreate({ pinId: 0, authorId: 0, commentText: "New comment0" });
-            handleCommentCreate({ pinId: 1, authorId: 1, commentText: "New comment2" });
-            //handleCommentCreate({ pinId: 0, authorId: 0, commentText: "New comment2" });
-            //console.log("Created comment")
-            //handleCommentDelete({ pinId: 0, commentId: 1 });
-        }, 1000)
     }
 
     function handleUserPinsSearchTermChange(event){
