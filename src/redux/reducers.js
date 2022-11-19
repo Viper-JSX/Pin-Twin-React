@@ -41,13 +41,20 @@ export function app(state=defaultState.app, action){
 
             pins.find((pin) => pin.id === action.payload.pinId).addComment(newComment);
 
-            //console.log("Redux: ",updatedPinsToShow, "Global: ", pins, newComment);
-
             return { ...state, pinsToShow: updatedPinsToShow };
         }
         case DELETE_COMMENT: {
+            const updatedPinsToShow = state.pinsToShow
+            .map((pin) => {
+                if(pin.id === action.payload.pinId){
+                    return { ...pin, comments: pin.comments.filter((comment) => comment.id !== action.payload.commentId) };
+                }
+                return pin;
+            });
+
             pins.find((pin) => pin.id === action.payload.pinId).deleteComment(action.payload.commentId);
-            return state;
+
+            return { ...state, pinsToShow: updatedPinsToShow };
         }
         default:{
             return state;

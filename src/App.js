@@ -86,6 +86,9 @@ function App(){
         }
 
         dispatch(searchPins(searchData));
+        handleCommentCreate({ pinId: 1, authorId: 0, commentText: "Commet 1" })
+        handleCommentCreate({ pinId: 1, authorId: 0, commentText: "Commet 2" })
+        handleCommentDelete({ pinId: 1, commentId: 1 })
     }
 
     function handleUserPinsSearchTermChange(event){
