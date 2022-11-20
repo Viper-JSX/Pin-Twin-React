@@ -16,8 +16,8 @@ function Layout({
     handleSignUp,
     handleProfileEdit,
 
-    handleLoginWindowOpen,
-    handleSignUpWindowOpen,
+    handleLoginFormOpen,
+    handleSignUpFormOpen,
     handleAuthorizationWindowClose,
 
     handlePinCreate,
@@ -43,13 +43,13 @@ function Layout({
             <Header 
                 handlePinsSearch={handlePinsSearch}
                 handlePinsSearchTermChange={handlePinsSearchTermChange} 
-                handleLoginWindowOpen={handleLoginWindowOpen}
-                handleSignUpWindowOpen={handleAuthorizationWindowClose}
+                handleLoginFormOpen={handleLoginFormOpen}
+                handleSignUpFormOpen={handleSignUpFormOpen}
             />
 
             <AuthorizationForm 
-                handleLoginWindowOpen={handleLoginWindowOpen}
-                handleSignUpWindowOpen={handleSignUpWindowOpen}
+                handleLoginFormOpen={handleLoginFormOpen}
+                handleSignUpFormOpen={handleSignUpFormOpen}
                 handleLogin={handleLogin}
                 handleSignUp={handleSignUp}
                 handleAuthorizationWindowClose={handleAuthorizationWindowClose} 

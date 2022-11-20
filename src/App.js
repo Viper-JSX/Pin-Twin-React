@@ -107,11 +107,12 @@ function App(){
 
 
     /*---Authorization windows---*/
-    function handleLoginWindowOpen(){
+    function handleLoginFormOpen(){
         dispatch(openLoginWindow());
     }
 
-    function handleSignUpWindowOpen(){ 
+    function handleSignUpFormOpen(){ 
+        console.log("Open sign up")
         dispatch(openSignUpWindow());
     }
 
@@ -133,9 +134,9 @@ function App(){
         dispatch(cancelConfirmation());
     }
 
-    useEffect(() => {
-        handleLoginWindowOpen();
-    }), [""];
+    //useEffect(() => {
+    //    handleLoginFormOpen();
+    //}), [""];
 
     return(
         <div className="App">
@@ -147,8 +148,8 @@ function App(){
                 handleSignUp={handleSignUp}
                 handleProfileEdit={handleProfileEdit}
 
-                handleLoginWindowOpen={handleLoginWindowOpen}
-                handleSignUpWindowOpen={handleSignUpWindowOpen}
+                handleLoginFormOpen={handleLoginFormOpen}
+                handleSignUpFormOpen={handleSignUpFormOpen}
                 handleAuthorizationWindowClose={handleAuthorizationWindowClose}
 
                 handlePinCreate={handlePinCreate}
