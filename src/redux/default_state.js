@@ -1,9 +1,10 @@
+import { pins } from "../various_things/pins";
 import { users } from "../various_things/users";
 import { NEW_TO_OLD } from "./sort_criterias";
 
 export const defaultState = {
     app:{
-        pins: [],
+        allPins: JSON.parse(JSON.stringify(pins)),
         pinsToShow: [], //Filtered pins that will be shown to user along scrolling
         currentlyShownPins: [] // Pins that are currently shown
     },
