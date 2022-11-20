@@ -23,6 +23,7 @@ export function searchPins(payload){
 export function login(payload){
     return function(dispatch){
         for(let i = 0; i < users.length; i++){
+            console.log(users[i]);
             if(users[i].email === payload.email && users[i].password === payload.password){
                 dispatch({ type: LOGIN, payload: {user: users[i]} });
                 return;

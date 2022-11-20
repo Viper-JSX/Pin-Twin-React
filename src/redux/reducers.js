@@ -78,8 +78,10 @@ export function user(state=defaultState.user, action){
         }
 
         case SIGN_UP:{
+            console.log(action.payload)
             const newUser = new UserClass(action.payload.email, action.payload.password);
             users.push(newUser);
+            console.log(newUser)
             return JSON.parse(JSON.stringify(newUser));
         }
         case CREATE_PIN:{

@@ -1,10 +1,10 @@
 let currentIdCount = 0;
 
 export class UserClass{
-    constructor(email, [password]){
+    constructor(email, password){
         this.id = currentIdCount;
         this.nickname = ( [...email].filter((element, index) => index < email.indexOf("@")) ).join("").toLocaleLowerCase() + currentIdCount.toString();
-    
+
         this.email = email;
         this.password = password;
         this.pins = [];
