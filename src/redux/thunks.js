@@ -3,7 +3,7 @@ import { convertTagsStringToTagsArray } from "../utilities/convertTagsStringToTa
 import { selectMostFavouriteTags } from "../utilities/select_most_favourite_tags";
 import { pins } from "../various_things/pins";
 import { users } from "../various_things/users";
-import { closeAuthorizationWindow } from "./action_creators";
+import { closeAuthorizationWindow, updatePinsList } from "./action_creators";
 import { CHANGE_PINS_SEARCH_TERM, CREATE_COMMENT, CREATE_PIN, DELETE_COMMENT, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FILTER_PINS_BASED_ON_USER_PREFERENCES, FOLLOW, HIDE_MESSAGE, LOGIN, SAVE_PIN, SEARCH_PINS, SHOW_MESSAGE, SHOW_RECENT_PINS, SIGN_UP, UNFOLLOW } from "./action_types";
 
 
@@ -104,6 +104,7 @@ export function editPin(payload){
         }
 
         dispatch({ type: EDIT_PIN, payload: { pinData: { ...payload.pinData, tags } }}); //implement validation
+        dispatch(updatePinsList({ pins }));
     }
 }
 
@@ -128,12 +129,14 @@ export function deletePinFromSaved(payload){
 export function createComment(payload){
     return function(dispatch){
         dispatch({ type: CREATE_COMMENT, payload });
+        dispatch(updatePinsList({ pins }));
     }
 }
 
 export function deleteComment(payload){
     return function(dispatch){
         dispatch({ type: DELETE_COMMENT, payload });
+        dispatch(updatePinsList({ pins }));
     }
 }
 

@@ -30,7 +30,6 @@ export function app(state=defaultState.app, action){
             return state;
         }
         case UPDATE_PINS_LIST: {
-            console.log(state.allPins);
             return { ...state, allPins: JSON.parse(JSON.stringify(action.payload.pins)) };
         }
         case CREATE_COMMENT: {
