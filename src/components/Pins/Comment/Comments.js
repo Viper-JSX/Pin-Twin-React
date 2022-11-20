@@ -3,7 +3,6 @@ import Comment from "./Comment";
 
 function Comments({ comments, handleCommentDelete }){
     const userId = useSelector((state) => state.user.id);
-    console.log("Commm")
     return(
         <div className="comments">
             {

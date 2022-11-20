@@ -2,7 +2,6 @@ import LogoutButton from "../Authorization/Logout_button";
 import FileEditButton from "../Reusable_components/File_edit_button/File_edit_button";
 
 function UserProfileImageAndNickname({ nickname, profileImageSrc, handleUserProfileImageChange, handleLogout }){
-    console.log(handleLogout)
 
     return(
         <div className="userProfileImageAndNickname">

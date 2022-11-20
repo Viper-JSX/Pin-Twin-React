@@ -16,7 +16,7 @@ function App(){
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
 
-   useSelector((state) => console.log(state.app.allPins, pins, "redux, global, updated"));
+   useSelector((state) => console.log(state));
 
     /*---User---*/
     function handleLogin({ event, loginData }){

@@ -12,7 +12,10 @@ import ProfileOpener from "../../User_profile/Profile_opener";
 function Pin({ handleConfirmationWindowOpen, handleCommentCreate, handleCommentDelete }){
     const user = useSelector((state) => state.user);
     const location = useLocation();
-    const pin = location.state.pin;
+    const pinId = location.state.pinId;
+    const pin = useSelector((state) => state.app.allPins?.find((pin) => pin.id === pinId));
+
+
     const similarPins = pins.filter((possibleSimilarPin) => {
         for(let i = 0; i < pin.tags.length; i++){
             if(possibleSimilarPin.tags.includes(pin.tags[i]) && possibleSimilarPin.id !== pin.id){

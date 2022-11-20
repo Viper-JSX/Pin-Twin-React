@@ -3,7 +3,6 @@ import { users } from "../../../various_things/users";
 
 function Comment({ userId, comment, handleCommentDelete }){
     const commentAuthor = users.find((user) => user.id === comment.creatorId);
-    console.log(commentAuthor, "Com");
     return(
         <div className="comment">
             {

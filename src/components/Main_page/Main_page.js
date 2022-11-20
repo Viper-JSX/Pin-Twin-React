@@ -4,6 +4,7 @@ import Pins from "../Pins/Pins";
 
 function MainPage({ handlePinOpenerClick, handlePinSave }){
     const [ user, pinsToShow ] = useSelector((state) => [ state.user, state.app.pinsToShow ]);
+    
 
     return(
         <div id="mainPage">

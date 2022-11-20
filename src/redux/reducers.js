@@ -81,10 +81,8 @@ export function user(state=defaultState.user, action){
         }
 
         case SIGN_UP:{
-            console.log(action.payload)
             const newUser = new UserClass(action.payload.email, action.payload.password);
             users.push(newUser);
-            console.log(newUser)
             return JSON.parse(JSON.stringify(newUser));
         }
         case CREATE_PIN:{
@@ -100,6 +98,7 @@ export function user(state=defaultState.user, action){
             }
 
             return {         
+                ...state,
                 pins: state.pins.map((pin) => {
                     if(pin.id === action.payload.pinData.id){
                         return { ...pin, imageSrc: action.payload.pinData.imageSrc, title: action.payload.pinData.title, discription: action.payload.pinData.discription, tags: action.payload.pinData.tags };
