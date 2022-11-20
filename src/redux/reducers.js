@@ -30,7 +30,14 @@ export function app(state=defaultState.app, action){
             return state;
         }
         case UPDATE_PINS_LIST: {
-            return { ...state, allPins: JSON.parse(JSON.stringify(action.payload.pins)) };
+            console.log(action.payload.changedPinId);
+            const updatedPin = action.payload.updatedPin;
+
+            return { 
+                ...state, 
+                allPins: JSON.parse(JSON.stringify(action.payload.pins)),
+                //pinsToShow: state.pinsToShow.map((pin) => pin.id === updatedPin.id ? updatedPin : pin)
+            };
         }
         case CREATE_COMMENT: {
             const newComment = new CommentClass(action.payload.pinId, action.payload.authorId, action.payload.commentText);
