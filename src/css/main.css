@@ -61,6 +61,7 @@ header > .search{
     width: 100vw;
     background-color: red;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .pinOpener{

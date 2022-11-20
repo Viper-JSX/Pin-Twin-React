@@ -1,4 +1,5 @@
 import { useLocation } from "react-router";
+import { useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux/es/exports";
 
 import { pins } from "../../../various_things/pins";
@@ -10,11 +11,13 @@ import CommentsSection from "../Comment/Comments_section";
 import ProfileOpener from "../../User_profile/Profile_opener";
 
 function Pin({ handleConfirmationWindowOpen, handleCommentCreate, handleCommentDelete }){
+    const [ searchParams, setSearchParams ] = useSearchParams();
+    //useSelector((state) => console.log(state.app))
+
     const user = useSelector((state) => state.user);
     const location = useLocation();
     const pinId = location.state.pinId;
     const pin = useSelector((state) => state.app.allPins?.find((pin) => pin.id === pinId));
-    
 
     const similarPins = pins.filter((possibleSimilarPin) => {
         for(let i = 0; i < pin.tags.length; i++){
