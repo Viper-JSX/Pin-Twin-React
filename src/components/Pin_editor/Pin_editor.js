@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import ImageSelect from "./Image_select";
 import PinDeleteButton from "./Pin_delete_button";
 import PinEditorInputs from "./Pin_editor_inputs";
@@ -9,6 +9,7 @@ import PinEditorTextFields from "./Pin_editor_text_fields";
 function PinEditor({ mode, handlePinCreate, handlePinEdit, handleConfirmationWindowOpen }){
     const location = useLocation();
     const userId = useSelector((state) => state.user.id);
+    const navigate = useNavigate();
     const [ pinData, setPinData ] = useState(() => {
         if(location.state?.pin){
             return { ...location.state.pin, tagsString: location.state.pin.tags.join(" ") };
@@ -49,7 +50,7 @@ function PinEditor({ mode, handlePinCreate, handlePinEdit, handleConfirmationWin
                 :
                 <>
                     <PinDeleteButton handleConfirmationWindowOpen={handleConfirmationWindowOpen} pinId={pinData.id} />
-                    <button className="editPin" onClick={ () => handlePinEdit({ pinData })}>Save</button>
+                    <button className="editPin" onClick={ () => handlePinEdit({ pinData, navigate })}>Save</button>
                 </>
             }
         </div>

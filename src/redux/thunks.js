@@ -104,6 +104,7 @@ export function editPin(payload){
 
         dispatch({ type: EDIT_PIN, payload: { pinData: { ...payload.pinData, tags } }}); //implement validation
         dispatch(updatePinsList({ pins }));
+        //payload.navigate(`/pins/${payload.pinData.id}`, { state: { pinId: payload.id }});
     }
 }
 

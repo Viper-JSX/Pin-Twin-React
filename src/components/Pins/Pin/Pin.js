@@ -14,7 +14,7 @@ function Pin({ handleConfirmationWindowOpen, handleCommentCreate, handleCommentD
     const location = useLocation();
     const pinId = location.state.pinId;
     const pin = useSelector((state) => state.app.allPins?.find((pin) => pin.id === pinId));
-
+    
 
     const similarPins = pins.filter((possibleSimilarPin) => {
         for(let i = 0; i < pin.tags.length; i++){
