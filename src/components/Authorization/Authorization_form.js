@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 
 import { NavLink } from 'react-router-dom';
@@ -17,6 +17,10 @@ function AuthorizationForm({ handleLoginFormOpen, handleSignUpFormOpen, handleLo
     }
 
     const formRef = useRef(null);
+
+    useEffect(() => {
+        setInputsValue({ ...inputsValue, email: "", password: "" });
+    }, [currentAuthorizationType]); //To reset the fields when switching or closing form
 
     if(!currentAuthorizationType){
         return null;
