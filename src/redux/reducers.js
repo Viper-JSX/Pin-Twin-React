@@ -93,12 +93,10 @@ export function user(state=defaultState.user, action){
             for(let i = 0; i < pins.length; i++){
                 if(pins[i].id === action.payload.pinData.id){
                     pins[i].edit(action.payload.pinData.imageSrc, action.payload.pinData.title, action.payload.pinData.discription, action.payload.pinData.tags);
-
                 }
             }
 
             return {         
-                ...state, 
                 pins: state.pins.map((pin) => {
                     if(pin.id === action.payload.pinData.id){
                         return { ...pin, imageSrc: action.payload.pinData.imageSrc, title: action.payload.pinData.title, discription: action.payload.pinData.discription, tags: action.payload.pinData.tags };

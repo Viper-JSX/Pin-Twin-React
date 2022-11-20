@@ -1,5 +1,7 @@
 import { useActionData } from "react-router";
 import { convertTagsStringToTagsArray } from "../utilities/convertTagsStringToTagsArray";
+import { selectMostFavouriteTags } from "../utilities/select_most_favourite_tags";
+import { pins } from "../various_things/pins";
 import { users } from "../various_things/users";
 import { closeAuthorizationWindow } from "./action_creators";
 import { CHANGE_PINS_SEARCH_TERM, CREATE_COMMENT, CREATE_PIN, DELETE_COMMENT, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FILTER_PINS_BASED_ON_USER_PREFERENCES, FOLLOW, HIDE_MESSAGE, LOGIN, SAVE_PIN, SEARCH_PINS, SHOW_MESSAGE, SHOW_RECENT_PINS, SIGN_UP, UNFOLLOW } from "./action_types";
@@ -29,6 +31,8 @@ export function login(payload){
                 dispatch({ type: LOGIN, payload: {user: users[i]} });
                 dispatch(closeAuthorizationWindow());
                 dispatch(showMessage({ title: "Success", text: "Logged in" }));
+                dispatch({ type: FILTER_PINS_BASED_ON_USER_PREFERENCES, payload: { pins: pins, userFavouriteTags: selectMostFavouriteTags(users[i].tagsViewFrequencyHistogram), userFollowings: [ users[i].followings ] } }); //if user logged in then show their most preferable pins
+
                 return;
             }
         }
@@ -49,6 +53,7 @@ export function signUp(payload){
             dispatch({ type: SIGN_UP, payload });
             dispatch(showMessage({ title: "Success", text: "Successfully signed up" }));
             dispatch(closeAuthorizationWindow());
+            dispatch({ type: SHOW_RECENT_PINS, pins: pins }); //If new accout is created, then show recent pins
         }
     };
 }
