@@ -1,4 +1,4 @@
-import { useLocation } from "react-router";
+import { Navigate, useLocation } from "react-router";
 import { useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux/es/exports";
 
@@ -16,6 +16,12 @@ function Pin({ handleConfirmationWindowOpen, handleCommentCreate, handleCommentD
     const pinId = parseInt(searchParams.get("id"));
     const user = useSelector((state) => state.user);
     const pin = useSelector((state) => state.app.allPins?.find((pin) => pin.id === pinId)); //Getting pin based on param 'id'
+
+    if(!pin){
+        return(
+            <Navigate to="/" />
+        );
+    }
 
     const similarPins = pins.filter((possibleSimilarPin) => {
         for(let i = 0; i < pin.tags.length; i++){
