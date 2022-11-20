@@ -3,7 +3,7 @@ import Comments from "../../Reusable_components/Comments/Comments";
 import CommentCreator from "./Comment_creator";
 
 function CommentsSection({ pinId, comments, handleCommentCreate, handleCommentDelete }){
-    const userId = useSelector((state) => state.user.id);
+    const userId = useSelector((state) => state.user?.id);
 
     return(
         <div className="commentsSection">

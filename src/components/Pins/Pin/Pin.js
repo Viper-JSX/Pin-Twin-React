@@ -12,12 +12,10 @@ import ProfileOpener from "../../User_profile/Profile_opener";
 
 function Pin({ handleConfirmationWindowOpen, handleCommentCreate, handleCommentDelete }){
     const [ searchParams, setSearchParams ] = useSearchParams();
-    //useSelector((state) => console.log(state.app))
 
+    const pinId = parseInt(searchParams.get("id"));
     const user = useSelector((state) => state.user);
-    const location = useLocation();
-    const pinId = location.state.pinId;
-    const pin = useSelector((state) => state.app.allPins?.find((pin) => pin.id === pinId));
+    const pin = useSelector((state) => state.app.allPins?.find((pin) => pin.id === pinId)); //Getting pin based on param 'id'
 
     const similarPins = pins.filter((possibleSimilarPin) => {
         for(let i = 0; i < pin.tags.length; i++){
@@ -30,7 +28,7 @@ function Pin({ handleConfirmationWindowOpen, handleCommentCreate, handleCommentD
     return(
         <div className="pin">
             {
-                (user.id || user.id === 0) && user.id === pin.creatorId ? //If user logged in and user created current pin
+                (user?.id || user?.id === 0) && user?.id === pin.creatorId ? //If user logged in and user created current pin
                 <OpenPinEditor pin={pin} />
                 :
                 null
