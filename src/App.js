@@ -112,7 +112,6 @@ function App(){
     }
 
     function handleSignUpFormOpen(){ 
-        console.log("Open sign up")
         dispatch(openSignUpWindow());
     }
 

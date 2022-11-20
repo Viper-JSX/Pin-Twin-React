@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-function OpenPinCreator({ handleLoginWindowOpen, handleSignUpWindowOpen }){
+function OpenPinCreator({ handleLoginFormOpen }){
     const user = useSelector((state) => state.user);
 
     return(
@@ -12,7 +12,7 @@ function OpenPinCreator({ handleLoginWindowOpen, handleSignUpWindowOpen }){
                 <button className="openPinCreator">Create <br /> pin</button>
             </NavLink>
             :
-            <button className="openPinCreator" onClick={handleLoginWindowOpen}>Create <br /> pin</button>
+            <button className="openPinCreator" onClick={handleLoginFormOpen}>Create <br /> pin</button>
         }
         </>
     );
