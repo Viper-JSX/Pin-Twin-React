@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router";
+import { Navigate, useLocation } from "react-router";
 import { SAVED_PINS, USER_PINS } from "../../various_things/constant_keywords";
 
 import Pins from "../Pins/Pins";
 import SavedPins from "../Pins/Saved_pins/Saved_pins.";
 import FollowButton from "../Reusable_components/Follow_button/Follow_button";
-import ProfileOpener from "./Profile_opener";
 import ProfileTopImage from "./Profile_top_image";
 import UserPinsSwitcher from "./User_pins_switcher";
 import UserProfileImageAndNickname from "./User_profile_image_and_nickname";
 
-function UserProfileWindow({ handleProfileEdit, handlePinSave, handlePinRemoveFromSaved, handleFollow, handleUnfollow }){
+function UserProfileWindow({ handleLogout, handleProfileEdit, handlePinSave, handlePinRemoveFromSaved, handleFollow, handleUnfollow }){
     const location = useLocation();
 
     const user = useSelector((state) => state.user); //User itself
@@ -39,21 +38,27 @@ function UserProfileWindow({ handleProfileEdit, handlePinSave, handlePinRemoveFr
         };
     }
 
+    if(!user && !otherUser){
+        return(
+            <Navigate to="/" />
+        );
+    }
+
     if(otherUser && user?.id !== otherUser.id){ //If other user was passed to view and if user opened not his own profile through ProfileOpener. User can be not existing that's why optional chaining is user
         return(
             <div className="userProfileWindow"> 
-            <ProfileTopImage imageSrc={otherUser.profileTopImageSrc} />
-            <UserProfileImageAndNickname nickname={otherUser.nickname} profileImageSrc={otherUser.profileImageSrc} />
-            <FollowButton userToFollowOrUnfollowId={otherUser.id} handleFollow={handleFollow} handleUnfollow={handleUnfollow} />
-            <Pins pins={otherUser.pins} handlePinSave={handlePinSave} />
-        </div>
+                <ProfileTopImage imageSrc={otherUser.profileTopImageSrc} />
+                <UserProfileImageAndNickname nickname={otherUser.nickname} profileImageSrc={otherUser.profileImageSrc} />
+                <FollowButton userToFollowOrUnfollowId={otherUser.id} handleFollow={handleFollow} handleUnfollow={handleUnfollow} />
+                <Pins pins={otherUser.pins} handlePinSave={handlePinSave} />
+            </div>
         );
     }
 
     return(
         <div className="userProfileWindow"> 
             <ProfileTopImage imageSrc={user.profileTopImageSrc} handleProfileTopImageChange={handleProfileTopImageChange} />
-            <UserProfileImageAndNickname nickname={user.nickname} profileImageSrc={user.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} />
+            <UserProfileImageAndNickname nickname={user.nickname} profileImageSrc={user.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} handleLogout={handleLogout} />
             
             <UserPinsSwitcher handleUserPinsSwitch={handleUserPinsSwitch} />
             {

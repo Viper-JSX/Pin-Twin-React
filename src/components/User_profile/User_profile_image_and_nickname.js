@@ -1,6 +1,9 @@
+import LogoutButton from "../Authorization/Logout_button";
 import FileEditButton from "../Reusable_components/File_edit_button/File_edit_button";
 
-function UserProfileImageAndNickname({ nickname, profileImageSrc, handleUserProfileImageChange }){
+function UserProfileImageAndNickname({ nickname, profileImageSrc, handleUserProfileImageChange, handleLogout }){
+    console.log(handleLogout)
+
     return(
         <div className="userProfileImageAndNickname">
             <div className="userProfileImageWrapper">
@@ -10,7 +13,10 @@ function UserProfileImageAndNickname({ nickname, profileImageSrc, handleUserProf
             <b className="userNickname">{nickname}</b>
             {
                 handleUserProfileImageChange ? //If user is viewing his own profile
-                <FileEditButton accept={"image/png, image/gif, image/jpeg"} handler={handleUserProfileImageChange} />
+                <>
+                    <FileEditButton accept={"image/png, image/gif, image/jpeg"} handler={handleUserProfileImageChange} />
+                    <LogoutButton handleLogout={handleLogout} />
+                </>
                 :
                 null
             }

@@ -145,6 +145,7 @@ function App(){
 
                 handleLogin={handleLogin}
                 handleSignUp={handleSignUp}
+                handleLogout={handleLogout}
                 handleProfileEdit={handleProfileEdit}
 
                 handleLoginFormOpen={handleLoginFormOpen}

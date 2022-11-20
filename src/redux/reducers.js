@@ -69,7 +69,7 @@ export function user(state=defaultState.user, action){
             return JSON.parse(JSON.stringify(action.payload.user));
         }
         case LOGOUT:{
-            return state;  
+            return null;  
         }
 
         case EDIT_PROFILE: {
