@@ -2,7 +2,7 @@ import { UserClass } from "../Classes/User_class";
 import { PinClass } from "../Classes/Pin_class"; 
 
 import { users } from "../various_things/users";
-import { CANCEL_CONFIRMATION, CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CONFIRM, CONFIRM_ACTION, CREATE_COMMENT, CREATE_PIN, DELETE_COMMENT, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FILTER_PINS_BASED_ON_USER_PREFERENCES, FOLLOW, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SAVE_PIN, SEARCH_PINS, SET_CONFIRMATION_VALUES, SHOW_MESSAGE, SHOW_MORE_PINS, SHOW_RECENT_PINS, SIGN_UP, UNFOLLOW, UPDATE_TAGS_VIEW_FREQUENCY_HISTOGRAM } from "./action_types";
+import { CANCEL_CONFIRMATION, CHANGE_CONVERSATIONS_SEARCH_TERM, CHANGE_PINS_SEARCH_TERM, CHANGE_PINS_SORT_CRITERIA, CHANGE_USER_PINS_SEARCH_TERM, CHANGE_USER_PINS_SORT_CRITERIA, CLOSE_AUTHORIZATION_WINDOW, CONFIRM, CONFIRM_ACTION, CREATE_COMMENT, CREATE_PIN, DELETE_COMMENT, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FILTER_PINS_BASED_ON_USER_PREFERENCES, FOLLOW, FORCE_UPDATE, HIDE_MESSAGE, LOGIN, LOGOUT, OPEN_LOGIN_WINDOW, OPEN_SIGN_UP_WINDOW, REGISTER, SAVE_PIN, SEARCH_PINS, SET_CONFIRMATION_VALUES, SHOW_MESSAGE, SHOW_MORE_PINS, SHOW_RECENT_PINS, SIGN_UP, UNFOLLOW, UPDATE_PINS_LIST, UPDATE_TAGS_VIEW_FREQUENCY_HISTOGRAM } from "./action_types";
 import { defaultState } from "./default_state";
 import { pins } from "../various_things/pins";
 import { filterPinsBasedOnUserPreferences } from "../utilities/filter_pins_based_on_user_preferences";
@@ -28,6 +28,10 @@ export function app(state=defaultState.app, action){
         }
         case SHOW_MORE_PINS: {
             return state;
+        }
+        case UPDATE_PINS_LIST: {
+            console.log(state.allPins);
+            return { ...state, allPins: JSON.parse(JSON.stringify(action.payload.pins)) };
         }
         case CREATE_COMMENT: {
             const newComment = new CommentClass(action.payload.pinId, action.payload.authorId, action.payload.commentText);
