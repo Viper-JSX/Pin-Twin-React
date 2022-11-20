@@ -1,6 +1,7 @@
 import { useActionData } from "react-router";
 import { convertTagsStringToTagsArray } from "../utilities/convertTagsStringToTagsArray";
 import { users } from "../various_things/users";
+import { closeAuthorizationWindow } from "./action_creators";
 import { CHANGE_PINS_SEARCH_TERM, CREATE_COMMENT, CREATE_PIN, DELETE_COMMENT, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FILTER_PINS_BASED_ON_USER_PREFERENCES, FOLLOW, HIDE_MESSAGE, LOGIN, SAVE_PIN, SEARCH_PINS, SHOW_MESSAGE, SHOW_RECENT_PINS, SIGN_UP, UNFOLLOW } from "./action_types";
 
 
@@ -26,9 +27,12 @@ export function login(payload){
             console.log(users[i]);
             if(users[i].email === payload.email && users[i].password === payload.password){
                 dispatch({ type: LOGIN, payload: {user: users[i]} });
+                dispatch(closeAuthorizationWindow());
+                dispatch(showMessage({ title: "Success", text: "Logged in" }));
                 return;
             }
         }
+        dispatch(showMessage({ title: "Cannot login", text: "Wrong email or password" }));
     }
 }
 
@@ -43,6 +47,8 @@ export function signUp(payload){
             });
 
             dispatch({ type: SIGN_UP, payload });
+            dispatch(showMessage({ title: "Success", text: "Successfully signed up" }));
+            dispatch(closeAuthorizationWindow());
         }
     };
 }

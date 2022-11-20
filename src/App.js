@@ -30,6 +30,7 @@ function App(){
     }
 
     function handleLogout(){
+        
         dispatch(logout());
     }
 
