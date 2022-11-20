@@ -31,6 +31,7 @@ function AuthorizationForm({ handleLoginFormOpen, handleSignUpFormOpen, handleLo
             <div className="authorizationForm">
                 <CloseButton handler={handleAuthorizationWindowClose} />
                 <form ref={formRef}>
+                    <b>{currentAuthorizationType === "login" ? "Login" : "Sign-up"}</b>
                     <input className="emailInput" type="email" value={inputsValue.email} placeholder="Email" onChange={handleLoginChange} />
                     <input className="passwordInput" type="password" value={inputsValue.password} placeholder="Password" onChange={handlePasswordChange} />
 
