@@ -189,8 +189,9 @@ header > .search{
 
 /*---Pins---*/
 .pins, .savedPins{
-    width: 100vw;
+    width: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -199,9 +200,25 @@ header > .search{
 /*---Pin---*/
 .pinOpener{
     width: 15%;
+    min-width: 150px;
+    height: auto;
     margin: var(--tinyMargin);
     border: var(--thickDarkBorder);
     flex-grow: 1/5;
+    position: relative;
+}
+
+.savePin{
+    right: 0;
+    position: absolute;
+}
+
+.pinOpenerPannel{
+
+}
+
+.pinOpenerImage{
+    width: 100%;
 }
 
 .pin{
