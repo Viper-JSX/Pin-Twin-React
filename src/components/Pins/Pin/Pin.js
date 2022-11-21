@@ -6,9 +6,6 @@ import { pins } from "../../../various_things/pins";
 
 import Pins from "../Pins";
 import OpenPinEditor from "./Open_pin_editor";
-import PinImageAndInfo from "./Pin_image_and_info";
-import CommentsSection from "../Comment/Comments_section";
-import ProfileOpener from "../../User_profile/Profile_opener";
 import PinImage from "./Pin_image";
 import PinInfoAndComments from "./Pin_info_and_comments";
 

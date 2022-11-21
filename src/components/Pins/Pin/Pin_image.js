@@ -1,6 +1,6 @@
 function PinImage({ imageSrc }){
     return(
-        <img src={imageSrc} alt="Pin image" />
+        <img className="pinImage" src={imageSrc} alt="Pin image" />
     );
 }
 
