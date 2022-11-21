@@ -195,16 +195,28 @@ header > .search{
     flex-wrap: wrap;
 }
 
-
-
-/*---Pin---*/
 .pinOpener{
     width: 18%;
     min-width: 150px;
     height: auto;
     margin: var(--middleMargin);
-    flex-grow: 1/5;
+    border-radius: 0.5rem;
     position: relative;
+    transition: var(--veryShortTransitionTime);
+    flex-grow: 1/5;
+    overflow: hidden;
+}
+
+.pinOpener:hover{
+    transform: scale(1.1);
+}
+
+.pinOpener:hover  .pinOpenerImage{
+    
+}
+
+.pinOpener:hover  .pinOpenerPannel{
+
 }
 
 .savePin{
@@ -220,6 +232,8 @@ header > .search{
     width: 100%;
 }
 
+
+/*---Pin---*/
 .pin{
 
 }
