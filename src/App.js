@@ -10,10 +10,12 @@ import { pins } from "./various_things/pins";
 import { cancelConfirmation, changeConversationsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, logout, openLoginWindow, openSignUpWindow, setConfirmationValues, updateTagsViewFrequencyHistogram } from "./redux/action_creators";
 import { login, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow, searchPins, createComment, deleteComment } from "./redux/thunks";
 import { selectMostFavouriteTags } from "./utilities/select_most_favourite_tags";
+import { useNavigate } from "react-router";
 
 
 function App(){
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const user = useSelector((state) => state.user);
 
     //useSelector((state) => console.log(state.app))
@@ -42,7 +44,7 @@ function App(){
     }
 
     function handlePinEdit(pinData){
-        dispatch(editPin( pinData ));
+        dispatch(editPin( { ...pinData, navigate }));
     }
 
     function handlePinDelete({ pinId }){
