@@ -1,3 +1,5 @@
+import { PinClass } from "../Classes/Pin_class";
+
 import { convertTagsStringToTagsArray } from "../utilities/convertTagsStringToTagsArray";
 import { selectMostFavouriteTags } from "../utilities/select_most_favourite_tags";
 import { pins } from "../various_things/pins";
@@ -79,8 +81,10 @@ export function createPin(payload){
             return;
         }
 
-        dispatch({ type: CREATE_PIN, payload: { pinData:{ ...payload.pinData, tags }}}); //implement validation
+        const newPin = new PinClass(payload.pinData.creatorId, payload.pinData.imageSrc, payload.pinData.title, payload.pinData.discription, tags);
+        dispatch({ type: CREATE_PIN, payload: { newPin }}); //implement validation
         dispatch(updatePinsList({ pins }));
+        payload.navigate({ pathname: "/pins/pin", search: `?id=${newPin.id}` });
     }
 }
 

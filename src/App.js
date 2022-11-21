@@ -40,7 +40,7 @@ function App(){
     }
 
     function handlePinCreate(pinData){
-        dispatch(createPin(pinData));
+        dispatch(createPin({ ...pinData, navigate }));
     }
 
     function handlePinEdit(pinData){
