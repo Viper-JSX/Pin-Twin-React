@@ -42,12 +42,12 @@ export function login(payload){
 export function signUp(payload){
     return function(dispatch) {
         if(payload.email.length > 8 && payload.password.length > 8){ //implement email/password validation ...
-            users.forEach((user) => {
-                if(user.email === payload.email){
+            for(let i = 0; i < users.length; i++) {
+                if(users[i].email === payload.email){
                     dispatch(showMessage({ title: "Error", text: "This email is already used" }));
                     return;
                 }
-            });
+            };
 
             dispatch({ type: SIGN_UP, payload });
             dispatch(showMessage({ title: "Success", text: "Successfully signed up" }));
