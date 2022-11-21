@@ -1,10 +1,14 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux/es/exports";
 
 import Pins from "../Pins/Pins";
 
-function MainPage({ handlePinOpenerClick, handlePinSave }){
-    const [ user, pinsToShow ] = useSelector((state) => [ state.user, state.app.pinsToShow ]);
-    
+function MainPage({ handlePinsSearchTermChange, handlePinOpenerClick, handlePinSave }){
+    const [ user, pinsToShow, pinsSearchTerm ] = useSelector((state) => [ state.user, state.app.pinsToShow, state.search.pinsSearch.term ]);
+
+    useEffect(() => {
+        handlePinsSearchTermChange({ target: { value: pinsSearchTerm } }); //To update pins list (pins to show when returning to MainPage)
+    }, []);
 
     return(
         <div id="mainPage">

@@ -102,9 +102,8 @@ export function editPin(payload){
             dispatch(showMessage({title: "Wrong tags", text: "There must be at least one tag, tags must be comma-separated and must not contain special characters except of comma and white-space"} ));
             return;
         }
-        console.log("update", payload.pinData)
         dispatch({ type: EDIT_PIN, payload: { pinData: { ...payload.pinData, tags } }}); //implement validation
-        dispatch(updatePinsList({ pins, updatedPin: { ...payload.pinData, tags} }));
+        dispatch(updatePinsList({ pins }));
     }
 }
 

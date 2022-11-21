@@ -60,7 +60,7 @@ function Layout({
             <ConfirmationWindow handleConfirmationCancel={handleConfirmationCancel} handlePinDelete={handlePinDelete} />
 
             <Routes>
-                <Route path="/" element={<MainPage handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />} />
+                <Route path="/" element={<MainPage handlePinsSearchTermChange={handlePinsSearchTermChange} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />} />
                 <Route path="/pins/pin" element={<Pin handleConfirmationWindowOpen={handleConfirmationWindowOpen} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} />} />
                 <Route path="/profile" element={<UserProfile  handleLogout={handleLogout} handleProfileEdit={handleProfileEdit} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />} />
                 <Route path="/users/:id" element={<UserProfile handlePinSave={handlePinSave} handleFollow={handleFollow} handleUnfollow={handleUnfollow} />} />

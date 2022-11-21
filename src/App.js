@@ -16,7 +16,7 @@ function App(){
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
 
-    useSelector((state) => console.log(state.app))
+    //useSelector((state) => console.log(state.app))
     /*---User---*/
     function handleLogin({ event, loginData }){
         event.preventDefault();

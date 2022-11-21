@@ -30,13 +30,9 @@ export function app(state=defaultState.app, action){
             return state;
         }
         case UPDATE_PINS_LIST: {
-            console.log(action.payload.changedPinId);
-            const updatedPin = action.payload.updatedPin;
-
             return { 
                 ...state, 
-                allPins: JSON.parse(JSON.stringify(action.payload.pins)),
-                //pinsToShow: state.pinsToShow.map((pin) => pin.id === updatedPin.id ? updatedPin : pin)
+                allPins: JSON.parse(JSON.stringify(action.payload.pins))
             };
         }
         case CREATE_COMMENT: {
