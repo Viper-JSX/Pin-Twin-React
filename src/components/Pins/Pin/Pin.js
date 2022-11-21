@@ -10,7 +10,7 @@ import PinImage from "./Pin_image";
 import PinInfoAndComments from "./Pin_info_and_comments";
 import PinContent from "./Pin_content";
 
-function Pin({ handlePinSave, handleConfirmationWindowOpen, handleCommentCreate, handleCommentDelete, handleLoginFormOpen }){
+function Pin({ handlePinSave, handlePinOpenerClick, handleCommentCreate, handleCommentDelete, handleLoginFormOpen }){
     const [ searchParams, setSearchParams ] = useSearchParams();
 
     const pinId = parseInt(searchParams.get("id"));
@@ -43,7 +43,7 @@ function Pin({ handlePinSave, handleConfirmationWindowOpen, handleCommentCreate,
             <PinContent pin={pin} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
 
             <b>Similar pins</b>
-            <Pins pins={similarPins} handlePinSave={handlePinSave} />
+            <Pins pins={similarPins} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />
         </div> 
     );  
 }
