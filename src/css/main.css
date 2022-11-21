@@ -247,17 +247,20 @@ header > .search{
     align-items: center;
 }
 
-.pinContentWrapper{
-    width: 80%;
-    border: var(--thinLightBorder);
+.pinContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.pinImageAndInfo{
-    display: flex;
+.pinContent > *{
+    margin: 2rem;
 }
 
 .pinImage{
-    width: 20vw;
+    width: 40vw;
+    min-width: 280px;
+    border-radius: 1rem;
 }
 
 
