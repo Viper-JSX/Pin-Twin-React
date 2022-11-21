@@ -58,6 +58,7 @@ function PinEditor({ mode, handlePinCreate, handlePinEdit, handleConfirmationWin
 
     return(
         <div className="pinEditor">
+            <b className="pinEditorTitle">{mode === "create" ? "Create" : "Edit"}</b>
             <PinEditorInputs pinData={pinData} handlePinImageChange={handlePinImageChange} handlePinTitleChange={handlePinTitleChange} handlePinDiscriptionChange={handlePinDiscriptionChange} handlePinTagsChange={handlePinTagsChange} />
 
             {

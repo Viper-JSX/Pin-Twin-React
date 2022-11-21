@@ -225,6 +225,15 @@ header > .search{
     width: 100%;
 }
 
+.pinEditorTitle{
+    width: 100%;
+    margin-bottom: 0.5rem;
+    color: var(--lightColor);
+    font-size: 2rem;
+    text-align: center;
+    display: inline-block;
+}
+
 .pinEditorInputs{
     display: flex;
     justify-content: space-around;
@@ -288,6 +297,23 @@ header > .search{
 
 .pinEditorTextFields > *{
     margin: var(--middleMargin);
+}
+
+.createPin, .editPin{
+    width: 7rem;
+    height: 4rem;
+    margin: 2rem;
+    color: var(--lightColor);
+    background-color: var(--highlightColor1);
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    margin-left: 100%;
+    float: right;
+}
+
+.createPin:hover, .editPin:hover{
+    color: var(--darkColor);
+    background-color: var(--lightColor);
 }
 
 
