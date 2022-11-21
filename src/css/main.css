@@ -34,7 +34,12 @@ body{
 }
 
 button{
+    transition: var(--veryShortTransitionTime);
+}
 
+button:hover{
+    color: var(--lightColor);
+    background-color: var(--highlightColor1);
 }
 
 .fileEditButton{
@@ -55,6 +60,10 @@ button{
     background-color: var(--highlightColor1);
     border-left: var(--thickDarkBorder);
     border-top: var(--thickDarkBorder);
+}
+
+.logoutButton{
+    
 }
 
 /*---Header---*/
@@ -291,7 +300,7 @@ header > .search{
 
 .userPinsSwitcher > *{
     min-width: 7rem;
-    margin: 2rem;
+    margin: 1rem;
     padding: 0.5rem;
     color: var(--lightColor);
     background-color: var(--highlightColor1);
