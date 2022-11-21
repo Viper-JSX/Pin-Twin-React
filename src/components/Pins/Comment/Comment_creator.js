@@ -21,7 +21,8 @@ function CommentCreator({ pinId, handleCommentCreate, handleLoginFormOpen }){
     return (
         <div className="commentCreator">
             <textarea value={commentData.commentText} placeholder="Comment" onChange={handleCommentTextChange}></textarea>
-            <button className="createComment" onClick={handleCreateCommentButtonClick}>Comment</button>
+            <br />
+            <button className="createComment" onClick={handleCreateCommentButtonClick}>Done</button>
         </div>
     );
 }

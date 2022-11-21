@@ -257,6 +257,10 @@ header > .search{
     margin: 2rem;
 }
 
+.pinTitle{
+    font-size: 1.4rem;
+}
+
 .pinImage{
     width: 40vw;
     min-width: 280px;
