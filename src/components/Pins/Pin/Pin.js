@@ -9,6 +9,8 @@ import OpenPinEditor from "./Open_pin_editor";
 import PinImageAndInfo from "./Pin_image_and_info";
 import CommentsSection from "../Comment/Comments_section";
 import ProfileOpener from "../../User_profile/Profile_opener";
+import PinImage from "./Pin_image";
+import PinInfoAndComments from "./Pin_info_and_comments";
 
 function Pin({ handlePinSave, handleConfirmationWindowOpen, handleCommentCreate, handleCommentDelete, handleLoginFormOpen }){
     const [ searchParams, setSearchParams ] = useSearchParams();
@@ -40,9 +42,8 @@ function Pin({ handlePinSave, handleConfirmationWindowOpen, handleCommentCreate,
                 null
             }
             <div className="pinContentWrapper">
-                <PinImageAndInfo pin={pin} />
-                <CommentsSection pinId={pin.id} comments={pin.comments} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
-                <ProfileOpener profileId={pin.creatorId} />
+                <PinImage imageSrc={pin.imageSrc} />
+                <PinInfoAndComments pin={pin} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
             </div>
 
             <b>Similar pins</b>
