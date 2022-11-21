@@ -13,8 +13,6 @@ function MainPage({ handleLoginFormOpen, handleSignUpFormOpen, handlePinsSearchT
 
     return(
         <div id="mainPage">
-            Main
-
             {
                 user ? 
                 <Pins 

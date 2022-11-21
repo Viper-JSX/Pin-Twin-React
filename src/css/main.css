@@ -1,5 +1,6 @@
 :root{
     --darkTransparentColor: rgba(10, 10, 10, 0.3);
+    --darkHalfTransparentColor: rgba(10, 10, 10, 0.5);
 
     --darkColor: #111111;
     --lightColor: #EEEEEE;
@@ -73,30 +74,24 @@ header > .search{
     background-color: var(--highlightColor1);
 }
 
-header > .openLoginForm > button{
-    color: var(--lightColor);
-    border-radius: 1rem;
-}
-
-header .openSignUpForm, header .openLoginForm{
+.openSignUpForm, .openLoginForm{
     width: 5rem;
     height: 2rem;
     border-radius: 1rem;
 }
 
-
-header .openLoginForm{
+.openLoginForm{
     color: var(--lightColor);
     background-color: var(--highlightColor1);
     font-weight: 700;
 }  
 
-header > .openAuthorization > .openLoginForm:hover, header .openPinCreator:hover{
+.openLoginForm:hover, .openPinCreator:hover{
     color: var(--darkColor);
     background-color: var(--lightColor);
 }
 
-header > .openAuthorization > .openSignUpForm{
+.openSignUpForm{
     color: var(--darkColor);
     background-color: var(--lightColor);
 }  
@@ -121,14 +116,36 @@ header > .openAuthorization > .openSignUpForm{
 
 
 /*---Welcome page---*/
+.welcomePage{
+    height: 100vh;
+    background-image: url("../files/images/japan_minimalist.jpg");
+    background-size: cover;
+}
 
+.welcomePageCover{
+    width: 100%;
+    height: 100%;
+    background-color: var(--darkHalfTransparentColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.welcomePageCover .openAuthorization{
+    display: flex;
+    flex-direction: column;
+}
 
+.welcomePageCover .openAuthorization button {
+    width: 10rem;
+    height: 4rem;
+    margin: 0.4rem;
+}
 
 /*---Pins---*/
 .pins{
     width: 100vw;
-    background-color: red;
     display: flex;
     flex-wrap: wrap;
 }
