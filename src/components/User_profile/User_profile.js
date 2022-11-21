@@ -60,7 +60,7 @@ function UserProfileWindow({ handleLogout, handleProfileEdit, handlePinSave, han
             <ProfileTopImage imageSrc={user.profileTopImageSrc} handleProfileTopImageChange={handleProfileTopImageChange} />
             <UserProfileImageAndNickname nickname={user.nickname} profileImageSrc={user.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} handleLogout={handleLogout} />
             
-            <UserPinsSwitcher handleUserPinsSwitch={handleUserPinsSwitch} />
+            <UserPinsSwitcher typeOfPinsToShow={typeOfPinsToShow} handleUserPinsSwitch={handleUserPinsSwitch}  />
             {
                 typeOfPinsToShow === USER_PINS ? 
                 <Pins pins={user.pins} />

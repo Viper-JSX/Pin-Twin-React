@@ -282,6 +282,11 @@ header > .search{
     display: inline-block;
 }
 
+.userPinsSwitcher > *.active{
+    color: var(--darkColor);
+    background-color: var(--lightColor);
+}
+
 .userPinsSwitcher > *:hover{
     color: var(--darkColor);
     background-color: var(--lightColor);
