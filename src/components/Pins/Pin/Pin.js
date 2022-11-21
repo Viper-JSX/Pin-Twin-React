@@ -39,9 +39,11 @@ function Pin({ handlePinSave, handleConfirmationWindowOpen, handleCommentCreate,
                 :
                 null
             }
-            <PinImageAndInfo pin={pin} />
-            <CommentsSection pinId={pin.id} comments={pin.comments} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
-            <ProfileOpener profileId={pin.creatorId} />
+            <div className="pinContentWrapper">
+                <PinImageAndInfo pin={pin} />
+                <CommentsSection pinId={pin.id} comments={pin.comments} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
+                <ProfileOpener profileId={pin.creatorId} />
+            </div>
 
             <b>Similar pins</b>
             <Pins pins={similarPins} handlePinSave={handlePinSave} />

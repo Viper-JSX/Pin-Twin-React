@@ -137,9 +137,12 @@ header > .search{
 .notificationsWindow, .messagesWindow{
     min-width: 300px;
     min-height: 480px;
+    color: var(--lightColor);
+    background-color: var(--darkColor);
     border: var(--thickDarkBorder);
     transition: var(--shortTransitionTime);
     position: absolute;
+    top: 4rem;
     right: 1rem;
     display: none;
 }
@@ -208,20 +211,22 @@ header > .search{
 }
 
 .pinOpener:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .pinOpener:hover  .pinOpenerImage{
-    
+    filter: brightness(0.5);
 }
 
-.pinOpener:hover  .pinOpenerPannel{
-
+.pinOpener:hover > .savePin{
+    display: initial;
 }
 
 .savePin{
     right: 0;
     position: absolute;
+    display: none;
+    z-index: 1;
 }
 
 .pinOpenerPannel{
@@ -234,8 +239,13 @@ header > .search{
 
 
 /*---Pin---*/
+
 .pin{
 
+}
+
+.pinContentWrapper{
+    background-color: red;
 }
 
 .pinImageAndInfo{
