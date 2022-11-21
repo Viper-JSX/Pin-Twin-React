@@ -33,6 +33,8 @@ button{
 
 }
 
+/*---Header---*/
+
 header{
     border-bottom: var(--thinDarkBorder);
     display: flex;
@@ -116,6 +118,10 @@ header > .openAuthorization > .openSignUpForm{
 .notificationsWindow.hidden, .messagesWindow.hidden{
     opacity: 0;
 }
+
+
+/*---Welcome page---*/
+
 
 
 
