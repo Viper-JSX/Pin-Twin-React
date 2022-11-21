@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { users } from "../../../various_things/users";
 
 function Comment({ userId, comment, handleCommentDelete }){
-    const commentAuthor = users.find((user) => user.id === comment.creatorId);
+    const commentAuthor = users.find((user) => user.id === comment.authorId);
     return(
         <div className="comment">
             {

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 function CommentCreator({ pinId, handleCommentCreate }){
     const [ commentData, setCommentData ] = useState({ commentText: "" });
-    const authorId = useSelector((state) => state?.user?.id);
+    const authorId = useSelector((state) => state.user?.id);
 
     function handleCommentTextChange(event){
         setCommentData({ ...commentData, commentText: event.target.value });

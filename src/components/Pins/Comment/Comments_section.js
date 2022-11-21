@@ -1,10 +1,9 @@
 import { useSelector } from "react-redux";
-import Comments from "../../Reusable_components/Comments/Comments";
+import Comments from "./Comments";
 import CommentCreator from "./Comment_creator";
 
 function CommentsSection({ pinId, comments, handleCommentCreate, handleCommentDelete }){
     const userId = useSelector((state) => state.user?.id);
-
     return(
         <div className="commentsSection">
             <b className="commentsSectionTitle">Comments</b>

@@ -2,7 +2,8 @@ import { useSelector } from "react-redux";
 import Comment from "./Comment";
 
 function Comments({ comments, handleCommentDelete }){
-    const userId = useSelector((state) => state.user.id);
+    const userId = useSelector((state) => state.user?.id);
+
     return(
         <div className="comments">
             {
