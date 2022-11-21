@@ -6,8 +6,8 @@ function Comment({ userId, comment, handleCommentDelete }){
     return(
         <div className="comment">
             {
-                userId === comment.creatorId ? 
-                <button class="deleteComment" onClick={() => handleCommentDelete({ pinId: comment.pinId, commentId: comment.id })}>Delete</button>
+                userId === comment.authorId ? 
+                <button className="deleteComment" onClick={() => handleCommentDelete({ pinId: comment.pinId, commentId: comment.id })}>Delete</button>
                 :
                 null
             }
