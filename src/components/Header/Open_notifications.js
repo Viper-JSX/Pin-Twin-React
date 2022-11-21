@@ -23,7 +23,7 @@ function OpenNotifications(){
 
     return(
         <>
-            <button onClick={handleNotificationsShow}>
+            <button className="openNotifications" onClick={handleNotificationsShow}>
                 <FontAwesomeIcon icon={faBell} />
             </button>
 

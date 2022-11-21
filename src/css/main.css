@@ -1,6 +1,10 @@
 :root{
     --darkTransparentColor: rgba(10, 10, 10, 0.3);
 
+    --darkColor: #111111;
+    --lightColor: #EEEEEE;
+    --highlightColor1: #E60023;
+
     --shortTransitionTime: 0.3s;
     --middleTransitionTime: 0.5s;
     --longTransitionTime: 1s;
@@ -10,31 +14,90 @@
 
     --tinyMargin: 0.1rem;
     --middleMargin: 0.3rem;
+
+    --standardFont: monospace, sans-serif, serif;
 }
 
 *{
     box-sizing: border-box;
+    font-family: var(--standardFont);
 }
 
 body{
     margin: 0;
     padding: 0;
+    background-color: var(--darkColor);
+}
+
+button{
+
 }
 
 header{
     border-bottom: var(--thinDarkBorder);
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 header > *{
     margin: 0.5rem;
 }
 
+header  .openPinCreator{
+    width: 5rem;
+    height: 3rem;
+    color: var(--lightColor);
+    border-radius: 1rem;
+    background-color: var(--highlightColor1);
+    font-weight: 700;
+}
+
 header > .search{
+    min-width: 100px;
+    height: 2rem;
     flex-grow: 1;
     border-radius: 5rem;
 }
+
+
+.openNotifications, .openMessages{
+    width: 2rem;
+    height: 2rem;
+}
+
+.openNotifications:hover, .openMessages:hover{
+    color: var(--lightColor);
+    background-color: var(--highlightColor1);
+}
+
+header > .openLoginForm > button{
+    color: var(--lightColor);
+    border-radius: 1rem;
+}
+
+header .openSignUpForm, header .openLoginForm{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
+}
+
+
+header .openLoginForm{
+    color: var(--lightColor);
+    background-color: var(--highlightColor1);
+    font-weight: 700;
+}  
+
+header > .openAuthorization > .openLoginForm:hover, header .openPinCreator:hover{
+    color: var(--darkColor);
+    background-color: var(--lightColor);
+}
+
+header > .openAuthorization > .openSignUpForm{
+    color: var(--darkColor);
+    background-color: var(--lightColor);
+}  
 
 .notificationsWindow, .messagesWindow{
     min-width: 300px;

@@ -23,7 +23,7 @@ function OpenMessages(){
 
     return(
         <>
-            <button onClick={handleMessagesShow}>
+            <button className="openMessages" onClick={handleMessagesShow}>
                 <FontAwesomeIcon icon={faMessage} />
             </button>
 
