@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux/es/exports";
 
 import Pins from "../Pins/Pins";
+import WelcomePage from "./Welcome_page/Welcome_page";
 
-function MainPage({ handlePinsSearchTermChange, handlePinOpenerClick, handlePinSave }){
+function MainPage({ handleLoginFormOpen, handleSignUpFormOpen, handlePinsSearchTermChange, handlePinOpenerClick, handlePinSave }){
     const [ user, pinsToShow, pinsSearchTerm ] = useSelector((state) => [ state.user, state.app.pinsToShow, state.search.pinsSearch.term ]);
 
     useEffect(() => {
@@ -22,7 +23,7 @@ function MainPage({ handlePinsSearchTermChange, handlePinOpenerClick, handlePinS
                     handlePinSave={handlePinSave} 
                 />
                 :
-                "Some other content"
+                <WelcomePage handleLoginFormOpen={handleLoginFormOpen} handleSignUpFormOpen={handleSignUpFormOpen} />
             }
         </div>
     );
