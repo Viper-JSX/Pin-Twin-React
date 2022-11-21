@@ -56,7 +56,7 @@ function UserProfileWindow({ handleLogout, handleProfileEdit, handlePinSave, han
     }
 
     return(
-        <div className="userProfileWindow"> 
+        <div className="userProfile"> 
             <ProfileTopImage imageSrc={user.profileTopImageSrc} handleProfileTopImageChange={handleProfileTopImageChange} />
             <UserProfileImageAndNickname nickname={user.nickname} profileImageSrc={user.profileImageSrc} handleUserProfileImageChange={handleUserProfileImageChange} handleLogout={handleLogout} />
             

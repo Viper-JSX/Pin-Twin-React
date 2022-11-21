@@ -154,6 +154,7 @@ header > .search{
     margin: 0.4rem;
 }
 
+
 /*---Pins---*/
 .pins{
     width: 100vw;
@@ -161,6 +162,9 @@ header > .search{
     flex-wrap: wrap;
 }
 
+
+
+/*---Pin---*/
 .pinOpener{
     width: 15%;
     margin: var(--tinyMargin);
@@ -212,7 +216,13 @@ header > .search{
 }
 
 
-/*---Profile---*/
+/*---User profile---*/
+.userProfile{
+    color: var(--lightColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .profileTopImageContainer{
     height: 5rem;
@@ -231,6 +241,18 @@ header > .search{
     right: 0;
 }
 
+.userProfileImageAndNickname{
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.userProfileImageAndNickname .fileEditButton{
+    position: absolute;
+    top: 0;
+    color: green
+}
+
 .userProfileImageWrapper{
     width: 10rem;
     height: 10rem;
@@ -245,8 +267,25 @@ header > .search{
     height: 100%;
 }
 
+.userPinsSwitcher{
+    
+}
 
+.userPinsSwitcher > *{
+    min-width: 7rem;
+    margin: 2rem;
+    padding: 0.5rem;
+    color: var(--lightColor);
+    background-color: var(--highlightColor1);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
 
+.userPinsSwitcher > *:hover{
+    color: var(--darkColor);
+    background-color: var(--lightColor);
+}
 
 /*---Authorization---*/
 .authorizationFormWrapper{

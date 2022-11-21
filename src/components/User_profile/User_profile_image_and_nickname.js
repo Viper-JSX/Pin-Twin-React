@@ -14,6 +14,7 @@ function UserProfileImageAndNickname({ nickname, profileImageSrc, handleUserProf
                 handleUserProfileImageChange ? //If user is viewing his own profile
                 <>
                     <FileEditButton accept={"image/png, image/gif, image/jpeg"} handler={handleUserProfileImageChange} />
+                    <br />
                     <LogoutButton handleLogout={handleLogout} />
                 </>
                 :
