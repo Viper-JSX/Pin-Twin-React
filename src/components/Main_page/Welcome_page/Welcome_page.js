@@ -4,7 +4,7 @@ function WelcomePage({ handleLoginFormOpen, handleSignUpFormOpen }){
     return(
         <div className="welcomePage">
             <div className="welcomePageCover">
-                <h2>Welcome to PinTwin</h2>
+                <h1 className="welcomePageTitle">Welcome to PinTwin</h1>
                 <OpenAuthorization handleLoginFormOpen={handleLoginFormOpen} handleSignUpFormOpen={handleSignUpFormOpen} />
             </div>
         </div>

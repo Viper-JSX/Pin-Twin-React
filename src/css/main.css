@@ -96,6 +96,12 @@ header > .search{
     background-color: var(--lightColor);
 }  
 
+
+.openSignUpForm:hover{
+    color: var(--lightColor);
+    background-color: var(--darkColor);
+}
+
 .notificationsWindow, .messagesWindow{
     min-width: 300px;
     min-height: 480px;
@@ -130,6 +136,11 @@ header > .search{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.welcomePageTitle{
+    margin-bottom: 2rem;
+    color: var(--lightColor);
 }
 
 .welcomePageCover .openAuthorization{
