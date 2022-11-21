@@ -26,6 +26,13 @@ function PinEditor({ mode, handlePinCreate, handlePinEdit, handleConfirmationWin
         }
     
     }, [])
+
+    useEffect(() => {
+        if(mode === "create"){
+            setPinData({ creatorId: userId, imageSrc: "", title: "", discription: "", tagsString: "" });
+        }
+    }, [mode]);
+
     function handlePinImageChange(event){
         if(event.target.files.length === 0) return;
 
