@@ -218,15 +218,35 @@ header > .search{
 
 
 
+
+
 /*---Editor---*/
 .pinEditor{
     width: 100%;
-    background-color: blue;
 }
 
 .pinEditorInputs{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.pinEditorInputs > div{
+    margin: 1rem
+}
+
+.imageSelect{
+    height: max-content;
+    border: var(--thickDarkBorder);
+}
+
+.imageSelect > input[type='file']{
+    display: none;
+}
+
+.imageSelect img{
+    width: 30vw;
+    min-width: 300px;
 }
 
 .pinEditorTextFields{
@@ -237,14 +257,6 @@ header > .search{
 
 .pinEditorTextFields > *{
     margin: var(--middleMargin);
-}
-
-.imageSelect{
-    border: var(--thickDarkBorder);
-}
-
-.imageSelect img{
-    width: 20vw;
 }
 
 
