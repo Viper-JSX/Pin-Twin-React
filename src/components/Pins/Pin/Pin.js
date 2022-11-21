@@ -10,7 +10,7 @@ import PinImageAndInfo from "./Pin_image_and_info";
 import CommentsSection from "../Comment/Comments_section";
 import ProfileOpener from "../../User_profile/Profile_opener";
 
-function Pin({ handleConfirmationWindowOpen, handleCommentCreate, handleCommentDelete, handleLoginFormOpen }){
+function Pin({ handlePinSave, handleConfirmationWindowOpen, handleCommentCreate, handleCommentDelete, handleLoginFormOpen }){
     const [ searchParams, setSearchParams ] = useSearchParams();
 
     const pinId = parseInt(searchParams.get("id"));
@@ -44,7 +44,7 @@ function Pin({ handleConfirmationWindowOpen, handleCommentCreate, handleCommentD
             <ProfileOpener profileId={pin.creatorId} />
 
             <b>Similar pins</b>
-            <Pins pins={similarPins} />
+            <Pins pins={similarPins} handlePinSave={handlePinSave} />
         </div> 
     );  
 }
