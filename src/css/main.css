@@ -6,12 +6,15 @@
     --lightColor: #EEEEEE;
     --highlightColor1: #E60023;
 
+    --veryShortTransitionTime: 0.1s;
     --shortTransitionTime: 0.3s;
     --middleTransitionTime: 0.5s;
     --longTransitionTime: 1s;
 
     --thinDarkBorder: 1px solid black;
     --thickDarkBorder: 2px solid black;
+    --thinLightBorder: 1px solid white;
+    --thickLightBorder: 2px solid white;
 
     --tinyMargin: 0.1rem;
     --middleMargin: 0.3rem;
@@ -32,6 +35,26 @@ body{
 
 button{
 
+}
+
+.fileEditButton{
+    padding: 0.1rem;
+    aspect-ratio: 1/1;
+    color: var(--darkColor);
+    background-color: var(--lightColor);
+    border-radius: 0.3rem;
+    transition: var(--veryShortTransitionTime);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.fileEditButton:hover{
+    color: var(--lightColor);
+    background-color: var(--highlightColor1);
+    border-left: var(--thickDarkBorder);
+    border-top: var(--thickDarkBorder);
 }
 
 /*---Header---*/
@@ -156,7 +179,7 @@ header > .search{
 
 
 /*---Pins---*/
-.pins{
+.pins, .savedPins{
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
@@ -250,7 +273,6 @@ header > .search{
 .userProfileImageAndNickname .fileEditButton{
     position: absolute;
     top: 0;
-    color: green
 }
 
 .userProfileImageWrapper{
@@ -265,10 +287,6 @@ header > .search{
 
 .userProfileImage{
     height: 100%;
-}
-
-.userPinsSwitcher{
-    
 }
 
 .userPinsSwitcher > *{
@@ -291,6 +309,16 @@ header > .search{
     color: var(--darkColor);
     background-color: var(--lightColor);
 }
+
+.userProfile > .pins, .userProfile > .savedPins{
+    width: 80%;
+    border: var(--thinLightBorder);
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+
+
 
 /*---Authorization---*/
 .authorizationFormWrapper{
