@@ -241,11 +241,15 @@ header > .search{
 /*---Pin---*/
 
 .pin{
-
+    color: var(--lightColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pinContentWrapper{
-    background-color: red;
+    width: 80%;
+    border: var(--thinLightBorder);
 }
 
 .pinImageAndInfo{
