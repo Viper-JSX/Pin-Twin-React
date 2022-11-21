@@ -199,11 +199,10 @@ header > .search{
 
 /*---Pin---*/
 .pinOpener{
-    width: 15%;
+    width: 18%;
     min-width: 150px;
     height: auto;
-    margin: var(--tinyMargin);
-    border: var(--thickDarkBorder);
+    margin: var(--middleMargin);
     flex-grow: 1/5;
     position: relative;
 }
