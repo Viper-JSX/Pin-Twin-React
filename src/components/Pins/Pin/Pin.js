@@ -8,6 +8,7 @@ import Pins from "../Pins";
 import OpenPinEditor from "./Open_pin_editor";
 import PinImage from "./Pin_image";
 import PinInfoAndComments from "./Pin_info_and_comments";
+import PinContent from "./Pin_content";
 
 function Pin({ handlePinSave, handleConfirmationWindowOpen, handleCommentCreate, handleCommentDelete, handleLoginFormOpen }){
     const [ searchParams, setSearchParams ] = useSearchParams();
@@ -38,10 +39,8 @@ function Pin({ handlePinSave, handleConfirmationWindowOpen, handleCommentCreate,
                 :
                 null
             }
-            <div className="pinContentWrapper">
-                <PinImage imageSrc={pin.imageSrc} />
-                <PinInfoAndComments pin={pin} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
-            </div>
+
+            <PinContent pin={pin} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
 
             <b>Similar pins</b>
             <Pins pins={similarPins} handlePinSave={handlePinSave} />
