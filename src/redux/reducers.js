@@ -89,8 +89,9 @@ export function user(state=defaultState.user, action){
             return JSON.parse(JSON.stringify(newUser));
         }
         case CREATE_PIN:{
+            const pinWithRemovedReferences = JSON.parse(JSON.stringify(action.payload.newPin));
             pins.push(action.payload.newPin);
-            return { ...state, pins: [ ...state.pins, { ...action.payload.newPin } ] };
+            return { ...state, pins: [ ...state.pins, pinWithRemovedReferences] };
         }
         case EDIT_PIN:{
             for(let i = 0; i < pins.length; i++){
