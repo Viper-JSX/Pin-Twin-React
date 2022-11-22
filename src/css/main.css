@@ -276,6 +276,7 @@ header > .search, #mainPage > .search{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .pinContent > *{
@@ -293,13 +294,24 @@ header > .search, #mainPage > .search{
 }
 
 .comments{
-    max-width: 50vh;
-    overflow: scroll;
+    width: 20vw;
+    min-width: 280px;
+    max-height: 40vh;
+    overflow-y: auto;
 }
 
 .comment{
     margin: 0.2rem;
+    padding: 0.2rem;
+    white-space: wrap;
+    word-wrap: break-word;
+    border-bottom: var(--thickLightBorder);
 }
+
+.commentCreator{
+    margin-top: 1rem;
+}
+
 
 
 
