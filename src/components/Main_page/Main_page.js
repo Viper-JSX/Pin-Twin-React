@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux/es/exports";
 
 import Pins from "../Pins/Pins";
+import Search from "../Reusable_components/Search/Search";
 import WelcomePage from "./Welcome_page/Welcome_page";
 
 function MainPage({ handleLoginFormOpen, handleSignUpFormOpen, handlePinsSearchTermChange, handlePinOpenerClick, handlePinSave }){
@@ -14,12 +15,15 @@ function MainPage({ handleLoginFormOpen, handleSignUpFormOpen, handlePinsSearchT
     return(
         <div id="mainPage">
             {
-                user ? 
-                <Pins 
-                    pins={pinsToShow} 
-                    handlePinOpenerClick={handlePinOpenerClick} 
-                    handlePinSave={handlePinSave} 
-                />
+                user ?
+                <>
+                    <Search value={pinsSearchTerm} handler={handlePinsSearchTermChange} />
+                    <Pins 
+                        pins={pinsToShow} 
+                        handlePinOpenerClick={handlePinOpenerClick} 
+                        handlePinSave={handlePinSave} 
+                    />
+                </>
                 :
                 <WelcomePage handleLoginFormOpen={handleLoginFormOpen} handleSignUpFormOpen={handleSignUpFormOpen} />
             }
