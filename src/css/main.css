@@ -148,7 +148,7 @@ header > .search, #mainPage > .search{
 }
 
 .notificationsWindow, .messagesWindow{
-    min-width: 300px;
+    min-width: 280px;
     min-height: 480px;
     color: var(--lightColor);
     background-color: var(--darkColor);
@@ -156,7 +156,7 @@ header > .search, #mainPage > .search{
     transition: var(--shortTransitionTime);
     position: absolute;
     top: 4rem;
-    right: 1rem;
+    right: 0.2rem;
     display: none;
 }
 
@@ -218,6 +218,7 @@ header > .search, #mainPage > .search{
 /*---Pins---*/
 .pins, .savedPins{
     width: 100%;
+    min-width: 280px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -292,6 +293,7 @@ header > .search, #mainPage > .search{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: red;
 }
 
 .pinContent{
@@ -302,11 +304,7 @@ header > .search, #mainPage > .search{
 }
 
 .pinContent > *{
-    margin: 2rem;
-}
-
-.pinInfoAndComments > .saveOrEditPin {
-    margin-bottom: 1rem;
+    margin: 1.5rem;
 }
 
 .pinTitle{
@@ -579,7 +577,7 @@ header > .search, #mainPage > .search{
 }
 
 .authorizationForm, .confirmationWindow{
-    min-width: 300px;
+    min-width: 280px;
     aspect-ratio: 1/0.5;
     padding: 1rem;
     padding-top: 0;
@@ -650,6 +648,9 @@ header > .search, #mainPage > .search{
 
 @media screen and (max-width: 360px) {
     /*FIx alignment*/
+    .pinContent > *{
+        margin: 1.5rem 0 1.5rem 0;
+    }
 }
 
 
