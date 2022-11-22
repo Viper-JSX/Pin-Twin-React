@@ -1,16 +1,17 @@
 import { useSelector } from 'react-redux';
+import RemovePinFromSaved from '../Saved_pins/Remove_pin_from_saved';
 import OpenPinEditor from './Open_pin_editor';
 
-function SaveEditButtons({ pin, handlePinSave }){
+function SaveEditButtons({ pin, handlePinSave, handlePinRemoveFromSaved }){
     const [ user, userSavedPins ] = useSelector((state) => [ state.user, state.user?.savedPins ]);
     console.log(userSavedPins)
     return(
         <div className="saveEditButtons">
             {
                 userSavedPins && userSavedPins.find((savedPin) => savedPin.id === pin.id) ? 
-                <button className="removePinFromSaved" onClick={}>Saved</button>
+                <RemovePinFromSaved userId={user.id} pinId={pin.id} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
                 :
-               <button className="savePi" onClick={() => handlePinSave(pin)}>Save</button>
+                <button className="savePi" onClick={() => handlePinSave(pin)}>Save</button>
             }
 
             {

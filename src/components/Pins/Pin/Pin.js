@@ -7,7 +7,7 @@ import { pins } from "../../../various_things/pins";
 import Pins from "../Pins";
 import PinContent from "./Pin_content";
 
-function Pin({ handlePinSave, handlePinOpenerClick, handleCommentCreate, handleCommentDelete, handleLoginFormOpen }){
+function Pin({ handlePinSave, handlePinRemoveFromSaved, handlePinOpenerClick, handleCommentCreate, handleCommentDelete, handleLoginFormOpen }){
     const [ searchParams, setSearchParams ] = useSearchParams();
 
     const pinId = parseInt(searchParams.get("id"));
@@ -28,7 +28,7 @@ function Pin({ handlePinSave, handlePinOpenerClick, handleCommentCreate, handleC
     });
     return(
         <div className="pin">
-            <PinContent pin={pin} handlePinSave={handlePinSave} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
+            <PinContent pin={pin} handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
 
             <b>Similar pins</b>
             <Pins pins={similarPins} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />
