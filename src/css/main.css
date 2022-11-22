@@ -261,8 +261,23 @@ header > .search, #mainPage > .search{
 .savePin, .removePinFromSaved{
     width: 5rem;
     height: 2rem;
+    border-radius: 1rem;
+    transition: var(--shortTransitionTime);
+}
+
+.savePin{
     color: var(--lightColor);
     background-color: var(--highlightColor1);
+}
+
+.removePinFromSaved{
+    color: var(--lightColor);
+    background-color: darkslategray;
+}
+
+.savePin:hover, .removePinFromSaved:hover{
+    color: var(--darkColor);
+    background-color: var(--lightColor);
 }
 
 .pinOpenerImage{

@@ -1,6 +1,6 @@
 function RemovePinFromSaved({ userId, pinId, handlePinRemoveFromSaved }){
     return(
-        <button onClick={() => handlePinRemoveFromSaved({ deleteData: { userId, pinId } })}>Saved</button>
+        <button className="removePinFromSaved" onClick={() => handlePinRemoveFromSaved({ deleteData: { userId, pinId } })}>Saved</button>
     );
 }
 
