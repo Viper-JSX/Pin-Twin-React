@@ -523,6 +523,16 @@ header > .search, #mainPage > .search{
     border-radius: 0.5rem;
 }
 
+.savedPin{
+    position: relative;
+}
+
+.savedPin > .removePinFromSaved{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
 
 
 /*---Messages modal window---*/
