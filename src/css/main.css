@@ -166,6 +166,15 @@ header > .search{
 }
 
 
+
+/*---Main page---*/
+#mainPage > .search{
+    color: red;
+    display: none;
+}
+
+
+
 /*---Welcome page---*/
 .welcomePage{
     height: 100vh;
@@ -548,6 +557,17 @@ header > .search{
 }
 
 
+
+/*---Media queries---*/
+@media screen and (max-width: 500px) {
+    header > .search{
+        display: none;
+    }
+
+    #mainPage > .search{
+        display: initial;
+    }
+}
 
 
 /*---Animations---*/
