@@ -229,7 +229,7 @@ export function confirmation(state=defaultState.confirmation, action){
     switch(action.type){
         case CONFIRM_ACTION:
         case CANCEL_CONFIRMATION: {
-            return {};
+            return { confirmationText: ""};
         }
         case SET_CONFIRMATION_VALUES: {
             return { ...action.payload };
