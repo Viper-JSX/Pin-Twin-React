@@ -422,8 +422,8 @@ header > .search, #mainPage > .search{
 }
 
 .createPin, .editPin, .pinDeleteButton{
-    width: 7rem;
-    height: 4rem;
+    width: 5rem;
+    height: 3rem;
     margin: 2rem;
     color: var(--lightColor);
     background-color: var(--highlightColor1);
