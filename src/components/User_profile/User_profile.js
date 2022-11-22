@@ -10,7 +10,7 @@ import ProfileTopImage from "./Profile_top_image";
 import UserPinsSwitcher from "./User_pins_switcher";
 import UserProfileImageAndNickname from "./User_profile_image_and_nickname";
 
-function UserProfileWindow({ handleLogout, handleProfileEdit, handlePinSave, handlePinRemoveFromSaved, handleFollow, handleUnfollow }){
+function UserProfileWindow({ handleLogout, handlePinOpenerClick, handleProfileEdit, handlePinSave, handlePinRemoveFromSaved, handleFollow, handleUnfollow }){
     const location = useLocation();
 
     const user = useSelector((state) => state.user); //User itself
@@ -63,9 +63,9 @@ function UserProfileWindow({ handleLogout, handleProfileEdit, handlePinSave, han
             <UserPinsSwitcher typeOfPinsToShow={typeOfPinsToShow} handleUserPinsSwitch={handleUserPinsSwitch}  />
             {
                 typeOfPinsToShow === USER_PINS ? 
-                <Pins pins={user.pins} />
+                <Pins pins={user.pins} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />
                 :
-                <SavedPins savedPins={user.savedPins} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
+                <SavedPins savedPins={user.savedPins} handlePinOpenerClick={handlePinOpenerClick} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
             }
         </div>
     );
