@@ -43,7 +43,6 @@ button:hover{
 }
 
 .fileEditButton{
-    padding: 0.1rem;
     aspect-ratio: 1/1;
     color: var(--darkColor);
     background-color: var(--lightColor);
@@ -471,6 +470,7 @@ header > .search, #mainPage > .search{
 }
 
 .profileTopImageContainer .fileEditButton{
+    font-size: 1.3rem;
     margin: var(--middleMargin);
     position: absolute;
     top: 0;
@@ -484,8 +484,11 @@ header > .search, #mainPage > .search{
 }
 
 .userProfileImageAndNickname .fileEditButton{
+    font-size: 1.3rem;
     position: absolute;
-    top: 0;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .userProfileImageWrapper{
