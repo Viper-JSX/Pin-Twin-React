@@ -421,6 +421,11 @@ header > .search, #mainPage > .search{
 
 .pinEditorTextFields > *{
     margin: var(--middleMargin);
+    border-radius: 0.5rem;
+}
+
+.pinEditorTextFields > input{
+    height: 2rem;
 }
 
 .createPin, .editPin{
