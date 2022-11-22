@@ -247,7 +247,7 @@ header > .search, #mainPage > .search{
     display: initial;
 }
 
-.savePin{
+.pinOpener > .savePin{
     right: 0;
     position: absolute;
     display: none;
@@ -256,6 +256,13 @@ header > .search, #mainPage > .search{
 
 .pinOpenerPannel{
 
+}
+
+.savePin, .removePinFromSaved{
+    width: 5rem;
+    height: 2rem;
+    color: var(--lightColor);
+    background-color: var(--highlightColor1);
 }
 
 .pinOpenerImage{
@@ -281,6 +288,10 @@ header > .search, #mainPage > .search{
 
 .pinContent > *{
     margin: 2rem;
+}
+
+.pinInfoAndComments > .saveOrEditPin {
+
 }
 
 .pinImageAndComments  .profileOpener{

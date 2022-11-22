@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import OpenPinEditor from './Open_pin_editor';
 import SavePinOrRemovePinFromSaved from './Save_pin_or_remove_pin_from_saved';
 
-function SaveEditPinButtons({ pin, handlePinSave, handlePinRemoveFromSaved }){
+function SaveOrEditPin({ pin, handlePinSave, handlePinRemoveFromSaved }){
     const user = useSelector((state) => state.user);
 
     return(
-        <div className="saveEditButtons">
+        <div className="saveOrEditPin">
             <SavePinOrRemovePinFromSaved pin={pin} handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
 
             {
@@ -20,4 +20,4 @@ function SaveEditPinButtons({ pin, handlePinSave, handlePinRemoveFromSaved }){
     )
 }
 
-export default SaveEditPinButtons;
+export default SaveOrEditPin;

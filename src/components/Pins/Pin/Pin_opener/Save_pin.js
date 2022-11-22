@@ -1,6 +1,6 @@
 function SavePin({ pin, handlePinSave }){
     return(
-        <button className="savePi" onClick={() => handlePinSave(pin)}>Save</button>
+        <button className="savePin" onClick={() => handlePinSave(pin)}>Save</button>
     );
 }
 
