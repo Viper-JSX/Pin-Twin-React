@@ -458,6 +458,25 @@ header > .search{
 
 
 
+/*---Messages modal window---*/
+.messageModal{
+    color: var(--);
+    padding: 1rem;
+    background-color: var(--lightColor);
+    border: var(--thickDarkBorder);
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.messageTitle{
+    border-bottom: var(--thickDarkBorder);
+    border-bottom-color: var(--highlightColor1);
+}
+
 
 /*---Authorization---*/
 .authorizationFormWrapper{
@@ -469,6 +488,7 @@ header > .search{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .authorizationForm{
