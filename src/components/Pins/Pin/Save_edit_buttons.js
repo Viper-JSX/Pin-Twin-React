@@ -8,7 +8,7 @@ function SaveEditButtons({ pin, handlePinSave }){
         <div className="saveEditButtons">
             {
                 userSavedPins && userSavedPins.find((savedPin) => savedPin.id === pin.id) ? 
-                <button>Suka</button>
+                <button className="removePinFromSaved" onClick={}>Saved</button>
                 :
                <button className="savePi" onClick={() => handlePinSave(pin)}>Save</button>
             }

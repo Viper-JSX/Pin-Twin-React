@@ -53,6 +53,10 @@ function App(){
     }
 
     function handlePinSave(pin){
+        if(!user){
+            handleLoginFormOpen();
+            return;
+        }
         dispatch(savePin({ pin }));
     }
 
