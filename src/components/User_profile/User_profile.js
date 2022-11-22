@@ -50,7 +50,7 @@ function UserProfileWindow({ handleLogout, handlePinOpenerClick, handleProfileEd
                 <ProfileTopImage imageSrc={otherUser.profileTopImageSrc} />
                 <UserProfileImageAndNickname nickname={otherUser.nickname} profileImageSrc={otherUser.profileImageSrc} />
                 <FollowButton userToFollowOrUnfollowId={otherUser.id} handleFollow={handleFollow} handleUnfollow={handleUnfollow} />
-                <Pins pins={otherUser.pins} handlePinSave={handlePinSave} />
+                <Pins pins={otherUser.pins} handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} handlePinOpenerClick={handlePinOpenerClick} />
             </div>
         );
     }
@@ -63,9 +63,9 @@ function UserProfileWindow({ handleLogout, handlePinOpenerClick, handleProfileEd
             <UserPinsSwitcher typeOfPinsToShow={typeOfPinsToShow} handleUserPinsSwitch={handleUserPinsSwitch}  />
             {
                 typeOfPinsToShow === USER_PINS ? 
-                <Pins pins={user.pins} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />
+                <Pins pins={user.pins} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
                 :
-                <SavedPins savedPins={user.savedPins} handlePinOpenerClick={handlePinOpenerClick} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
+                <SavedPins savedPins={user.savedPins} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinRemoveFromSaved} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
             }
         </div>
     );
