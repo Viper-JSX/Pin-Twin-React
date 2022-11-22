@@ -99,9 +99,12 @@ header  .openPinCreator{
 }
 
 header > .search{
-    min-width: 100px;
-    height: 2rem;
     flex-grow: 1;
+}
+
+header > .search, #mainPage > .search{
+    min-width: 200px;
+    height: 2rem;
     border-radius: 5rem;
 }
 
@@ -169,7 +172,8 @@ header > .search{
 
 /*---Main page---*/
 #mainPage > .search{
-    color: red;
+    margin: 1rem 50% 1rem 50%;
+    transform: translateX(-50%);
     display: none;
 }
 
