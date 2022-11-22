@@ -471,7 +471,7 @@ header > .search{
     z-index: 3;
 
     animation-name: fadeIn;
-    animation-duration: var(--shortTransitionTime);
+    animation-duration: var(--middleTransitionTime);
     animation-iteration-count: 1;
 }
 
@@ -492,6 +492,10 @@ header > .search{
     justify-content: center;
     align-items: center;
     z-index: 1;
+
+    animation-name: fadeIn;
+    animation-duration: var(--middleTransitionTime);
+    animation-iteration-count: 1;
 }
 
 .authorizationForm{
