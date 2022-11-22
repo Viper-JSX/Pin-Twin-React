@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { pins } from "./various_things/pins";
 
 import { cancelConfirmation, changeConversationsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, logout, openLoginWindow, openSignUpWindow, setConfirmationValues, updateTagsViewFrequencyHistogram } from "./redux/action_creators";
-import { login, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow, searchPins, createComment, deleteComment } from "./redux/thunks";
+import { login, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow, searchPins, createComment, deleteComment, showMessage } from "./redux/thunks";
 import { selectMostFavouriteTags } from "./utilities/select_most_favourite_tags";
 import { useNavigate } from "react-router";
 
@@ -65,6 +65,11 @@ function App(){
     }
 
     function handleFollow(followData){
+        if(!user){
+            handleLoginFormOpen();
+            return;
+        }
+
         dispatch(follow(followData));
     }
 
