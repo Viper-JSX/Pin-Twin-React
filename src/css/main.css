@@ -225,7 +225,7 @@ header > .search, #mainPage > .search{
 
 .pinOpener{
     width: 18%;
-    min-width: 150px;
+    min-width: 280px;
     height: auto;
     margin: var(--middleMargin);
     border-radius: 0.5rem;
