@@ -306,11 +306,7 @@ header > .search, #mainPage > .search{
 }
 
 .pinInfoAndComments > .saveOrEditPin {
-
-}
-
-.pinImageAndComments  .profileOpener{
-    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .pinTitle{
