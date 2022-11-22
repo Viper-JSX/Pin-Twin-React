@@ -157,6 +157,6 @@ export function unfollow(payload){
 export function showMessage(payload){
     return function (dispatch){
         dispatch({type: SHOW_MESSAGE, payload});
-        setTimeout(() => dispatch({ type: HIDE_MESSAGE }), 3000)
+        setTimeout(() => dispatch({ type: HIDE_MESSAGE }), 5000)
     }
 }
