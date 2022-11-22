@@ -3,7 +3,7 @@ import RemovePinFromSaved from "./Remove_pin_from_saved";
 
 function SavedPinOpener({ userId, pin, handlePinOpenerClick, handlePinRemoveFromSaved }){
     return(
-        <div className="savedPin">
+        <div className="savedPinOpener">
             <RemovePinFromSaved userId={userId} pinId={pin.id}  handlePinRemoveFromSaved={handlePinRemoveFromSaved} />
             <PinOpener pin={pin} handlePinOpenerClick={handlePinOpenerClick} />
         </div>
