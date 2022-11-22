@@ -26,10 +26,9 @@ function Pin({ handlePinSave, handlePinOpenerClick, handleCommentCreate, handleC
             }
         }
     });
-
     return(
         <div className="pin">
-            <PinContent pin={pin} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
+            <PinContent pin={pin} handlePinSave={handlePinSave} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
 
             <b>Similar pins</b>
             <Pins pins={similarPins} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />
