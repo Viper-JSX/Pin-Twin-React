@@ -31,7 +31,7 @@ function AuthorizationForm({ handleLoginFormOpen, handleSignUpFormOpen, handleLo
             <div className="authorizationForm">
                 <CloseButton handler={handleAuthorizationWindowClose} />
                 <form ref={formRef}>
-                    <b>{currentAuthorizationType === "login" ? "Login" : "Sign-up"}</b>
+                    <b className="authorizationFormTitle">{currentAuthorizationType === "login" ? "Login" : "Sign-up"}</b>
                     <input className="emailInput" type="email" value={inputsValue.email} placeholder="Email" onChange={handleLoginChange} />
                     <input className="passwordInput" type="password" value={inputsValue.password} placeholder="Password" onChange={handlePasswordChange} />
 
@@ -42,14 +42,14 @@ function AuthorizationForm({ handleLoginFormOpen, handleSignUpFormOpen, handleLo
                                 handleLogin({ event, loginData: inputsValue});
                             }}>Login</button>
 
-                            <NavLink to="" onClick={handleSignUpFormOpen}>Don't have an account? Create one!</NavLink>
+                            <NavLink className="authorizationFormSwitcher" to="" onClick={handleSignUpFormOpen}>Don't have an account? <br /> Create one!</NavLink>
                         </>
                         :
                         <>
                             <button onClick={(event) => {
                                 handleSignUp({event, signUpData: inputsValue});
                             }}>Sign-up</button>
-                            <NavLink to="" onClick={handleLoginFormOpen}>Already have an account?</NavLink>
+                            <NavLink className="authorizationFormSwitcher" to="" onClick={handleLoginFormOpen}>Already have an account?</NavLink>
                         </>
                     }
                 </form>

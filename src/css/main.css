@@ -462,6 +462,12 @@ header > .search{
 }
 
 .authorizationForm{
+    min-width: 300px;
+    aspect-ratio: 1/0.5;
+    padding: 1rem;
+    padding-top: 0;
+    color: var(--lightColor);
+    background-color: var(--darkColor);
     border: var(--thinDarkBorder);
     position: relative;
 }
@@ -472,11 +478,14 @@ header > .search{
     transform: translateX(-100%);
 }
 
+.authorizationFormTitle{
+    text-align: center;
+}
+
 .authorizationForm form{
     border-top: var(--thickDarkBorder);
     display: flex;
     flex-direction: column;
-
 }
 
 .authorizationForm form > *{
@@ -489,4 +498,12 @@ header > .search{
 
 .loginForm.hidden, .signUpForm.hidden{
     display: none;
+}
+
+.authorizationFormSwitcher{
+    color: var(--lightColor);
+}
+
+.authorizationFormSwitcher:hover{
+    color: var(--highlightColor1);
 }
