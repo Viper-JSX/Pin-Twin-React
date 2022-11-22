@@ -77,6 +77,9 @@ function App(){
     }
 
     function handlePinOpenerClick({ pinTags }){
+        if(!user){
+            return
+        }
         dispatch(updateTagsViewFrequencyHistogram({ pinTags }));
     }
 
