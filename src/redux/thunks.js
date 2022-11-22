@@ -130,6 +130,10 @@ export function deletePinFromSaved(payload){
 
 export function createComment(payload){
     return function(dispatch){
+        if(!payload.commentText){
+            dispatch(showMessage({ title: "Fill in the field", text: "Comment cannot be empty" }));
+            return;
+        }
         dispatch({ type: CREATE_COMMENT, payload });
         dispatch(updatePinsList({ pins }));
     }
