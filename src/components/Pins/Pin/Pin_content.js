@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+
 import PinImage from "./Pin_image";
 import PinInfoAndComments from "./Pin_info_and_comments";
 
