@@ -66,6 +66,16 @@ button:hover{
     
 }
 
+.closeButton{
+    color: var(--lightColor);
+    background-color: orangered;
+}
+
+.closeButton:hover{
+    color: var(--darkColor);
+    background-color: var(--lightColor);
+}
+
 /*---Header---*/
 
 header{
