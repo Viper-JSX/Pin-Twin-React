@@ -19,13 +19,16 @@ function Pin({ handlePinSave, handlePinRemoveFromSaved, handlePinOpenerClick, ha
         );
     }
 
-    const similarPins = pins.filter((possibleSimilarPin) => {
-        for(let i = 0; i < pin.tags.length; i++){
-            if(possibleSimilarPin.tags.includes(pin.tags[i]) && possibleSimilarPin.id !== pin.id){
-                return true;
+    const similarPins = []; 
+    
+    for(let i = 0; i < pins.length; i++){
+        for(let j = 0; j < pin.tags.length; j++){
+            if(pins[i].tags.includes(pin.tags[j]) && pins[i].id !== pin.id){
+                similarPins.push(pins[i]);
+                break;
             }
         }
-    }).slice(0, 10);
+    }
     
     return(
         <div className="pin">
