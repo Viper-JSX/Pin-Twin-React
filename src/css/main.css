@@ -283,6 +283,10 @@ header > .search, #mainPage > .search{
     margin: 2rem;
 }
 
+.pinImageAndComments  .profileOpener{
+    margin-top: 1rem;
+}
+
 .pinTitle{
     font-size: 1.4rem;
 }
@@ -312,7 +316,10 @@ header > .search, #mainPage > .search{
     margin-top: 1rem;
 }
 
-
+.pinBy{
+    margin-top: 1rem;
+    display: inline-block;
+}
 
 
 /*---Editor---*/

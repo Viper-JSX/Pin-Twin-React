@@ -7,7 +7,7 @@ function PinInfoAndComments({ pin, handleCommentCreate, handleCommentDelete, han
         <div className="pinImageAndComments">
                 <PinInfo pin={pin} />
                 <CommentsSection pinId={pin.id} comments={pin.comments} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
-                <ProfileOpener profileId={pin.creatorId} />
+                <b className="pinBy">Pin by: <ProfileOpener profileId={pin.creatorId} /></b>
         </div>
     );
 }

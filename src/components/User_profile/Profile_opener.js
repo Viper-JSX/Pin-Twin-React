@@ -7,10 +7,7 @@ function ProfileOpener({ profileId }){
 
     return(
         <NavLink to={`/users/${profileId}`} state={{ user }}>
-            <div className="profileOpener">
-                <b>{user.nickname}</b>
-                <button>See</button>
-            </div>
+            <b className="profileOpener">{user.nickname}</b>
         </NavLink>
     );
 }
