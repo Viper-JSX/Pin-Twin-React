@@ -628,6 +628,10 @@ header > .search, #mainPage > .search{
     flex-direction: column;
 }
 
+.confirmationWindowButtons > button{
+    margin: 0.5rem;
+}
+
 /*---Media queries---*/
 @media screen and (max-width: 500px) {
     header > .search{
