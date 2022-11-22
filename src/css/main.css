@@ -62,10 +62,6 @@ button:hover{
     border-top: var(--thickDarkBorder);
 }
 
-.logoutButton{
-    
-}
-
 .closeButton{
     color: var(--lightColor);
     background-color: orangered;
@@ -425,7 +421,7 @@ header > .search, #mainPage > .search{
     height: 2rem;
 }
 
-.createPin, .editPin{
+.createPin, .editPin, .pinDeleteButton{
     width: 7rem;
     height: 4rem;
     margin: 2rem;
@@ -442,6 +438,9 @@ header > .search, #mainPage > .search{
     background-color: var(--lightColor);
 }
 
+.pinDeleteButton{
+    background-color: red;
+}
 
 /*---User profile---*/
 .userProfile{
