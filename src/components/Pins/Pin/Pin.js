@@ -25,7 +25,8 @@ function Pin({ handlePinSave, handlePinRemoveFromSaved, handlePinOpenerClick, ha
                 return true;
             }
         }
-    });
+    }).slice(0, 10);
+    
     return(
         <div className="pin">
             <PinContent pin={pin} handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
