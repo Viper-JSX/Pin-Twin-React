@@ -19,11 +19,13 @@ function ConfirmationWindow({ handleConfirmationCancel, handlePinDelete }){
     }
 
     return(
-        <div>
-            <b className="confirmationWindowText">{confirmationValues.text}</b>
-            <br />
-            <button className="proceedConfirmation" onClick={confirmationHandler} >Proceed</button>
-            <button className="cancelConfirmation" onClick={handleConfirmationCancel} >Cancel</button>
+        <div className="confirmationWindowWrapper">
+            <div className="confirmationWindow">
+                <b className="confirmationWindowText">{confirmationValues.text}</b>
+                <br />
+                <button className="proceedConfirmation" onClick={confirmationHandler} >Proceed</button>
+                <button className="cancelConfirmation" onClick={handleConfirmationCancel} >Cancel</button>
+            </div>
         </div>
     )
 }

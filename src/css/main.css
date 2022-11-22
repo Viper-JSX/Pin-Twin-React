@@ -621,6 +621,10 @@ header > .search, #mainPage > .search{
 }
 
 
+.confirmationWindowWrapper{
+    
+}
+
 
 /*---Media queries---*/
 @media screen and (max-width: 500px) {
