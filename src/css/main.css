@@ -258,7 +258,7 @@ header > .search, #mainPage > .search{
 
 }
 
-.savePin, .removePinFromSaved{
+.savePin, .removePinFromSaved, .openPinEditor{
     width: 5rem;
     height: 2rem;
     border-radius: 1rem;
@@ -270,12 +270,12 @@ header > .search, #mainPage > .search{
     background-color: var(--highlightColor1);
 }
 
-.removePinFromSaved{
+.removePinFromSaved, .openPinEditor{
     color: var(--lightColor);
     background-color: darkslategray;
 }
 
-.savePin:hover, .removePinFromSaved:hover{
+.savePin:hover, .removePinFromSaved:hover, .openPinEditor:hover{
     color: var(--darkColor);
     background-color: var(--lightColor);
 }
