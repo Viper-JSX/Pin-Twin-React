@@ -49,6 +49,7 @@ function App(){
 
     function handlePinDelete({ pinId }){
         dispatch(deletePin({ pinId }));
+        navigate("/");
     }
 
     function handlePinSave(pin){
