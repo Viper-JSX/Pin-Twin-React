@@ -460,7 +460,6 @@ header > .search{
 
 /*---Messages modal window---*/
 .messageModal{
-    color: var(--);
     padding: 1rem;
     background-color: var(--lightColor);
     border: var(--thickDarkBorder);
@@ -470,6 +469,10 @@ header > .search{
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
+
+    animation-name: fadeIn;
+    animation-duration: var(--shortTransitionTime);
+    animation-iteration-count: 1;
 }
 
 .messageTitle{
@@ -536,4 +539,17 @@ header > .search{
 
 .authorizationFormSwitcher:hover{
     color: var(--highlightColor1);
+}
+
+
+
+
+/*---Animations---*/
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
