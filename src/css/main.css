@@ -243,11 +243,11 @@ header > .search, #mainPage > .search{
     filter: brightness(0.5);
 }
 
-.pinOpener:hover > .savePin{
+.pinOpener:hover > .savePin, .pinOpener:hover > .removePinFromSaved{
     display: initial;
 }
 
-.pinOpener > .savePin{
+.pinOpener > .savePin, .pinOpener > .removePinFromSaved{
     right: 0;
     position: absolute;
     display: none;
