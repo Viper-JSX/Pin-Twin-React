@@ -292,7 +292,14 @@ header > .search, #mainPage > .search{
     border-radius: 1rem;
 }
 
+.comments{
+    max-width: 50vh;
+    overflow: scroll;
+}
 
+.comment{
+    margin: 0.2rem;
+}
 
 
 
