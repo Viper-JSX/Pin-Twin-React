@@ -46,7 +46,7 @@ function UserProfileWindow({ handleLogout, handlePinOpenerClick, handleProfileEd
 
     else if(otherUser && user?.id !== otherUser.id){ //If other user was passed to view and if user opened not his own profile through ProfileOpener. User can be not existing that's why optional chaining is user
         return(
-            <div className="userProfileWindow"> 
+            <div className="userProfile"> 
                 <ProfileTopImage imageSrc={otherUser.profileTopImageSrc} />
                 <UserProfileImageAndNickname nickname={otherUser.nickname} profileImageSrc={otherUser.profileImageSrc} />
                 <FollowButton userToFollowOrUnfollowId={otherUser.id} handleFollow={handleFollow} handleUnfollow={handleUnfollow} />
