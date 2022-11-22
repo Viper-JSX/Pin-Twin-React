@@ -23,8 +23,10 @@ function ConfirmationWindow({ handleConfirmationCancel, handlePinDelete }){
             <div className="confirmationWindow">
                 <b className="confirmationWindowText">{confirmationValues.text}</b>
                 <br />
-                <button className="proceedConfirmation" onClick={confirmationHandler} >Proceed</button>
-                <button className="cancelConfirmation" onClick={handleConfirmationCancel} >Cancel</button>
+                <div className="confirmationWindowButtons">
+                    <button className="proceedConfirmation" onClick={confirmationHandler} >Proceed</button>
+                    <button className="cancelConfirmation" onClick={handleConfirmationCancel} >Cancel</button>
+                </div>
             </div>
         </div>
     )
