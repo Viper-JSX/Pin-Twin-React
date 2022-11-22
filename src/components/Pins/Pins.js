@@ -1,6 +1,6 @@
 import PinOpener from "./Pin/Pin_opener/Pin_opener";
 
-function Pins({ pins, handlePinOpenerClick, handlePinSave }){
+function Pins({ pins, handlePinOpenerClick, handlePinSave, handlePinRemoveFromSaved }){
     return(
         <div className="pins">
             {
@@ -9,6 +9,7 @@ function Pins({ pins, handlePinOpenerClick, handlePinSave }){
                     key={`pin_${pin.id}`} 
                     handlePinOpenerClick={handlePinOpenerClick} 
                     handlePinSave={handlePinSave} 
+                    handlePinRemoveFromSaved={handlePinRemoveFromSaved}
                     /> 
                 ) 
             }

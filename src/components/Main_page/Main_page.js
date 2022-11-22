@@ -5,7 +5,7 @@ import Pins from "../Pins/Pins";
 import Search from "../Reusable_components/Search/Search";
 import WelcomePage from "./Welcome_page/Welcome_page";
 
-function MainPage({ handleLoginFormOpen, handleSignUpFormOpen, handlePinsSearchTermChange, handlePinOpenerClick, handlePinSave }){
+function MainPage({ handleLoginFormOpen, handleSignUpFormOpen, handlePinsSearchTermChange, handlePinOpenerClick, handlePinSave, handlePinRemoveFromSaved}){
     const [ user, pinsToShow, pinsSearchTerm ] = useSelector((state) => [ state.user, state.app.pinsToShow, state.search.pinsSearch.term ]);
 
     useEffect(() => {
@@ -22,6 +22,7 @@ function MainPage({ handleLoginFormOpen, handleSignUpFormOpen, handlePinsSearchT
                         pins={pinsToShow} 
                         handlePinOpenerClick={handlePinOpenerClick} 
                         handlePinSave={handlePinSave} 
+                        handlePinRemoveFromSaved={handlePinRemoveFromSaved}
                     />
                 </>
                 :

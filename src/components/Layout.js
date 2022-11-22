@@ -60,10 +60,10 @@ function Layout({
             <ConfirmationWindow handleConfirmationCancel={handleConfirmationCancel} handlePinDelete={handlePinDelete} />
 
             <Routes>
-                <Route path="/" element={<MainPage handleLoginFormOpen={handleLoginFormOpen} handleSignUpFormOpen={handleSignUpFormOpen} handlePinsSearchTermChange={handlePinsSearchTermChange} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />} />
+                <Route path="/" element={<MainPage handleLoginFormOpen={handleLoginFormOpen} handleSignUpFormOpen={handleSignUpFormOpen} handlePinsSearchTermChange={handlePinsSearchTermChange} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />} />
                 <Route path="/pins/pin" element={<Pin handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} handlePinOpenerClick={handlePinOpenerClick} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />} />
                 <Route path="/profile" element={<UserProfile  handleLogout={handleLogout} handlePinOpenerClick={handlePinOpenerClick} handleProfileEdit={handleProfileEdit} handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} />} />
-                <Route path="/users/:id" element={<UserProfile handlePinSave={handlePinSave} handleFollow={handleFollow} handlePinOpenerClick={handlePinOpenerClick} handleUnfollow={handleUnfollow} />} />
+                <Route path="/users/:id" element={<UserProfile handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} handleFollow={handleFollow} handlePinOpenerClick={handlePinOpenerClick} handleUnfollow={handleUnfollow} />} />
                 <Route path="/pins/create" element={<PinEditor mode="create" handlePinCreate={handlePinCreate} handlePinEdit={null} />} />
                 <Route path="/pins/:id/edit" element={<PinEditor mode="edit" handlePinCreate={null} handlePinEdit={handlePinEdit} handlePinDelete={handlePinDelete} handleConfirmationWindowOpen={handleConfirmationWindowOpen} />} />
             
