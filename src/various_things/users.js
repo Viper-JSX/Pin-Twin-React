@@ -7,8 +7,6 @@ export const users = [
     new UserClass("yurkig@gmail.com", "b")
 ];
 
-users[0].pins[0] = pins[0];
-users[1].pins[0] = pins[1];
-users[1].profileTopImageSrc = "https://wallpapershome.com/images/pages/ico_h/24116.jpg";
-
-users[0].followings[0] = 1;
+users[0].pins = pins.slice(0, 15);
+users[1].pins = pins.slice(15, 30);
+users[2].pins = pins.slice(30);
