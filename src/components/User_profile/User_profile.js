@@ -50,6 +50,7 @@ function UserProfileWindow({ handleLogout, handlePinOpenerClick, handleProfileEd
                 <ProfileTopImage imageSrc={otherUser.profileTopImageSrc} />
                 <UserProfileImageAndNickname nickname={otherUser.nickname} profileImageSrc={otherUser.profileImageSrc} />
                 <FollowButton userToFollowOrUnfollowId={otherUser.id} handleFollow={handleFollow} handleUnfollow={handleUnfollow} />
+                <b className="boldText">Pins</b>
                 <Pins pins={otherUser.pins} handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} handlePinOpenerClick={handlePinOpenerClick} />
             </div>
         );
