@@ -15,7 +15,6 @@ function Pin({ handlePinSave, handlePinRemoveFromSaved, handlePinOpenerClick, ha
     const similarPins = []; 
 
     useEffect(() => {
-        console.log("render");
         window.scrollTo(0, 0);
     }, [pinId]);
 

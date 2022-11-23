@@ -28,8 +28,7 @@ export function app(state=defaultState.app, action){
             return { ...state, pinsToShow: JSON.parse(JSON.stringify(pins)) }; //May not update 
         }
         case SHOW_MORE_PINS: {
-            console.log(pinsChunkSize);
-            return { ...state, showedPinsCount: state.showedPinsCount += pinsChunkSize };
+            return { ...state, showedPinsCount: state.showedPinsCount + pinsChunkSize };
         }
         case UPDATE_PINS_LIST: {
             return { 
