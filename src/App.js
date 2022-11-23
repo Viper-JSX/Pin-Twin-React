@@ -18,7 +18,22 @@ function App(){
     const navigate = useNavigate();
     const user = useSelector((state) => state.user);
 
-    //useSelector((state) => console.log(state.app))
+    useEffect(() => {
+        window.addEventListener("scroll", handlePageScroll);
+    }, []);
+
+
+    function handlePageScroll(){
+        const pageHeight = document.body.scrollHeight;
+        const pageScrollRelativeToBottomOfViewport = window.scrollY + window.innerHeight;
+
+        if(pageScrollRelativeToBottomOfViewport >= pageHeight * 0.8){ //If user has scrolled 4/5 of page then load new chunk of pins
+            console.log("Load new chunk of pins");
+        }
+
+        console.log(pageScrollRelativeToBottomOfViewport, "/", document.body.scrollHeight, "scroll")
+    }
+
     /*---User---*/
     function handleLogin({ event, loginData }){
         event.preventDefault();
@@ -147,10 +162,6 @@ function App(){
     function handleConfirmationCancel(){
         dispatch(cancelConfirmation());
     }
-
-    //useEffect(() => {
-    //    handleLoginFormOpen();
-    //}), [""];
 
     return(
         <div className="App">
