@@ -311,7 +311,8 @@ header > .search, #mainPage > .search{
 }
 
 .pinImage{
-    width: 40vw;
+    max-width: 40vw;
+    max-height: 80vh; /*May cause image shrinkong*/
     min-width: 280px;
     border-radius: 1rem;
 }
