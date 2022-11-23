@@ -6,7 +6,7 @@ import Search from "../Reusable_components/Search/Search";
 import WelcomePage from "./Welcome_page/Welcome_page";
 
 function MainPage({ handleLoginFormOpen, handleSignUpFormOpen, handlePinsSearchTermChange, handlePinOpenerClick, handlePinSave, handlePinRemoveFromSaved}){
-    const [ user, pinsToShow, pinsSearchTerm ] = useSelector((state) => [ state.user, state.app.pinsToShow, state.search.pinsSearch.term ]);
+    const [ user, pinsToShow, showedPinsCount, pinsSearchTerm ] = useSelector((state) => [ state.user, state.app.pinsToShow, state.app.showedPinsCount, state.search.pinsSearch.term ]);
 
     useEffect(() => {
         handlePinsSearchTermChange({ target: { value: pinsSearchTerm } }); //To update pins list (pins to show when returning to MainPage)
@@ -19,7 +19,7 @@ function MainPage({ handleLoginFormOpen, handleSignUpFormOpen, handlePinsSearchT
                 <>
                     <Search value={pinsSearchTerm} handler={handlePinsSearchTermChange} />
                     <Pins 
-                        pins={pinsToShow} 
+                        pins={pinsToShow.slice(0, showedPinsCount)} 
                         handlePinOpenerClick={handlePinOpenerClick} 
                         handlePinSave={handlePinSave} 
                         handlePinRemoveFromSaved={handlePinRemoveFromSaved}
