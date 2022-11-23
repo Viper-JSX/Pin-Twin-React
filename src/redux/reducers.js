@@ -7,6 +7,7 @@ import { defaultState } from "./default_state";
 import { pins } from "../various_things/pins";
 import { filterPinsBasedOnUserPreferences } from "../utilities/filter_pins_based_on_user_preferences";
 import { CommentClass } from "../Classes/CommentCLass";
+import { pinsChunkSize } from "../various_things/constants";
 
 
 export function app(state=defaultState.app, action){
@@ -27,7 +28,8 @@ export function app(state=defaultState.app, action){
             return { ...state, pinsToShow: JSON.parse(JSON.stringify(pins)) }; //May not update 
         }
         case SHOW_MORE_PINS: {
-            return state;
+            console.log(pinsChunkSize);
+            return { ...state, showedPinsCount: state.showedPinsCount += pinsChunkSize };
         }
         case UPDATE_PINS_LIST: {
             return { 

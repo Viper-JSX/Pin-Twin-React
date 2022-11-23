@@ -7,7 +7,7 @@ export const defaultState = {
     app:{
         allPins: JSON.parse(JSON.stringify(pins)),
         pinsToShow: [], //Filtered pins that will be shown to user along scrolling
-        displayedPinsCount: pinsChunkSize
+        showedPinsCount: pinsChunkSize
     },
 
     user: null,
