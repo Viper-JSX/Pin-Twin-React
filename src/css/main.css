@@ -166,18 +166,27 @@ header > .search, #mainPage > .search{
 
 
 /*---Main page---*/
+#mainPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #mainPage > .search{
     margin: 1rem 0 1rem 0;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     display: none;
 }
 
+#mainPage > .pins{
+    margin-top: 0.5rem
+}
 
 
 /*---Welcome page---*/
 .welcomePage{
+    width: 100%;
     height: 100vh;
     background-image: url("../files/images/japan_minimalist.jpg");
     background-size: cover;
