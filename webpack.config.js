@@ -22,7 +22,7 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
-            },            
+            },    
         ]
     },
     devServer: {
