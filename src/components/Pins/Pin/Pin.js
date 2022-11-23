@@ -41,7 +41,7 @@ function Pin({ handlePinSave, handlePinRemoveFromSaved, handlePinOpenerClick, ha
         <div className="pin">
             <PinContent pin={pin} handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} handleCommentCreate={handleCommentCreate} handleCommentDelete={handleCommentDelete} handleLoginFormOpen={handleLoginFormOpen} />
 
-            <b>Similar pins</b>
+            <b className="boldText">Similar pins</b>
             <Pins pins={similarPins} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} />
         </div> 
     );  

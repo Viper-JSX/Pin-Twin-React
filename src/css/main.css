@@ -550,7 +550,7 @@ header > .search, #mainPage > .search{
     z-index: 1;
 }
 
-.userProfile > .boldText{
+.userProfile > .boldText, .pin > .boldText{
     margin: 2rem;
     font-size: 1.3rem;
 }
