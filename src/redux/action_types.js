@@ -1,5 +1,6 @@
 /*---App---*/
 export const SHOW_MORE_PINS = "SHOW_MORE_PINS";
+export const RESET_SHOWED_PINS_COUNT = "RESET_SHOWED_PINS_COUNT";
 
 export const UPDATE_PINS_LIST = "UPDATE_PINS_LIST";
 export const FORCE_UPDATE = "FORCE_UPDATE";

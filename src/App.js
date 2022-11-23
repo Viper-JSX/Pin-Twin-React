@@ -7,7 +7,7 @@ import Layout from "./components/Layout";
 import { useDispatch, useSelector } from 'react-redux';
 import { pins } from "./various_things/pins";
 
-import { cancelConfirmation, changeConversationsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, logout, openLoginWindow, openSignUpWindow, setConfirmationValues, showMorePins, updateTagsViewFrequencyHistogram } from "./redux/action_creators";
+import { cancelConfirmation, changeConversationsSearchTerm, changePinsSortCriteria, changeUserPinsSearchTerm, changeUserPinsSortCriteria, closeAuthorizationWindow, confirmAction, logout, openLoginWindow, openSignUpWindow, resetShowedPinsCount, setConfirmationValues, showMorePins, updateTagsViewFrequencyHistogram } from "./redux/action_creators";
 import { login, signUp, createPin, deletePin, editPin, savePin, editProfile, deletePinFromSaved, follow, unfollow, searchPins, createComment, deleteComment, showMessage } from "./redux/thunks";
 import { selectMostFavouriteTags } from "./utilities/select_most_favourite_tags";
 import { useNavigate } from "react-router";
@@ -20,6 +20,7 @@ function App(){
 
     useEffect(() => {
         window.addEventListener("scroll", handlePageScroll);
+        ///dispatch(resetShowedPinsCount()); //Reset when entering main page
     }, []);
 
 

@@ -4,12 +4,13 @@ import { convertTagsStringToTagsArray } from "../utilities/convertTagsStringToTa
 import { selectMostFavouriteTags } from "../utilities/select_most_favourite_tags";
 import { pins } from "../various_things/pins";
 import { users } from "../various_things/users";
-import { closeAuthorizationWindow, updatePinsList } from "./action_creators";
+import { closeAuthorizationWindow, resetShowedPinsCount, updatePinsList } from "./action_creators";
 import { CHANGE_PINS_SEARCH_TERM, CREATE_COMMENT, CREATE_PIN, DELETE_COMMENT, DELETE_PIN, DELETE_PIN_FROM_SAVED, EDIT_PIN, EDIT_PROFILE, FILTER_PINS_BASED_ON_USER_PREFERENCES, FOLLOW, HIDE_MESSAGE, LOGIN, SAVE_PIN, SEARCH_PINS, SHOW_MESSAGE, SHOW_RECENT_PINS, SIGN_UP, UNFOLLOW } from "./action_types";
 
 export function searchPins(payload){
     return function(dispatch){
         dispatch({ type: CHANGE_PINS_SEARCH_TERM, payload: { pinsSearchTerm: payload.pinsSearchTerm } });
+        dispatch(resetShowedPinsCount());
 
         if(payload.pinsSearchTerm){ //User entered something to search bar
             dispatch({ type: SEARCH_PINS, payload: { pinsSearchTerm: payload.pinsSearchTerm } });
