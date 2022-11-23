@@ -259,24 +259,24 @@ header > .search, #mainPage > .search{
     width: 20%;
 }
 
-.savePin, .removePinFromSaved, .openPinEditor{
+.savePin, .removePinFromSaved, .openPinEditor, .followButton, .unfollowButton{
     width: 5rem;
     height: 2rem;
     border-radius: 1rem;
     transition: var(--shortTransitionTime);
 }
 
-.savePin{
+.savePin, .followButton{
     color: var(--lightColor);
     background-color: var(--highlightColor1);
 }
 
-.removePinFromSaved, .openPinEditor{
+.removePinFromSaved, .openPinEditor, .unfollowButton{
     color: var(--lightColor);
     background-color: darkslategray;
 }
 
-.savePin:hover, .removePinFromSaved:hover, .openPinEditor:hover{
+.savePin:hover, .removePinFromSaved:hover, .openPinEditor:hover, .followButton:hover, .unfollowButton:hover{
     color: var(--darkColor);
     background-color: var(--lightColor);
 }
