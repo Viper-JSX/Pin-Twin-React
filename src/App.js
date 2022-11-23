@@ -27,11 +27,9 @@ function App(){
         const pageHeight = document.body.scrollHeight;
         const pageScrollRelativeToBottomOfViewport = window.scrollY + window.innerHeight;
 
-        if(pageScrollRelativeToBottomOfViewport >= pageHeight * 0.8){ //If user has scrolled 4/5 of page then load new chunk of pins
+        if( (window.location.pathname === "" || window.location.pathname === "/") && pageScrollRelativeToBottomOfViewport >= pageHeight * 0.8){ //If user has scrolled 4/5 of page then load new chunk of pins
             console.log("Load new chunk of pins");
         }
-
-        console.log(pageScrollRelativeToBottomOfViewport, "/", document.body.scrollHeight, "scroll")
     }
 
     /*---User---*/
