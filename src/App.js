@@ -20,7 +20,6 @@ function App(){
 
     useEffect(() => {
         window.addEventListener("scroll", handlePageScroll);
-        ///dispatch(resetShowedPinsCount()); //Reset when entering main page
     }, []);
 
     useEffect(() => {
