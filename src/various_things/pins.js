@@ -8,7 +8,7 @@ export const pins = [
     new PinClass(1, "https://petapixel.com/assets/uploads/2022/07/DALLEcopy.jpg", "Pin 5", "The pin that will become a history", ["sky", "bottom"], new Date()),
     new PinClass(2, "https://petapixel.com/assets/uploads/2022/07/DALLEcopy.jpg", "Pin 6", "The pin that will become a history", ["life", "world"], new Date()),
     new PinClass(0, "https://petapixel.com/assets/uploads/2022/07/DALLEcopy.jpg", "Pin 7", "The pin that will become a history", ["life", "world"], new Date()),
-    new PinClass(1, "https://petapixel.com/assets/uploads/2022/07/DALLEcopy.jpg", "Pin 8", "The pin that will become a history", ["sky", "bottom"], new Date()),
+    new PinClass(1, "https://i.pinimg.com/736x/28/2c/d7/282cd7c9f3a1f7a6ce9d0b7fe5c76009.jpg", "Pin 8", "The pin that will become a history", ["sky", "bottom"], new Date()),
     new PinClass(2, "https://petapixel.com/assets/uploads/2022/07/DALLEcopy.jpg", "Pin 9", "The pin that will become a history", ["life", "world"], new Date()),
     new PinClass(0, "https://petapixel.com/assets/uploads/2022/07/DALLEcopy.jpg", "Pin 10", "The pin that will become a history", ["life", "world"], new Date()),
     new PinClass(1, "https://petapixel.com/assets/uploads/2022/07/DALLEcopy.jpg", "Pin 11", "The pin that will become a history", ["sky", "bottom"], new Date()),

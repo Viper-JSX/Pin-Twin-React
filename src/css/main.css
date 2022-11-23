@@ -214,9 +214,10 @@ header > .search, #mainPage > .search{
 .pins, .savedPins{
     width: 100%;
     min-width: 280px;
-    display: flex;
+    /*display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap;*/
+    columns: 5 280px;
 }
 
 .pinOpener{
