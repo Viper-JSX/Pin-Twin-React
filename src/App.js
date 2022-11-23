@@ -23,6 +23,9 @@ function App(){
         ///dispatch(resetShowedPinsCount()); //Reset when entering main page
     }, []);
 
+    useEffect(() => {
+        dispatch(resetShowedPinsCount());
+    }, [window.location.pathname])
 
     function handlePageScroll(){
         const pageHeight = document.body.scrollHeight;
