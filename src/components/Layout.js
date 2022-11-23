@@ -1,4 +1,6 @@
+import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router";
+
 import AuthorizationForm from "./Authorization/Authorization_form";
 import Header from "./Header/Header";
 import MainPage from "./Main_page/Main_page";
@@ -39,8 +41,15 @@ function Layout({
     handleConfirmationCancel
 }){
 
+    const user = useSelector((state) => state.user);
+
     return(
         <div id="layout">
+
+            {
+            ( (window.location.pathname === "" || window.location.pathname === "/") && !user ) ? //User is on main page and not logged in
+            null
+            :
             <Header 
                 handlePinsSearch={handlePinsSearch}
                 handlePinsSearchTermChange={handlePinsSearchTermChange} 
@@ -48,6 +57,7 @@ function Layout({
                 handleSignUpFormOpen={handleSignUpFormOpen}
             />
 
+            }
             <AuthorizationForm 
                 handleLoginFormOpen={handleLoginFormOpen}
                 handleSignUpFormOpen={handleSignUpFormOpen}
