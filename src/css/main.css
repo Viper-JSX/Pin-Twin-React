@@ -236,6 +236,17 @@ header > .search, #mainPage > .search{
     column-gap: 0.5rem;
 }
 
+.pins.empty, .savedPins.empty{
+    columns: initial;
+    display: flex;
+    justify-content: center;
+}
+
+.pins.empty > b, .savedPins.empty > b{
+    color: var(--lightColor);
+    text-decoration: 0.1rem underline var(--highlightColor1);
+}
+
 .pinOpener{
     min-width: 280px;
     margin-bottom: 0.5rem;
@@ -259,6 +270,7 @@ header > .search, #mainPage > .search{
 }
 
 .pinOpener > .savePin, .pinOpener > .removePinFromSaved{
+    margin: 0.1rem;
     right: 0;
     position: absolute;
     display: none;
