@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { appIconSrc } from "../../various_things/constants";
+
 
 function MainPageIcon(){
     return(
         <NavLink to="/">
-            <img className="mainPageIcon"  alt="Main page" />
+            <img className="mainPageIcon" src={appIconSrc}  alt="Main page" />
         </NavLink>
     );
 }
