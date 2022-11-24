@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { appIconSrc } from "../../various_things/constants";
 
 
-function MainPageIcon(){
+function AppIcon(){
     return(
         <NavLink to="/">
             <img className="mainPageIcon" src={appIconSrc}  alt="Main page" />
@@ -10,4 +10,4 @@ function MainPageIcon(){
     );
 }
 
-export default MainPageIcon;
+export default AppIcon;

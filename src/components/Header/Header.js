@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import OpenAuthorization from "../Authorization/Open_authorization/Open_authorization";
 import Search from "../Reusable_components/Search/Search";
-import MainPageIcon from "./Main_page_icon";
+import AppIcon from "./App_icon";
 import OpenMessages from "./Open_messages";
 import OpenNotifications from "./Open_notifications";
 import OpenPinCreator from "./Open_pin_creator";
@@ -12,7 +12,7 @@ function Header({ handlePinsSearchTermChange, handleLoginFormOpen, handleSignUpF
 
     return(
         <header id="header">
-            <MainPageIcon />
+            <AppIcon />
             <OpenPinCreator handleLoginFormOpen={handleLoginFormOpen} />
             <Search value={pinsSearchTerm} placeholder={"Search"} handler={handlePinsSearchTermChange} />
             <OpenNotifications />
