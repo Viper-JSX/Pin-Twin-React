@@ -10,7 +10,7 @@ function SavedPins({ savedPins, handlePinOpenerClick, handlePinSave, handlePinRe
                 savedPins.length > 0 ?
                 savedPins.map((savedPin) => <PinOpener userId={userId} pin={savedPin} handlePinOpenerClick={handlePinOpenerClick} handlePinSave={handlePinSave} handlePinRemoveFromSaved={handlePinRemoveFromSaved} key={`saved_pin_${savedPin.id}`} />)
                 :
-                <b>No saved tags</b>
+                <b>No saved pins</b>
             }
         </div>
     );

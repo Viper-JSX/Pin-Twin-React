@@ -329,6 +329,12 @@ header > .search, #mainPage > .search{
     margin: 1.5rem;
 }
 
+.pinInfoAndComments{
+    max-width: 50vw;
+    min-width: 280px;
+    word-wrap: break-word;
+}
+
 .pinTitle{
     font-size: 1.4rem;
 }
