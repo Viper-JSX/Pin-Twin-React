@@ -5,7 +5,7 @@ import { appIconSrc } from "../../various_things/constants";
 function AppIcon(){
     return(
         <NavLink to="/">
-            <img className="mainPageIcon" src={appIconSrc}  alt="Main page" />
+            <img className="appIcon" src={appIconSrc}  alt="Main page" />
         </NavLink>
     );
 }

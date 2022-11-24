@@ -84,6 +84,16 @@ header > *{
     margin: 0.5rem;
 }
 
+header .appIcon{
+    height: 3rem;
+    transition: 0.3s;
+}
+
+header .appIcon:hover{
+    transform: scale(1.2);
+    filter: saturate(5);
+}
+
 header  .openPinCreator{
     width: 5rem;
     height: 3rem;
