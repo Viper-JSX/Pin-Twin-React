@@ -7,7 +7,7 @@ export const pins = [
     new PinClass(0, "https://watermark.lovepik.com/photo/20211119/large/lovepik-water-tree-picture_500280343.jpg", "Pin 4", "The pin that will become a history", ["tree"], new Date()),
     new PinClass(0, "https://ghantee.com/wp-content/uploads/2022/08/most-beautiful-trishul-image-on-the-internet-today-576x1024.jpg", "Pin 5", "The pin that will become a history", ["moon"], new Date()),
     new PinClass(0, "https://www.bhaktiphotos.com/wp-content/uploads/2018/04/Hindu-Shiva-God-Wallpaper-Free-Download.jpg", "Pin 6", "The pin that will become a history", ["buddha"], new Date()),
-    new PinClass(0, "https://funkylife.in/wp-content/uploads/2022/09/good-night-image-from-funkylife-328.jpg", "Pin 7", "The pin that will become a history sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss", ["goodnight"], new Date()),
+    new PinClass(0, "https://funkylife.in/wp-content/uploads/2022/09/good-night-image-from-funkylife-328.jpg", "Pin 7", "The pin that will become a history", ["goodnight"], new Date()),
     new PinClass(0, "https://i.pinimg.com/736x/28/2c/d7/282cd7c9f3a1f7a6ce9d0b7fe5c76009.jpg", "Pin 8", "The pin that will become a history", ["feather"], new Date()),
     new PinClass(0, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu_fpPmbK-bebEeX036y7frmW06amtCkG1ew&usqp=CAU", "Pin 9", "The pin that will become a history", ["kakadoo"], new Date()),
     new PinClass(0, "https://imgd.aeplcdn.com/310x174/n/cw/ec/44686/activa-6g-right-front-three-quarter.jpeg?q=75", "Pin 10", "The pin that will become a history", ["moto"], new Date()),

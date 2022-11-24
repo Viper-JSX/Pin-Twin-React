@@ -31,6 +31,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: var(--darkColor);
+    word-wrap: break-word;
 }
 
 button{
@@ -193,6 +194,11 @@ header > .search, #mainPage > .search{
     margin-top: 0.5rem
 }
 
+#mainPage > .pins > .pinOpener{
+    animation: appear;
+    animation-duration: var(--middleTransitionTime);
+    animation-iteration-count: 1;
+}
 
 /*---Welcome page---*/
 .welcomePage{
@@ -713,5 +719,16 @@ header > .search, #mainPage > .search{
     }
     100%{
         opacity: 1;
+    }
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
     }
 }
