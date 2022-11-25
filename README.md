@@ -19,7 +19,9 @@ This app is an analogue of Pinterest social media. Here you can create your prof
 * Redux thunk
 
 # How to run
-Open the app in your code editor and enter 'npn-start' and app will open in your default browser
+* Open the link: 
+Or
+* Open the app in your code editor and enter 'npn-start' and app will open in your default browser
 
 # For Developer
 * There are some things that are not implemented yet: notifications and messaging
